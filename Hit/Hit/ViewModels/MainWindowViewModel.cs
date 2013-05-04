@@ -10,6 +10,8 @@ namespace Hit.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        #region Commands Description
+
         private ICommand _addABBYYMailHitCommand;
         public ICommand AddABBYYMailHitCommand
         {
@@ -18,12 +20,6 @@ namespace Hit.ViewModels
                 return _addABBYYMailHitCommand ?? (_addABBYYMailHitCommand = new RelayCommand(param => OnAddABBYYMailHitCommand(), null));
             }
         }
-
-        private void OnAddABBYYMailHitCommand()
-        {
-
-        }
-
 
         private ICommand _addABBYYCallHitCommand;
         public ICommand AddABBYYCallHitCommand
@@ -34,13 +30,6 @@ namespace Hit.ViewModels
             }
         }
 
-        private void OnAddABBYYCallHitCommand()
-        {
-
-        }
-
-
-
         private ICommand _addFILENETMailHitCommand;
         public ICommand AddFILENETMailHitCommand
         {
@@ -49,12 +38,6 @@ namespace Hit.ViewModels
                 return _addFILENETMailHitCommand ?? (_addFILENETMailHitCommand = new RelayCommand(param => OnAddFILENETMailHitCommand(), null));
             }
         }
-
-        private void OnAddFILENETMailHitCommand()
-        {
-
-        }
-
 
         private ICommand _addFILENETCallHitCommand;
         public ICommand AddFILENETCallHitCommand
@@ -65,14 +48,6 @@ namespace Hit.ViewModels
             }
         }
 
-        private void OnAddFILENETCallHitCommand()
-        {
-
-        }
-
-
-
-
         private ICommand _addSAPMailHitCommand;
         public ICommand AddSAPMailHitCommand
         {
@@ -81,12 +56,6 @@ namespace Hit.ViewModels
                 return _addSAPMailHitCommand ?? (_addSAPMailHitCommand = new RelayCommand(param => OnAddSAPMailHitCommand(), null));
             }
         }
-
-        private void OnAddSAPMailHitCommand()
-        {
-
-        }
-
 
         private ICommand _addSAPCallHitCommand;
         public ICommand AddSAPCallHitCommand
@@ -97,13 +66,6 @@ namespace Hit.ViewModels
             }
         }
 
-        private void OnAddSAPCallHitCommand()
-        {
-
-        }
-
-
-
         private ICommand _addEnvironmentMailHitCommand;
         public ICommand AddEnvironmentMailHitCommand
         {
@@ -112,12 +74,6 @@ namespace Hit.ViewModels
                 return _addEnvironmentMailHitCommand ?? (_addEnvironmentMailHitCommand = new RelayCommand(param => OnAddEnvironmentMailHitCommand(), null));
             }
         }
-
-        private void OnAddEnvironmentMailHitCommand()
-        {
-
-        }
-
 
         private ICommand _addEnvironmentCallHitCommand;
         public ICommand AddEnvironmentCallHitCommand
@@ -128,9 +84,105 @@ namespace Hit.ViewModels
             }
         }
 
+        #endregion
+
+
+        #region Command Methods
+
+        private static void OnAddABBYYMailHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1,1,1);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+        private static void OnAddABBYYCallHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 2, 1);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+
+
+        private static void OnAddFILENETMailHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 1, 2);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+        private static void OnAddFILENETCallHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 2, 2);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+
+
+        private static void OnAddSAPMailHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 1, 3);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+        private static void OnAddSAPCallHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 2, 3);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+
+
+        private void OnAddEnvironmentMailHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 1, 4);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
         private void OnAddEnvironmentCallHitCommand()
         {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 2, 4);
+                hitsEntities.AddToRequests(request);
 
+                hitsEntities.SaveChanges();
+            }
         }
+
+        #endregion
     }
 }

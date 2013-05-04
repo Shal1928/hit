@@ -18,12 +18,12 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestThemes", "RequestThemes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Hit.Models.RequestThemes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Models.Requests), true)]
-[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestTypes", "RequestTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Hit.Models.RequestTypes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Models.Requests), true)]
+[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestThemes", "RequestThemes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Hit.RequestThemes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Requests), true)]
+[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestTypes", "RequestTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Hit.RequestTypes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Requests), true)]
 
 #endregion
 
-namespace Hit.Models
+namespace Hit
 {
     #region Contexts
     
@@ -118,22 +118,6 @@ namespace Hit.Models
             }
         }
         private ObjectSet<RequestTypes> _RequestTypes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<sysdiagrams> sysdiagrams
-        {
-            get
-            {
-                if ((_sysdiagrams == null))
-                {
-                    _sysdiagrams = base.CreateObjectSet<sysdiagrams>("sysdiagrams");
-                }
-                return _sysdiagrams;
-            }
-        }
-        private ObjectSet<sysdiagrams> _sysdiagrams;
 
         #endregion
         #region AddTo Methods
@@ -161,14 +145,6 @@ namespace Hit.Models
         {
             base.AddObject("RequestTypes", requestTypes);
         }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTosysdiagrams(sysdiagrams sysdiagrams)
-        {
-            base.AddObject("sysdiagrams", sysdiagrams);
-        }
 
         #endregion
     }
@@ -192,10 +168,14 @@ namespace Hit.Models
         /// Create a new Requests object.
         /// </summary>
         /// <param name="requestId">Initial value of the RequestId property.</param>
-        public static Requests CreateRequests(global::System.Int32 requestId)
+        /// <param name="requestTypeId">Initial value of the RequestTypeId property.</param>
+        /// <param name="requestThemeId">Initial value of the RequestThemeId property.</param>
+        public static Requests CreateRequests(global::System.Int32 requestId, global::System.Int32 requestTypeId, global::System.Int32 requestThemeId)
         {
             Requests requests = new Requests();
             requests.RequestId = requestId;
+            requests.RequestTypeId = requestTypeId;
+            requests.RequestThemeId = requestThemeId;
             return requests;
         }
 
@@ -232,9 +212,9 @@ namespace Hit.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> RequestTypeId
+        public global::System.Int32 RequestTypeId
         {
             get
             {
@@ -249,16 +229,16 @@ namespace Hit.Models
                 OnRequestTypeIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _RequestTypeId;
-        partial void OnRequestTypeIdChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _RequestTypeId;
+        partial void OnRequestTypeIdChanging(global::System.Int32 value);
         partial void OnRequestTypeIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> RequestThemeId
+        public global::System.Int32 RequestThemeId
         {
             get
             {
@@ -273,8 +253,8 @@ namespace Hit.Models
                 OnRequestThemeIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _RequestThemeId;
-        partial void OnRequestThemeIdChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _RequestThemeId;
+        partial void OnRequestThemeIdChanging(global::System.Int32 value);
         partial void OnRequestThemeIdChanged();
 
         #endregion
@@ -570,161 +550,6 @@ namespace Hit.Models
         }
 
         #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="HitsModel", Name="sysdiagrams")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class sysdiagrams : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new sysdiagrams object.
-        /// </summary>
-        /// <param name="name">Initial value of the name property.</param>
-        /// <param name="principal_id">Initial value of the principal_id property.</param>
-        /// <param name="diagram_id">Initial value of the diagram_id property.</param>
-        public static sysdiagrams Createsysdiagrams(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
-        {
-            sysdiagrams sysdiagrams = new sysdiagrams();
-            sysdiagrams.name = name;
-            sysdiagrams.principal_id = principal_id;
-            sysdiagrams.diagram_id = diagram_id;
-            return sysdiagrams;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                OnnameChanging(value);
-                ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("name");
-                OnnameChanged();
-            }
-        }
-        private global::System.String _name;
-        partial void OnnameChanging(global::System.String value);
-        partial void OnnameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 principal_id
-        {
-            get
-            {
-                return _principal_id;
-            }
-            set
-            {
-                Onprincipal_idChanging(value);
-                ReportPropertyChanging("principal_id");
-                _principal_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("principal_id");
-                Onprincipal_idChanged();
-            }
-        }
-        private global::System.Int32 _principal_id;
-        partial void Onprincipal_idChanging(global::System.Int32 value);
-        partial void Onprincipal_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 diagram_id
-        {
-            get
-            {
-                return _diagram_id;
-            }
-            set
-            {
-                if (_diagram_id != value)
-                {
-                    Ondiagram_idChanging(value);
-                    ReportPropertyChanging("diagram_id");
-                    _diagram_id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("diagram_id");
-                    Ondiagram_idChanged();
-                }
-            }
-        }
-        private global::System.Int32 _diagram_id;
-        partial void Ondiagram_idChanging(global::System.Int32 value);
-        partial void Ondiagram_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> version
-        {
-            get
-            {
-                return _version;
-            }
-            set
-            {
-                OnversionChanging(value);
-                ReportPropertyChanging("version");
-                _version = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("version");
-                OnversionChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _version;
-        partial void OnversionChanging(Nullable<global::System.Int32> value);
-        partial void OnversionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] definition
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_definition);
-            }
-            set
-            {
-                OndefinitionChanging(value);
-                ReportPropertyChanging("definition");
-                _definition = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("definition");
-                OndefinitionChanged();
-            }
-        }
-        private global::System.Byte[] _definition;
-        partial void OndefinitionChanging(global::System.Byte[] value);
-        partial void OndefinitionChanged();
-
-        #endregion
-    
     }
 
     #endregion

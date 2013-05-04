@@ -170,12 +170,14 @@ namespace Hit
         /// <param name="requestId">Initial value of the RequestId property.</param>
         /// <param name="requestTypeId">Initial value of the RequestTypeId property.</param>
         /// <param name="requestThemeId">Initial value of the RequestThemeId property.</param>
-        public static Requests CreateRequests(global::System.Int32 requestId, global::System.Int32 requestTypeId, global::System.Int32 requestThemeId)
+        /// <param name="requestDate">Initial value of the RequestDate property.</param>
+        public static Requests CreateRequests(global::System.Int32 requestId, global::System.Int32 requestTypeId, global::System.Int32 requestThemeId, global::System.DateTime requestDate)
         {
             Requests requests = new Requests();
             requests.RequestId = requestId;
             requests.RequestTypeId = requestTypeId;
             requests.RequestThemeId = requestThemeId;
+            requests.RequestDate = requestDate;
             return requests;
         }
 
@@ -256,6 +258,30 @@ namespace Hit
         private global::System.Int32 _RequestThemeId;
         partial void OnRequestThemeIdChanging(global::System.Int32 value);
         partial void OnRequestThemeIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime RequestDate
+        {
+            get
+            {
+                return _RequestDate;
+            }
+            set
+            {
+                OnRequestDateChanging(value);
+                ReportPropertyChanging("RequestDate");
+                _RequestDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("RequestDate");
+                OnRequestDateChanged();
+            }
+        }
+        private global::System.DateTime _RequestDate;
+        partial void OnRequestDateChanging(global::System.DateTime value);
+        partial void OnRequestDateChanged();
 
         #endregion
     

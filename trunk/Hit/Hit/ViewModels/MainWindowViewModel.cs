@@ -86,49 +86,26 @@ namespace Hit.ViewModels
 
         #endregion
 
+        private DateTime _dateTime = DateTime.Now.Date;
 
         #region Command Methods
 
-        private static void OnAddABBYYMailHitCommand()
+        private void OnAddABBYYMailHitCommand()
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1,1,1);
+                var request = Requests.CreateRequests(1, 1, 1, _dateTime);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
             }
         }
 
-        private static void OnAddABBYYCallHitCommand()
+        private void OnAddABBYYCallHitCommand()
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 2, 1);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
-        }
-
-
-
-        private static void OnAddFILENETMailHitCommand()
-        {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 1, 2);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
-        }
-
-        private static void OnAddFILENETCallHitCommand()
-        {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 2, 2);
+                var request = Requests.CreateRequests(1, 2, 1, _dateTime);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -137,22 +114,46 @@ namespace Hit.ViewModels
 
 
 
-        private static void OnAddSAPMailHitCommand()
+        private void OnAddFILENETMailHitCommand()
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 1, 3);
+                var request = Requests.CreateRequests(1, 1, 2, _dateTime);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
             }
         }
 
-        private static void OnAddSAPCallHitCommand()
+        private void OnAddFILENETCallHitCommand()
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 2, 3);
+                var request = Requests.CreateRequests(1, 2, 2, _dateTime);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+
+
+        private void OnAddSAPMailHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 1, 3, _dateTime);
+                hitsEntities.AddToRequests(request);
+
+                hitsEntities.SaveChanges();
+            }
+        }
+
+        private void OnAddSAPCallHitCommand()
+        {
+            using (var hitsEntities = new HitsEntities())
+            {
+                var request = Requests.CreateRequests(1, 2, 3, _dateTime);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -165,7 +166,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 1, 4);
+                var request = Requests.CreateRequests(1, 1, 4, _dateTime);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -176,7 +177,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 2, 4);
+                var request = Requests.CreateRequests(1, 2, 4, _dateTime);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();

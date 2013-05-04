@@ -25,6 +25,7 @@
           <Property Name="RequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RequestTypeId" Type="int" Nullable="false" />
           <Property Name="RequestThemeId" Type="int" Nullable="false" />
+          <Property Name="RequestDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="RequestThemes">
           <Key>
@@ -90,6 +91,7 @@
           <Property Name="RequestThemeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="RequestThemes" Relationship="HitsModel.FK_Requests_RequestThemes" FromRole="Requests" ToRole="RequestThemes" />
           <NavigationProperty Name="RequestTypes" Relationship="HitsModel.FK_Requests_RequestTypes" FromRole="Requests" ToRole="RequestTypes" />
+          <Property Type="DateTime" Name="RequestDate" Nullable="false" />
         </EntityType>
         <EntityType Name="RequestThemes">
           <Key>
@@ -138,7 +140,8 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HitsModelStoreContainer" CdmEntityContainer="HitsEntities">
           <EntitySetMapping Name="Requests"><EntityTypeMapping TypeName="HitsModel.Requests"><MappingFragment StoreEntitySet="Requests">
-            <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+            <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="RequestId" ColumnName="RequestId" />
             <ScalarProperty Name="RequestTypeId" ColumnName="RequestTypeId" />
             <ScalarProperty Name="RequestThemeId" ColumnName="RequestThemeId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>

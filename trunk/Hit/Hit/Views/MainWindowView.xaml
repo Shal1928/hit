@@ -27,9 +27,9 @@
         <StackPanel Orientation="Vertical" Margin="0,25,0,0"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Grid.Column="0" Grid.Row="1">
-            
-            <Button Content="Письмо" Margin="5" Width="100" Height="50" />
-            <Button Content="Звонок" Margin="5" Width="100" Height="50" />
+
+            <Button Content="Письмо" Command="{Binding AddABBYYMailHitCommand}" Margin="5" Width="100" Height="50" />
+            <Button Content="Звонок" Command="{Binding AddABBYYCallHitCommand}" Margin="5" Width="100" Height="50" />
         </StackPanel>
 
         
@@ -44,8 +44,8 @@
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Grid.Column="1" Grid.Row="1">
 
-            <Button Content="Письмо" Margin="5" Width="100" Height="50" />
-            <Button Content="Звонок" Margin="5" Width="100" Height="50" />
+            <Button Content="Письмо" Command="{Binding AddFILENETMailHitCommand}" Margin="5" Width="100" Height="50" />
+            <Button Content="Звонок" Command="{Binding AddFILENETCallHitCommand}" Margin="5" Width="100" Height="50" />
         </StackPanel>
 
         
@@ -59,8 +59,8 @@
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Grid.Column="2" Grid.Row="1">
 
-            <Button Content="Письмо" Margin="5" Width="100" Height="50" />
-            <Button Content="Звонок" Margin="5" Width="100" Height="50" />
+            <Button Content="Письмо" Command="{Binding AddSAPMailHitCommand}" Margin="5" Width="100" Height="50" />
+            <Button Content="Звонок" Command="{Binding AddSAPCallHitCommand}" Margin="5" Width="100" Height="50" />
         </StackPanel>
 
         
@@ -74,8 +74,8 @@
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Grid.Column="3" Grid.Row="1">
 
-            <Button Content="Письмо" Margin="5" Width="100" Height="50" />
-            <Button Content="Звонок" Margin="5" Width="100" Height="50" />
+            <Button Content="Письмо" Command="{Binding AddEnvironmentMailHitCommand}" Margin="5" Width="100" Height="50" />
+            <Button Content="Звонок" Command="{Binding AddEnvironmentCallHitCommand}" Margin="5" Width="100" Height="50" />
         </StackPanel>
         
         

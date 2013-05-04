@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HitsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="HitsModelStoreContainer">
+          <EntitySet Name="Requests" EntityType="HitsModel.Store.Requests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RequestThemes" EntityType="HitsModel.Store.RequestThemes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RequestTypes" EntityType="HitsModel.Store.RequestTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="HitsModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Requests_RequestThemes" Association="HitsModel.Store.FK_Requests_RequestThemes">
+            <End Role="RequestThemes" EntitySet="RequestThemes" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requests_RequestTypes" Association="HitsModel.Store.FK_Requests_RequestTypes">
+            <End Role="RequestTypes" EntitySet="RequestTypes" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="RequestId" />
+          </Key>
+          <Property Name="RequestId" Type="int" Nullable="false" />
+          <Property Name="RequestTypeId" Type="int" />
+          <Property Name="RequestThemeId" Type="int" />
+        </EntityType>
+        <EntityType Name="RequestThemes">
+          <Key>
+            <PropertyRef Name="RequestThemeId" />
+          </Key>
+          <Property Name="RequestThemeId" Type="int" Nullable="false" />
+          <Property Name="RequestTheme" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RequestTypes">
+          <Key>
+            <PropertyRef Name="RequestTypeId" />
+          </Key>
+          <Property Name="RequestTypeId" Type="int" Nullable="false" />
+          <Property Name="RequestType" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Requests_RequestThemes">
+          <End Role="RequestThemes" Type="HitsModel.Store.RequestThemes" Multiplicity="0..1" />
+          <End Role="Requests" Type="HitsModel.Store.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RequestThemes">
+              <PropertyRef Name="RequestThemeId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="RequestThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requests_RequestTypes">
+          <End Role="RequestTypes" Type="HitsModel.Store.RequestTypes" Multiplicity="0..1" />
+          <End Role="Requests" Type="HitsModel.Store.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RequestTypes">
+              <PropertyRef Name="RequestTypeId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="RequestTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HitsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="HitsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Requests" EntityType="HitsModel.Requests" />
+          <EntitySet Name="RequestThemes" EntityType="HitsModel.RequestThemes" />
+          <EntitySet Name="RequestTypes" EntityType="HitsModel.RequestTypes" />
+          <EntitySet Name="sysdiagrams" EntityType="HitsModel.sysdiagrams" />
+          <AssociationSet Name="FK_Requests_RequestThemes" Association="HitsModel.FK_Requests_RequestThemes">
+            <End Role="RequestThemes" EntitySet="RequestThemes" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requests_RequestTypes" Association="HitsModel.FK_Requests_RequestTypes">
+            <End Role="RequestTypes" EntitySet="RequestTypes" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="RequestId" />
+          </Key>
+          <Property Name="RequestId" Type="Int32" Nullable="false" />
+          <Property Name="RequestTypeId" Type="Int32" />
+          <Property Name="RequestThemeId" Type="Int32" />
+          <NavigationProperty Name="RequestThemes" Relationship="HitsModel.FK_Requests_RequestThemes" FromRole="Requests" ToRole="RequestThemes" />
+          <NavigationProperty Name="RequestTypes" Relationship="HitsModel.FK_Requests_RequestTypes" FromRole="Requests" ToRole="RequestTypes" />
+        </EntityType>
+        <EntityType Name="RequestThemes">
+          <Key>
+            <PropertyRef Name="RequestThemeId" />
+          </Key>
+          <Property Name="RequestThemeId" Type="Int32" Nullable="false" />
+          <Property Name="RequestTheme" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Requests" Relationship="HitsModel.FK_Requests_RequestThemes" FromRole="RequestThemes" ToRole="Requests" />
+        </EntityType>
+        <EntityType Name="RequestTypes">
+          <Key>
+            <PropertyRef Name="RequestTypeId" />
+          </Key>
+          <Property Name="RequestTypeId" Type="Int32" Nullable="false" />
+          <Property Name="RequestType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Requests" Relationship="HitsModel.FK_Requests_RequestTypes" FromRole="RequestTypes" ToRole="Requests" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Requests_RequestThemes">
+          <End Role="RequestThemes" Type="HitsModel.RequestThemes" Multiplicity="0..1" />
+          <End Role="Requests" Type="HitsModel.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RequestThemes">
+              <PropertyRef Name="RequestThemeId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="RequestThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requests_RequestTypes">
+          <End Role="RequestTypes" Type="HitsModel.RequestTypes" Multiplicity="0..1" />
+          <End Role="Requests" Type="HitsModel.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RequestTypes">
+              <PropertyRef Name="RequestTypeId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="RequestTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HitsModelStoreContainer" CdmEntityContainer="HitsEntities">
+          <EntitySetMapping Name="Requests"><EntityTypeMapping TypeName="HitsModel.Requests"><MappingFragment StoreEntitySet="Requests">
+            <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+            <ScalarProperty Name="RequestTypeId" ColumnName="RequestTypeId" />
+            <ScalarProperty Name="RequestThemeId" ColumnName="RequestThemeId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RequestThemes"><EntityTypeMapping TypeName="HitsModel.RequestThemes"><MappingFragment StoreEntitySet="RequestThemes">
+            <ScalarProperty Name="RequestThemeId" ColumnName="RequestThemeId" />
+            <ScalarProperty Name="RequestTheme" ColumnName="RequestTheme" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RequestTypes"><EntityTypeMapping TypeName="HitsModel.RequestTypes"><MappingFragment StoreEntitySet="RequestTypes">
+            <ScalarProperty Name="RequestTypeId" ColumnName="RequestTypeId" />
+            <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="HitsModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="HitsModel.Requests" Width="1.5" PointX="3" PointY="0.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="HitsModel.RequestThemes" Width="1.5" PointX="5.125" PointY="0.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="HitsModel.RequestTypes" Width="1.5" PointX="0.875" PointY="0.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="HitsModel.sysdiagrams" Width="1.5" PointX="7.625" PointY="0.875" Height="0.4" IsExpanded="false" />
+        <AssociationConnector Association="HitsModel.FK_Requests_RequestThemes" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.125" PointY="1.6728417968749998" />
+          <ConnectorPoint PointX="4.5" PointY="1.6728417968749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="HitsModel.FK_Requests_RequestTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.375" PointY="1.6728417968749998" />
+          <ConnectorPoint PointX="3" PointY="1.6728417968749998" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

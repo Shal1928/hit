@@ -61,10 +61,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\HitsModel.Designer.cs">
+    <Compile Include="Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HitsModel.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="Views\MainWindowView.xaml">
@@ -101,9 +101,9 @@
     <None Include="App.Config" />
     <None Include="Images\Lifebuoy 128x128.psd" />
     <None Include="Images\Lifebuoy16.psd" />
-    <EntityDeploy Include="Models\HitsModel.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HitsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -111,7 +111,9 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\UseAbilities\UseAbilities.MVVM\UseAbilities.MVVM.csproj">
       <Project>{8AC0BF72-84A5-4E2E-9A85-1DEF2167B51E}</Project>

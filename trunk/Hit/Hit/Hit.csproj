@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Images\Lifebuoy16.ico</ApplicationIcon>
+    <ApplicationIcon>Images\HitIcons.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -112,6 +112,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Lifebuoy128.png" />
+    <Resource Include="Images\Lifebuoy32.png" />
+    <Resource Include="Images\Lifebuoy64.png" />
+    <Resource Include="Images\HitIcons.ico" />
     <Content Include="SQL\CreateHits.sql" />
     <Content Include="SQL\SQLreportQuery.sql" />
   </ItemGroup>

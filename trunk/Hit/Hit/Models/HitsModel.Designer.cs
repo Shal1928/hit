@@ -18,12 +18,12 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestThemes", "RequestThemes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Hit.RequestThemes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Requests), true)]
-[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestTypes", "RequestTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Hit.RequestTypes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Requests), true)]
+[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestThemes", "RequestThemes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Hit.Models.RequestThemes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Models.Requests), true)]
+[assembly: EdmRelationshipAttribute("HitsModel", "FK_Requests_RequestTypes", "RequestTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Hit.Models.RequestTypes), "Requests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Hit.Models.Requests), true)]
 
 #endregion
 
-namespace Hit
+namespace Hit.Models
 {
     #region Contexts
     

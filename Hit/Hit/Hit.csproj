@@ -79,6 +79,10 @@
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -116,6 +120,7 @@
     <Resource Include="Images\Lifebuoy32.png" />
     <Resource Include="Images\Lifebuoy64.png" />
     <Resource Include="Images\HitIcons.ico" />
+    <Resource Include="Images\Background.png" />
     <Content Include="SQL\CreateHits.sql" />
     <Content Include="SQL\SQLreportQuery.sql" />
   </ItemGroup>

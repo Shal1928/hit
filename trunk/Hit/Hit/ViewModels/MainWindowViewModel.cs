@@ -8,6 +8,42 @@ namespace Hit.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        private DateTime _date;
+
+        #region Properties
+
+        private DateTime _selectedDate = DateTime.Now;
+        public DateTime SelectedDate
+        {
+            get
+            {
+                return _selectedDate;
+            }
+            set
+            {
+                _selectedDate = value;
+                OnPropertyChanged(() => SelectedDate);
+            }
+        }
+
+        private bool _useSelectedDate;
+        public bool UseSelectedDate
+        {
+            get
+            {
+                return _useSelectedDate;
+            }
+            set
+            {
+                _useSelectedDate = value;
+                _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
+                OnPropertyChanged(() => UseSelectedDate);
+            }
+        }
+
+        #endregion
+
+
         #region Commands Description
 
         private ICommand _addABBYYMailHitCommand;
@@ -84,7 +120,6 @@ namespace Hit.ViewModels
 
         #endregion
 
-        private DateTime _dateTime = DateTime.Now.Date;
 
         #region Command Methods
 
@@ -92,7 +127,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 1, 1, _dateTime);
+                var request = Requests.CreateRequests(1, 1, 1, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -103,7 +138,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 2, 1, _dateTime);
+                var request = Requests.CreateRequests(1, 2, 1, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -116,7 +151,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 1, 2, _dateTime);
+                var request = Requests.CreateRequests(1, 1, 2, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -127,7 +162,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 2, 2, _dateTime);
+                var request = Requests.CreateRequests(1, 2, 2, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -140,7 +175,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 1, 3, _dateTime);
+                var request = Requests.CreateRequests(1, 1, 3, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -151,7 +186,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 2, 3, _dateTime);
+                var request = Requests.CreateRequests(1, 2, 3, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -164,7 +199,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 1, 4, _dateTime);
+                var request = Requests.CreateRequests(1, 1, 4, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();
@@ -175,7 +210,7 @@ namespace Hit.ViewModels
         {
             using (var hitsEntities = new HitsEntities())
             {
-                var request = Requests.CreateRequests(1, 2, 4, _dateTime);
+                var request = Requests.CreateRequests(1, 2, 4, _date);
                 hitsEntities.AddToRequests(request);
 
                 hitsEntities.SaveChanges();

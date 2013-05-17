@@ -125,13 +125,13 @@ namespace Hit.ViewModels
 
         private void OnAddABBYYMailHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 1, 1, _date);
-                hitsEntities.AddToRequests(request);
+            //using (var hitsEntities = new HitsEntities())
+            //{
+            //    var request = Requests.CreateRequests(1, 1, 1, _date);
+            //    hitsEntities.AddToRequests(request);
 
-                hitsEntities.SaveChanges();
-            }
+            //    hitsEntities.SaveChanges();
+            //}
         }
 
         private void OnAddABBYYCallHitCommand()

@@ -8,6 +8,12 @@ namespace Hit.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        public MainWindowViewModel()
+        {
+            _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
+        }
+
+
         private DateTime _date;
 
         #region Properties

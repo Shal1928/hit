@@ -39,11 +39,13 @@
     <ApplicationIcon>Images\HitIcons.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\InversionBoolConverter.cs" />
     <Compile Include="Models\HitsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +132,10 @@
     <ProjectReference Include="..\..\UseAbilities\UseAbilities.MVVM\UseAbilities.MVVM.csproj">
       <Project>{8AC0BF72-84A5-4E2E-9A85-1DEF2167B51E}</Project>
       <Name>UseAbilities.MVVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UseAbilities\UseAbilities.WPF\UseAbilities.WPF.csproj">
+      <Project>{DE840968-7F50-41F7-B88A-59ADD6B61D73}</Project>
+      <Name>UseAbilities.WPF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

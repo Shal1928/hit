@@ -1,8 +1,10 @@
 ﻿<Base:ViewBase x:Class="Hit.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Base="clr-namespace:UseAbilities.MVVM.Base;assembly=UseAbilities.MVVM" 
-        Icon="/Hit;component/Images/HitIcons.ico"
+        xmlns:Base="clr-namespace:UseAbilities.MVVM.Base;assembly=UseAbilities.MVVM"
+               xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+               xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+               xmlns:Converters="clr-namespace:Hit.Converters" Icon="/Hit;component/Images/HitIcons.ico"
         Title="Hit" 
         Height="350" Width="525">
 
@@ -112,6 +114,13 @@
 
         <Expander Header="Расширенные настройки" 
                   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4">
+            
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown" SourceName="Border">
+                    <ei:ChangePropertyAction PropertyName="IsExpanded" Value="{Binding IsExpanded, RelativeSource={RelativeSource AncestorType={x:Type Expander}}, Converter={Converters:InversionBoolConverter}}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+
             <StackPanel Orientation="Vertical" Margin="15">
                 <DatePicker SelectedDate="{Binding SelectedDate}"
                             FontSize="12" Width="105"

@@ -11,4 +11,31 @@
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
+
+    <Style x:Key="ExpanderStyle" TargetType="{x:Type Expander}">
+
+        <Setter Property="IsExpanded" Value="False" />
+        
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="#ffFFFFFF" />
+        
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Foreground" Value="DarkGray" />
+
+        <Setter Property="Margin" Value="0,15,0,0" />
+        
+        <Style.Triggers>
+            <Trigger Property="IsExpanded" Value="True">
+                <Setter Property="Foreground" Value="DarkGray"/>
+            </Trigger>
+            <Trigger Property="IsExpanded" Value="False">
+                <Setter Property="Foreground" Value="#ff000000"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    
+
+
 </ResourceDictionary>

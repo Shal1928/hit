@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+                    xmlns:Controls="clr-namespace:Hit.Controls">
 
     <Color x:Key="ABBYYColor">#ffC20E31</Color>
     <SolidColorBrush x:Key="ABBYYSolidBrush" Color="{StaticResource ABBYYColor}" />
@@ -39,7 +38,7 @@
 
 
 
-    <Style TargetType="{x:Type Button}">
+    <Style TargetType="{x:Type Controls:ButtonExt}">
 
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -49,7 +48,7 @@
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
+                <ControlTemplate TargetType="{x:Type Controls:ButtonExt}">
                     <Grid>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -58,6 +57,8 @@
                                         <ColorAnimation To="#bbFFFFFF" Storyboard.TargetName="BgBrush0" Storyboard.TargetProperty="Color" Duration="0:0:0.07"/>
                                         <ColorAnimation To="#bbFFFFFF" Storyboard.TargetName="BgBrush1" Storyboard.TargetProperty="Color" Duration="0:0:0.07"/>
                                         <ColorAnimation To="#bbFFFFFF" Storyboard.TargetName="BrBrush" Storyboard.TargetProperty="Color" Duration="0:0:0.07" />
+                                        <ColorAnimation To="Transparent" Storyboard.TargetName="PlusOneFBrush" Storyboard.TargetProperty="Color" Duration="0:0:0.07" />
+                                        <DoubleAnimation To="10" Storyboard.TargetName="PlusOne" Storyboard.TargetProperty="FontSize" Duration="0:0:0.07" />
                                     </Storyboard>
                                 </VisualState>
 
@@ -66,6 +67,7 @@
                                         <ColorAnimation To="#bbFFFFFF" Storyboard.TargetName="BgBrush0" Storyboard.TargetProperty="Color" Duration="0:0:0.07"/>
                                         <ColorAnimation To="#88FFFFFF" Storyboard.TargetName="BgBrush1" Storyboard.TargetProperty="Color" Duration="0:0:0.07"/>
                                         <ColorAnimation To="#33FFFFFF" Storyboard.TargetName="BrBrush" Storyboard.TargetProperty="Color" Duration="0:0:0.07" />
+                                        <ColorAnimation To="#ff000000" Storyboard.TargetName="PlusOneFBrush" Storyboard.TargetProperty="Color" Duration="0:0:0.07" />
                                     </Storyboard>
                                 </VisualState>
 
@@ -74,6 +76,8 @@
                                         <ColorAnimation To="#ddFFFFFF" Storyboard.TargetName="BgBrush0" Storyboard.TargetProperty="Color" Duration="0:0:0.05"/>
                                         <ColorAnimation To="#aaFFFFFF" Storyboard.TargetName="BgBrush1" Storyboard.TargetProperty="Color" Duration="0:0:0.05"/>
                                         <ColorAnimation To="#66FFFFFF" Storyboard.TargetName="BrBrush" Storyboard.TargetProperty="Color" Duration="0:0:0.05" />
+                                        <ColorAnimation To="#ff000000" Storyboard.TargetName="PlusOneFBrush" Storyboard.TargetProperty="Color" Duration="0:0:0.07" />
+                                        <DoubleAnimation To="12" Storyboard.TargetName="PlusOne" Storyboard.TargetProperty="FontSize" Duration="0:0:0.07" />
                                     </Storyboard>
                                 </VisualState>
 
@@ -82,6 +86,7 @@
                                         <ColorAnimation To="#55FFFFFF" Storyboard.TargetName="BgBrush0" Storyboard.TargetProperty="Color" Duration="0:0:0"/>
                                         <ColorAnimation To="#33FFFFFF" Storyboard.TargetName="BgBrush1" Storyboard.TargetProperty="Color" Duration="0:0:0"/>
                                         <ColorAnimation To="#22FFFFFF" Storyboard.TargetName="BrBrush" Storyboard.TargetProperty="Color" Duration="0:0:0" />
+                                        <ColorAnimation To="Transparent" Storyboard.TargetName="PlusOneFBrush" Storyboard.TargetProperty="Color" Duration="0:0:0.07" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -99,19 +104,52 @@
                                 </LinearGradientBrush>
                             </Border.Background>
                             
-                            <ContentPresenter Margin="{TemplateBinding Padding}" 
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <ContentPresenter Margin="{TemplateBinding Padding}" 
                                               RecognizesAccessKey="True" 
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Grid.Column="1" Grid.Row="2" />
+
+                                <TextBlock Text="{TemplateBinding AdditionalContent}" FontSize="10" FontWeight="DemiBold" Margin="0,0,0,-10"
+                                           Grid.Column="2" Grid.Row="1" />
+                                <TextBlock x:Name="PlusOne" Text="+1" FontSize="10" FontWeight="DemiBold" Margin="0,0,0,-10"
+                                           Grid.Column="3" Grid.Row="1">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush x:Name="PlusOneFBrush" Color="#ff000000" />
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                            </Grid>                           
+                            
                         </Border>
 
                     </Grid>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="false">
+                        <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="#ADADAD"/>
                         </Trigger>
+                        <!--<Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PlusOne" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="PlusOne" Property="Visibility" Value="Hidden"/>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

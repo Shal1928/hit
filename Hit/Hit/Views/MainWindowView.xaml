@@ -111,7 +111,6 @@
         </StackPanel>
 
         <Expander Header="Расширенные настройки" 
-                  Style="{DynamicResource ExpanderStyle}"
                   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4">
             <StackPanel Orientation="Vertical" Margin="15">
                 <DatePicker SelectedDate="{Binding SelectedDate}"

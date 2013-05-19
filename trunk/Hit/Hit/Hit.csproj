@@ -106,6 +106,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.Config" />
+    <None Include="Configs\App.Config.Home" />
+    <None Include="Configs\App.Config.Work" />
     <None Include="Images\Lifebuoy 128x128.psd" />
     <None Include="Images\Lifebuoy16.psd" />
     <EntityDeploy Include="Models\HitsModel.edmx">

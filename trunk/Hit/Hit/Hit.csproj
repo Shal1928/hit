@@ -64,11 +64,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controls\ButtonExt.cs" />
+    <Compile Include="DataManagers\HitDataManager.cs" />
     <Compile Include="Models\HitsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HitsModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RequestTheme.cs" />
+    <Compile Include="Models\RequestType.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>

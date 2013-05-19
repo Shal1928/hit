@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
+using Hit.DataManagers;
 using Hit.Models;
 using UseAbilities.MVVM.Base;
 using UseAbilities.MVVM.Command;
@@ -11,12 +15,126 @@ namespace Hit.ViewModels
         public MainWindowViewModel()
         {
             _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
+            _hitDataManager = new HitDataManager();
+            UpdateRequestsCollection();
         }
 
-
+        private readonly HitDataManager _hitDataManager;
         private DateTime _date;
 
         #region Properties
+
+        private int _abbyyCallsCount;
+        public int ABBYYCallsCount
+        {
+            get
+            {
+                return _abbyyCallsCount;
+            }
+            set
+            {
+                _abbyyCallsCount = value;
+                OnPropertyChanged(() => ABBYYCallsCount);
+            }
+        }
+
+        private int _abbyyEmailsCount;
+        public int ABBYYEmailsCount
+        {
+            get
+            {
+                return _abbyyEmailsCount;
+            }
+            set
+            {
+                _abbyyEmailsCount = value;
+                OnPropertyChanged(() => ABBYYEmailsCount);
+            }
+        }
+
+        private int _filenetEmailsCount;
+        public int FILENETEmailsCount
+        {
+            get
+            {
+                return _filenetEmailsCount;
+            }
+            set
+            {
+                _filenetEmailsCount = value;
+                OnPropertyChanged(() => FILENETEmailsCount);
+            }
+        }
+
+        private int _filenetCallsCount;
+        public int FILENETCallsCount
+        {
+            get
+            {
+                return _filenetCallsCount;
+            }
+            set
+            {
+                _filenetCallsCount = value;
+                OnPropertyChanged(() => FILENETCallsCount);
+            }
+        }
+
+        private int _sapEmailsCount;
+        public int SAPEmailsCount
+        {
+            get
+            {
+                return _sapEmailsCount;
+            }
+            set
+            {
+                _sapEmailsCount = value;
+                OnPropertyChanged(() => SAPEmailsCount);
+            }
+        }
+
+        private int _sapCallsCount;
+        public int SAPCallsCount
+        {
+            get
+            {
+                return _sapCallsCount;
+            }
+            set
+            {
+                _sapCallsCount = value;
+                OnPropertyChanged(() => SAPCallsCount);
+            }
+        }
+
+        private int _environmentEmailsCount;
+        public int EnvironmentEmailsCount
+        {
+            get
+            {
+                return _environmentEmailsCount;
+            }
+            set
+            {
+                _environmentEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentEmailsCount);
+            }
+        }
+
+        private int _environmentCallsCount;
+        public int EnvironmentCallsCount
+        {
+            get
+            {
+                return _environmentCallsCount;
+            }
+            set
+            {
+                _environmentCallsCount = value;
+                OnPropertyChanged(() => EnvironmentCallsCount);
+            }
+        }
 
         private DateTime _selectedDate = DateTime.Now;
         public DateTime SelectedDate
@@ -28,6 +146,7 @@ namespace Hit.ViewModels
             set
             {
                 _selectedDate = value;
+                _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
                 OnPropertyChanged(() => SelectedDate);
             }
         }
@@ -44,6 +163,20 @@ namespace Hit.ViewModels
                 _useSelectedDate = value;
                 _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
                 OnPropertyChanged(() => UseSelectedDate);
+            }
+        }
+
+        private ObservableCollection<Requests> _requestsCollection;
+        public ObservableCollection<Requests> RequestsCollection
+        {
+            get
+            {
+                return _requestsCollection;
+            }
+            set
+            {
+                _requestsCollection = value;
+                OnPropertyChanged(() => RequestsCollection);
             }
         }
 
@@ -124,6 +257,15 @@ namespace Hit.ViewModels
             }
         }
 
+        private ICommand _updateRequestsCollectionCommand;
+        public ICommand UpdateRequestsCollectionCommand
+        {
+            get
+            {
+                return _updateRequestsCollectionCommand ?? (_updateRequestsCollectionCommand = new RelayCommand(param => UpdateRequestsCollection(), null));
+            }
+        }
+
         #endregion
 
 
@@ -131,96 +273,73 @@ namespace Hit.ViewModels
 
         private void OnAddABBYYMailHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 1, 1, _date);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.ABBYY, _date));
+            UpdateRequestsCollection();
         }
 
         private void OnAddABBYYCallHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 2, 1, _date);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.ABBYY, _date));
+            UpdateRequestsCollection();
         }
 
 
 
         private void OnAddFILENETMailHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 1, 2, _date);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.FILENET, _date));
+            UpdateRequestsCollection();
         }
 
         private void OnAddFILENETCallHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 2, 2, _date);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.FILENET, _date));
+            UpdateRequestsCollection();
         }
 
 
 
         private void OnAddSAPMailHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 1, 3, _date);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.SAP, _date));
+            UpdateRequestsCollection();
         }
 
         private void OnAddSAPCallHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 2, 3, _date);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.SAP, _date));
+            UpdateRequestsCollection();
         }
 
 
 
         private void OnAddEnvironmentMailHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 1, 4, _date);
-                hitsEntities.AddToRequests(request);
-
-                hitsEntities.SaveChanges();
-            }
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.Environment, _date));
+            UpdateRequestsCollection();
         }
 
         private void OnAddEnvironmentCallHitCommand()
         {
-            using (var hitsEntities = new HitsEntities())
-            {
-                var request = Requests.CreateRequests(1, 2, 4, _date);
-                hitsEntities.AddToRequests(request);
+            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.Environment, _date));
+            UpdateRequestsCollection();
+        }
 
-                hitsEntities.SaveChanges();
-            }
+        public void UpdateRequestsCollection()
+        {
+            RequestsCollection = new ObservableCollection<Requests>(_hitDataManager.FindRequestsList(SelectedDate));
+
+            ABBYYCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+            ABBYYEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+
+            FILENETCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+            FILENETEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+
+            SAPCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+            SAPEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+
+            EnvironmentCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+            EnvironmentEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
         }
 
         #endregion

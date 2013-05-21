@@ -41,21 +41,4 @@ namespace Hit.Stores
             return SerializationUtility.Deserialize<HitSettings>(FileName);
         }
     }
-
-    //public sealed class Singleton
-    //{
-    //    private static readonly Singleton uniqueInstanceEager = new Singleton();
-
-
-    //    //Construction 
-    //    private Singleton()
-    //    {
-    //        Console.WriteLine("Singleton Instance Created.");
-    //    }
-
-    //    public static Singleton GetInstance()
-    //    {
-    //        return uniqueInstanceEager;
-    //    }
-    //}
 }

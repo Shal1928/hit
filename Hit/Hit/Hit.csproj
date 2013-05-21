@@ -134,6 +134,10 @@
     <Content Include="SQL\SQLreportQuery.sql" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\UseAbilities\UseAbilities.IoC\UseAbilities.IoC.csproj">
+      <Project>{B855AE04-A938-472C-BA0A-1A546D5A3FEB}</Project>
+      <Name>UseAbilities.IoC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\UseAbilities\UseAbilities.MVVM\UseAbilities.MVVM.csproj">
       <Project>{8AC0BF72-84A5-4E2E-9A85-1DEF2167B51E}</Project>
       <Name>UseAbilities.MVVM</Name>
@@ -141,6 +145,10 @@
     <ProjectReference Include="..\..\UseAbilities\UseAbilities.WPF\UseAbilities.WPF.csproj">
       <Project>{DE840968-7F50-41F7-B88A-59ADD6B61D73}</Project>
       <Name>UseAbilities.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UseAbilities\UseAbilities.XML\UseAbilities.XML.csproj">
+      <Project>{F4863115-63AF-4DBC-A8EE-9771426DAEB0}</Project>
+      <Name>UseAbilities.XML</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

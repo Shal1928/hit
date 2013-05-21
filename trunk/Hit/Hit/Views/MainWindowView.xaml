@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Base="clr-namespace:UseAbilities.MVVM.Base;assembly=UseAbilities.MVVM"
         xmlns:Controls="clr-namespace:Hit.Controls"
-               xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-               xmlns:Converters="clr-namespace:UseAbilities.WPF.Converters;assembly=UseAbilities.WPF"
-               Icon="/Hit;component/Images/HitIcons.ico"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:Converters="clr-namespace:UseAbilities.WPF.Converters;assembly=UseAbilities.WPF"
+        Icon="/Hit;component/Images/HitIcons.ico"
         Title="Hit" 
         Height="350" Width="525">
 

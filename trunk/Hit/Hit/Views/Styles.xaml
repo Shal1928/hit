@@ -289,6 +289,12 @@
                         <Trigger Property="IsExpanded" Value="False">
                             <Setter Property="Foreground" Value="#ff000000"/>
                         </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="IsExpanded" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="IsExpanded" Value="False"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

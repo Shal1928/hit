@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Models\RequestTheme.cs" />
     <Compile Include="Models\RequestType.cs" />
+    <Compile Include="Stores\Base\DBStore.cs" />
     <Compile Include="Stores\Base\IFileStore.cs" />
     <Compile Include="Stores\Base\IStore.cs" />
     <Compile Include="Stores\Base\IXMLStore.cs" />

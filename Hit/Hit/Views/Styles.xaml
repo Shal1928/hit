@@ -268,8 +268,10 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <ToggleButton OverridesDefaultStyle="True" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                              Style="{DynamicResource ExpanderUpHeaderStyle}" Margin="4" />
+                                <!--<ToggleButton OverridesDefaultStyle="True" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              Style="{DynamicResource ExpanderUpHeaderStyle}" Margin="4" />-->
+                                <Rectangle x:Name="rectangle" HorizontalAlignment="Center" Height="19" Stroke="DarkGray" VerticalAlignment="Center" Width="19" Margin="4" />
+                                <Path x:Name="arrow" Data="M 1,1.5 L 4.5,5 L 8,1.5" HorizontalAlignment="Center" SnapsToDevicePixels="false" Stroke="#666" StrokeThickness="2" VerticalAlignment="Center" />
 
                                 <ContentPresenter Grid.Column="1" Margin="4,8,4,4" ContentSource="Header" RecognizesAccessKey="True" />
                             </Grid>
@@ -285,9 +287,11 @@
                         <Trigger Property="IsExpanded" Value="True">
                             <Setter TargetName="ContentRow" Property="Height" Value="{Binding DesiredHeight, ElementName=Content}" />
                             <Setter Property="Foreground" Value="DarkGray"/>
+                            <Setter Property="Data" TargetName="arrow" Value="M 1,4.5  L 4.5,1  L 8,4.5"/>
                         </Trigger>
                         <Trigger Property="IsExpanded" Value="False">
                             <Setter Property="Foreground" Value="#ff000000"/>
+                            <Setter Property="Data" TargetName="arrow" Value="M 1,1.5 L 4.5,5 L 8,1.5"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="IsExpanded" Value="True"/>

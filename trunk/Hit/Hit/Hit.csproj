@@ -65,6 +65,8 @@
     </ApplicationDefinition>
     <Compile Include="Controls\ButtonExt.cs" />
     <Compile Include="DataManagers\HitDataManager.cs" />
+    <Compile Include="Helpers\StaticHelper.cs" />
+    <Compile Include="Models\HitSettings.cs" />
     <Compile Include="Models\HitsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +74,13 @@
     </Compile>
     <Compile Include="Models\RequestTheme.cs" />
     <Compile Include="Models\RequestType.cs" />
+    <Compile Include="Stores\Base\IFileStore.cs" />
+    <Compile Include="Stores\Base\IStore.cs" />
+    <Compile Include="Stores\Base\IXMLStore.cs" />
+    <Compile Include="Stores\Base\StoreBase.cs" />
+    <Compile Include="Stores\Base\FileStore.cs" />
+    <Compile Include="Stores\Base\XMLStore.cs" />
+    <Compile Include="Stores\HitSettingsStore.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>

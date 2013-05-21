@@ -5,6 +5,8 @@ using System.Linq;
 using System.Windows.Input;
 using Hit.DataManagers;
 using Hit.Models;
+using Hit.Stores.Base;
+using UseAbilities.IoC.Attributes;
 using UseAbilities.MVVM.Base;
 using UseAbilities.MVVM.Command;
 
@@ -278,6 +280,40 @@ namespace Hit.ViewModels
             }
         }
 
+        public bool IsTotalsVisible
+        {
+            get
+            {
+                return HitSettings.IsTotalsVisible;
+            }
+            set
+            {
+                HitSettings.IsTotalsVisible = value;
+                OnPropertyChanged(() => IsTotalsVisible);
+            }
+        }
+
+        private HitSettings _hitSettings;
+        private HitSettings HitSettings
+        {
+            get
+            {
+                return _hitSettings ?? (_hitSettings = HitSettingsStore.Load());
+            }
+        }
+
+        #endregion
+
+
+        #region InjectedProperties
+
+        [InjectedProperty]
+        public IXmlStore<HitSettings> HitSettingsStore
+        {
+            get;
+            set;
+        }
+
         #endregion
 
 
@@ -364,6 +400,15 @@ namespace Hit.ViewModels
             }
         }
 
+        private ICommand _saveSettingsCommand;
+        public ICommand SaveSettingsCommand
+        {
+            get
+            {
+                return _saveSettingsCommand ?? (_saveSettingsCommand = new RelayCommand(param => SaveSettings(), null));
+            }
+        }
+
         #endregion
 
 
@@ -446,6 +491,11 @@ namespace Hit.ViewModels
             Total = ABBYYCount + FILENETCount + SAPCount + EnvironmentCount;
             EmailTotal = ABBYYEmailsCount + FILENETEmailsCount + SAPEmailsCount + EnvironmentEmailsCount;
             CallTotal = ABBYYCallsCount + FILENETCallsCount + SAPCallsCount + EnvironmentCallsCount;
+        }
+
+        private void SaveSettings()
+        {
+            HitSettingsStore.Save(HitSettings);
         }
 
         #endregion

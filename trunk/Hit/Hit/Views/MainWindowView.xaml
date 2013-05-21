@@ -89,7 +89,7 @@
         <TextBlock Text="{Binding Total}" Style="{DynamicResource TextBlockTotalStyle}" Margin="5,10,5,5"
                    Grid.Column="4" Grid.Row="1" />
         <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}"
-                    Visibility="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}"
+                    Visibility="{Binding IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}"
                     Grid.Column="4" Grid.Row="2">
             <StackPanel Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="{Binding EmailTotal}" FontSize="10" Margin="5,12,5,5" />
@@ -101,6 +101,13 @@
 
         
         <Expander Header="Расширенные настройки" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="5">
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeave">
+                    <i:InvokeCommandAction Command="{Binding SaveSettingsCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
             <Grid Margin="15">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -126,7 +133,7 @@
                           FontSize="10" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                           Grid.Column="0" Grid.Row="1" />
 
-                <CheckBox x:Name="IsTotalsVisible" Content="Отображать итоги"
+                <CheckBox Content="Отображать итоги" IsChecked="{Binding IsTotalsVisible}"
                           FontSize="10" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                           Grid.Column="1" Grid.Row="0" />
             </Grid>

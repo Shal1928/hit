@@ -24,6 +24,20 @@ namespace Hit.ViewModels
 
         #region Properties
 
+        private int _abbyyCount;
+        public int ABBYYCount
+        {
+            get
+            {
+                return _abbyyCount;
+            }
+            set
+            {
+                _abbyyCount = value;
+                OnPropertyChanged(() => ABBYYCount);
+            }
+        }
+
         private int _abbyyCallsCount;
         public int ABBYYCallsCount
         {
@@ -49,6 +63,20 @@ namespace Hit.ViewModels
             {
                 _abbyyEmailsCount = value;
                 OnPropertyChanged(() => ABBYYEmailsCount);
+            }
+        }
+
+        private int _filenetCount;
+        public int FILENETCount
+        {
+            get
+            {
+                return _filenetCount;
+            }
+            set
+            {
+                _filenetCount = value;
+                OnPropertyChanged(() => FILENETCount);
             }
         }
 
@@ -80,6 +108,20 @@ namespace Hit.ViewModels
             }
         }
 
+        private int _sapCount;
+        public int SAPCount
+        {
+            get
+            {
+                return _sapCount;
+            }
+            set
+            {
+                _sapCount = value;
+                OnPropertyChanged(() => SAPCount);
+            }
+        }
+
         private int _sapEmailsCount;
         public int SAPEmailsCount
         {
@@ -108,6 +150,20 @@ namespace Hit.ViewModels
             }
         }
 
+        private int _environmentCount;
+        public int EnvironmentCount
+        {
+            get
+            {
+                return _environmentCount;
+            }
+            set
+            {
+                _environmentCount = value;
+                OnPropertyChanged(() => EnvironmentCount);
+            }
+        }
+
         private int _environmentEmailsCount;
         public int EnvironmentEmailsCount
         {
@@ -133,6 +189,48 @@ namespace Hit.ViewModels
             {
                 _environmentCallsCount = value;
                 OnPropertyChanged(() => EnvironmentCallsCount);
+            }
+        }
+
+        private int _total;
+        public int Total
+        {
+            get
+            {
+                return _total;
+            }
+            set
+            {
+                _total = value;
+                OnPropertyChanged(() => Total);
+            }
+        }
+
+        private int _emailTotal;
+        public int EmailTotal
+        {
+            get
+            {
+                return _emailTotal;
+            }
+            set
+            {
+                _emailTotal = value;
+                OnPropertyChanged(() => EmailTotal);
+            }
+        }
+
+        private int _callTotal;
+        public int CallTotal
+        {
+            get
+            {
+                return _callTotal;
+            }
+            set
+            {
+                _callTotal = value;
+                OnPropertyChanged(() => CallTotal);
             }
         }
 
@@ -331,15 +429,23 @@ namespace Hit.ViewModels
 
             ABBYYCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
             ABBYYEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYCount = ABBYYCallsCount + ABBYYEmailsCount;
 
             FILENETCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
             FILENETEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETCount = FILENETCallsCount + FILENETEmailsCount;
 
             SAPCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
             SAPEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPCount = SAPCallsCount + SAPEmailsCount;
 
             EnvironmentCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
             EnvironmentEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentCount = EnvironmentCallsCount + EnvironmentEmailsCount;
+
+            Total = ABBYYCount + FILENETCount + SAPCount + EnvironmentCount;
+            EmailTotal = ABBYYEmailsCount + FILENETEmailsCount + SAPEmailsCount + EnvironmentEmailsCount;
+            CallTotal = ABBYYCallsCount + FILENETCallsCount + SAPCallsCount + EnvironmentCallsCount;
         }
 
         #endregion

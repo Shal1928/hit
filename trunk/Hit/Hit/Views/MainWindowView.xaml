@@ -39,138 +39,68 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-
-        <!--<Border Margin="0,2,0,0" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4">
-            <Border.Background>
-                <VisualBrush TileMode="FlipXY" Viewport="0,0,3,3" ViewportUnits="Absolute" Stretch="None">
-                    <VisualBrush.Visual>
-                        <Image Source="/Hit;component/Images/Background.png"></Image>
-                    </VisualBrush.Visual>
-                </VisualBrush>
-            </Border.Background>
-        </Border>-->
-        <!--<Border Background="#ffFFFFFF" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" />
-        <StackPanel Orientation="Horizontal" Margin="5"
-                    HorizontalAlignment="Center" VerticalAlignment="Top"
-                    Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4">
-
-            <DatePicker SelectedDate="{Binding SelectedDate}" />
-
-            <CheckBox Content="Регестрировать с выбранной датой" IsChecked="{Binding UseSelectedDate}"
-                      Margin="5" />
-        </StackPanel>-->
-
-
-        <Border Background="{DynamicResource ABBYYSolidBrush}" 
-                Grid.Column="0" Grid.Row="1" Grid.RowSpan="5" />
         
-        <StackPanel Orientation="Horizontal" Margin="5,15,5,5" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="0" Grid.Row="1">
+        <Border Background="{DynamicResource ABBYYSolidBrush}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="5" />
+        <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="0" Grid.Row="1">
             <TextBlock Text="ABBYY" FontWeight="DemiBold" />
-            <TextBlock Text="{Binding ABBYYCount}" FontSize="10" Margin="3,-5,0,0"
-                       Visibility="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
+            <TextBlock Text="{Binding ABBYYCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="0,25,0,0"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="0" Grid.Row="2">
-
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddABBYYMailHitCommand}" Margin="5" Width="100" Height="50"
-                                AdditionalContent="{Binding ABBYYEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddABBYYCallHitCommand}" Margin="5" Width="100" Height="50"
-                                AdditionalContent="{Binding ABBYYCallsCount}" />
+        <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="0" Grid.Row="2">
+            <Controls:ButtonExt Content="Письмо" Command="{Binding AddABBYYMailHitCommand}" AdditionalContent="{Binding ABBYYEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Command="{Binding AddABBYYCallHitCommand}" AdditionalContent="{Binding ABBYYCallsCount}" />
         </StackPanel>
 
 
-
-
-
-        <Border Background="#0f809e" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" />
-        <StackPanel Orientation="Horizontal" Margin="5,15,5,5" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="1" Grid.Row="1">
+        <Border Background="{DynamicResource FILENETSolidBrush}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" />
+        <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="1" Grid.Row="1">
             <TextBlock Text="FILENET" FontWeight="DemiBold" />
-            <TextBlock Text="{Binding FILENETCount}" FontSize="10" Margin="3,-5,0,0"
-                       Visibility="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
+            <TextBlock Text="{Binding FILENETCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="0,25,0,0"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="1" Grid.Row="2">
-
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddFILENETMailHitCommand}" Margin="5" Width="100" Height="50" 
-                                AdditionalContent="{Binding FILENETEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddFILENETCallHitCommand}" Margin="5" Width="100" Height="50"
-                                AdditionalContent="{Binding FILENETCallsCount}" />
+        <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="1" Grid.Row="2">
+            <Controls:ButtonExt Content="Письмо" Command="{Binding AddFILENETMailHitCommand}" AdditionalContent="{Binding FILENETEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Command="{Binding AddFILENETCallHitCommand}" AdditionalContent="{Binding FILENETCallsCount}" />
         </StackPanel>
 
 
-
-
-        <Border Background="#efab00" Grid.Column="2" Grid.Row="1" Grid.RowSpan="5" />
-        <StackPanel Orientation="Horizontal" Margin="5,15,5,5" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="2" Grid.Row="1">
+        <Border Background="{DynamicResource SAPSolidBrush}" Grid.Column="2" Grid.Row="1" Grid.RowSpan="5" />
+        <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="2" Grid.Row="1">
             <TextBlock Text="SAP" FontWeight="DemiBold" />
-            <TextBlock Text="{Binding SAPCount}" FontSize="10" Margin="3,-5,0,0"
-                       Visibility="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
+            <TextBlock Text="{Binding SAPCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="0,25,0,0"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="2" Grid.Row="2">
-
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddSAPMailHitCommand}" Margin="5" Width="100" Height="50"
-                                AdditionalContent="{Binding SAPEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddSAPCallHitCommand}" Margin="5" Width="100" Height="50"
-                                AdditionalContent="{Binding SAPCallsCount}" />
+        <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="2" Grid.Row="2">
+            <Controls:ButtonExt Content="Письмо" Command="{Binding AddSAPMailHitCommand}" AdditionalContent="{Binding SAPEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Command="{Binding AddSAPCallHitCommand}" AdditionalContent="{Binding SAPCallsCount}" />
         </StackPanel>
 
 
-
-
-        <Border Background="#ffCCCCCC" Grid.Column="3" Grid.Row="1" Grid.RowSpan="5" />
-        <StackPanel Orientation="Horizontal" Margin="5,15,5,5" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="3" Grid.Row="1">
+        <Border Background="{DynamicResource EnvironmentSolidBrush}" Grid.Column="3" Grid.Row="1" Grid.RowSpan="5" />
+        <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="3" Grid.Row="1">
             <TextBlock Text="Environment" FontWeight="DemiBold" />
-            <TextBlock Text="{Binding EnvironmentCount}" FontSize="10" Margin="3,-5,0,0"
-                       Visibility="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
+            <TextBlock Text="{Binding EnvironmentCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="0,25,0,0"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="3" Grid.Row="2">
-
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddEnvironmentMailHitCommand}" Margin="5" Width="100" Height="50"
-                                AdditionalContent="{Binding EnvironmentEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddEnvironmentCallHitCommand}" Margin="5" Width="100" Height="50"
-                                AdditionalContent="{Binding EnvironmentCallsCount}" />
+        <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="3" Grid.Row="2">
+            <Controls:ButtonExt Content="Письмо" Command="{Binding AddEnvironmentMailHitCommand}" AdditionalContent="{Binding EnvironmentEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Command="{Binding AddEnvironmentCallHitCommand}" AdditionalContent="{Binding EnvironmentCallsCount}" />
         </StackPanel>
 
 
-
-
-        <TextBlock Text="{Binding Total}" FontSize="10" Margin="5,10,5,5"
-                   Visibility="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}"
+        
+        
+        <TextBlock Text="{Binding Total}" Style="{DynamicResource TextBlockTotalStyle}" Margin="5,10,5,5"
                    Grid.Column="4" Grid.Row="1" />
-
-        <StackPanel Orientation="Vertical" Margin="0,25,0,0"
+        <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}"
                     Visibility="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
                     Grid.Column="4" Grid.Row="2">
             <StackPanel Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="{Binding EmailTotal}" FontSize="10" Margin="5,12,5,5" />
             </StackPanel>
             <StackPanel Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="{Binding CallTotal}" FontSize="10" Margin="5,22,5,5" />
-            </StackPanel>
-            
+            </StackPanel>  
         </StackPanel>
 
-
-
-
-        <Expander Header="Расширенные настройки"
-                  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="5">
-
+        
+        <Expander Header="Расширенные настройки" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="5">
             <Grid Margin="15">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -199,7 +129,6 @@
                 <CheckBox x:Name="IsTotalsVisible" Content="Отображать итоги"
                           FontSize="10" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                           Grid.Column="1" Grid.Row="0" />
-                
             </Grid>
         </Expander>
         

@@ -1,44 +1,92 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Controls="clr-namespace:Hit.Controls">
-
+                    xmlns:Controls="clr-namespace:Hit.Controls"
+                    xmlns:Converters="clr-namespace:UseAbilities.WPF.Converters;assembly=UseAbilities.WPF">
+    
+    
+    <!--**************-->
+    <!--*            *-->
+    <!--*   Colors   *-->
+    <!--*            *-->
+    <!--**V***********-->
     <Color x:Key="ABBYYColor">#ffC20E31</Color>
     <SolidColorBrush x:Key="ABBYYSolidBrush" Color="{StaticResource ABBYYColor}" />
 
-    <LinearGradientBrush x:Key="ABBYYGradientBrush" StartPoint="0,0" EndPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="{StaticResource ABBYYColor}" Offset="0" />
-            <GradientStop Color="#ffFFFFFF" Offset="0.8" />
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
+    <Color x:Key="FILENETColor">#0f809e</Color>
+    <SolidColorBrush x:Key="FILENETSolidBrush" Color="{StaticResource FILENETColor}" />
+
+    <Color x:Key="SAPColor">#efab00</Color>
+    <SolidColorBrush x:Key="SAPSolidBrush" Color="{StaticResource SAPColor}" />
+
+    <Color x:Key="EnvironmentColor">#ffCCCCCC</Color>
+    <SolidColorBrush x:Key="EnvironmentSolidBrush" Color="{StaticResource EnvironmentColor}" />
+
+    
+    <Color x:Key="ControlLightColor">#ffFFFFFF</Color>
+    <Color x:Key="ControlMediumColor">#ffFFFFFF</Color>
+    <Color x:Key="ControlDarkColor">#ffFFFFFF</Color>
+
+    <Color x:Key="GlyphColor">#ff000000</Color>
+    <Color x:Key="GlyphMouseOver">Green</Color>
+
+    <Color x:Key="BorderLightColor">#ffFFFFFF</Color>
+    <Color x:Key="BorderMediumColor">#ffFFFFFF</Color>
+    <Color x:Key="BorderDarkColor">#ffFFFFFF</Color>
+
+    <Color x:Key="PressedBorderLightColor">#ffFFFFFF</Color>
+    <Color x:Key="PressedBorderDarkColor">#ffFFFFFF</Color>
+
+    <Color x:Key="DisabledBorderLightColor">#ffFFFFFF</Color>
+    <Color x:Key="DisabledBorderDarkColor">#ffFFFFFF</Color>
+
+    <Color x:Key="DefaultBorderBrushDarkColor">Black</Color>
 
 
-    <!--<Style TargetType="{x:Type Expander}">
-
-        <Setter Property="IsExpanded" Value="False" />
-        
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Background" Value="#ffFFFFFF" />
-        
+    <!--************************-->
+    <!--*                      *-->
+    <!--*   TextBlock Styles   *-->
+    <!--*                      *-->
+    <!--**V*********************-->
+    <Style x:Key="TextBlockTotalStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="10" />
-        <Setter Property="Foreground" Value="DarkGray" />
-
-        <Setter Property="Margin" Value="0,15,0,0" />
-        
-        <Style.Triggers>
-            <Trigger Property="IsExpanded" Value="True">
-                <Setter Property="Foreground" Value="DarkGray"/>
-            </Trigger>
-            <Trigger Property="IsExpanded" Value="False">
-                <Setter Property="Foreground" Value="#ff000000"/>
-            </Trigger>
-        </Style.Triggers>
-
-    </Style>-->
+        <Setter Property="Margin" Value="3,-5,0,0" />
+        <Setter Property="Visibility" Value="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
+    </Style>
 
 
+    <!--**************************-->
+    <!--*                        *-->
+    <!--*   StackPanels Styles   *-->
+    <!--*                        *-->
+    <!--**V***********************-->
+    <Style x:Key="StackPanelStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
 
-    <Style TargetType="{x:Type Controls:ButtonExt}">
+    <Style x:Key="ThemeTitleStackPanelStyle" BasedOn="{StaticResource StackPanelStyle}" TargetType="{x:Type StackPanel}">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Margin" Value="5,15,5,5" />
+    </Style>
+
+    <Style x:Key="ThemeContentStackPanelStyle" BasedOn="{StaticResource StackPanelStyle}" TargetType="{x:Type StackPanel}">
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="Margin" Value="0,25,0,0" />
+    </Style>
+
+
+    <!--**********************-->
+    <!--*                    *-->
+    <!--*   Buttons Styles   *-->
+    <!--*                    *-->
+    <!--**V*******************-->
+    <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="50" />
+    </Style>
+    
+    <Style TargetType="{x:Type Controls:ButtonExt}" BasedOn="{StaticResource DefaultButtonStyle}">
 
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -158,115 +206,11 @@
     </Style>
 
 
-    <!--Expander-->
-    <!--<ControlTemplate x:Key="ExpanderToggleButton"
-                 TargetType="{x:Type ToggleButton}">
-        <Border x:Name="Border"
-          CornerRadius="2,0,0,0"
-          BorderThickness="0,0,1,0">
-            <Border.Background>
-                <LinearGradientBrush EndPoint="0.5,1"
-                           StartPoint="0.5,0">
-                    <GradientStop Color="{DynamicResource ControlLightColor}" />
-                    <GradientStop Color="{DynamicResource ControlMediumColor}"
-                      Offset="1" />
-                </LinearGradientBrush>
-            </Border.Background>
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0"
-                           EndPoint="0,1">
-                    <LinearGradientBrush.GradientStops>
-                        <GradientStopCollection>
-                            <GradientStop Color="{DynamicResource BorderLightColor}"
-                          Offset="0.0" />
-                            <GradientStop Color="{DynamicResource BorderDarkColor}"
-                          Offset="1.0" />
-                        </GradientStopCollection>
-                    </LinearGradientBrush.GradientStops>
-                </LinearGradientBrush>
-
-            </Border.BorderBrush>
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="MouseOver">
-                        <Storyboard>
-                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                          Storyboard.TargetProperty="(Panel.Background).
-                Color">
-                                <EasingColorKeyFrame KeyTime="0"
-                                   Value="{DynamicResource ControlMouseOverColor}" />
-                            </ColorAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="Pressed">
-                        <Storyboard>
-                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                          Storyboard.TargetProperty="(Panel.Background).
-                Color">
-                                <EasingColorKeyFrame KeyTime="0"
-                                   Value="{DynamicResource ControlPressedColor}" />
-                            </ColorAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="Disabled">
-                        <Storyboard>
-                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                          Storyboard.TargetProperty="(Panel.Background).
-                Color">
-                                <EasingColorKeyFrame KeyTime="0"
-                                   Value="{DynamicResource DisabledControlDarkColor}" />
-                            </ColorAnimationUsingKeyFrames>
-                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                          Storyboard.TargetProperty="(Border.BorderBrush).
-                Color">
-                                <EasingColorKeyFrame KeyTime="0"
-                                   Value="{DynamicResource DisabledBorderLightColor}" />
-                            </ColorAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </VisualState>
-                </VisualStateGroup>
-                <VisualStateGroup x:Name="CheckStates">
-                    <VisualState x:Name="Checked">
-                        <Storyboard>
-                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                           Storyboard.TargetName="CollapsedArrow">
-                                <DiscreteObjectKeyFrame KeyTime="0"
-                                      Value="{x:Static Visibility.Hidden}" />
-                            </ObjectAnimationUsingKeyFrames>
-                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                           Storyboard.TargetName="ExpandededArrow">
-                                <DiscreteObjectKeyFrame KeyTime="0"
-                                      Value="{x:Static Visibility.Visible}" />
-                            </ObjectAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="Unchecked" />
-                    <VisualState x:Name="Indeterminate" />
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <Grid>
-                <Path x:Name="CollapsedArrow"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Data="M 0 0 L 4 4 L 8 0 Z">
-                    <Path.Fill>
-                        <SolidColorBrush Color="{DynamicResource GlyphColor}" />
-                    </Path.Fill>
-                </Path>
-                <Path x:Name="ExpandededArrow"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Visibility="Collapsed"
-            Data="M 0 4 L 4 0 L 8 4 Z">
-                    <Path.Fill>
-                        <SolidColorBrush Color="{DynamicResource GlyphColor}" />
-                    </Path.Fill>
-                </Path>
-            </Grid>
-        </Border>
-    </ControlTemplate>-->
-
+    <!--***********************-->
+    <!--*                     *-->
+    <!--*   Expander Styles   *-->
+    <!--*                     *-->
+    <!--**V********************-->
     <Style TargetType="{x:Type Expander}">
 
         <Setter Property="IsExpanded" Value="False" />
@@ -282,48 +226,39 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Expander}">
-                    
-                    
-                    
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition x:Name="ContentRow" Height="0" />
                         </Grid.RowDefinitions>
                         
-                        <VisualStateManager.VisualStateGroups>
+                        <!--<VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
 
                                 <VisualState x:Name="MouseOver">
-                                    <!--<Storyboard>
+                                    <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="Red" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.BorderBrush).Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="Green" />
                                         </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>-->
+                                    </Storyboard>
                                 </VisualState>
 
                                 <VisualState x:Name="Disabled">
-                                    <!--Storyboard>
+                                    Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource DisabledControlDarkColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.BorderBrush).Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource DisabledBorderLightColor}" />
                                         </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>-->
+                                    </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-
-                        <!--<i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Click" SourceName="Content">
-                                <ei:ChangePropertyAction TargetName="Border" PropertyName="Background" Value="Red" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </VisualStateManager.VisualStateGroups>-->
 
                         <Border x:Name="Border" Background="#ddFFFFFF"  Grid.Row="0" BorderThickness="0" CornerRadius="0">
 
@@ -361,35 +296,11 @@
     </Style>
 
 
-    <!--Control colors.-->
-    <Color x:Key="ControlLightColor">#ffFFFFFF</Color>
-    <Color x:Key="ControlMediumColor">#ffFFFFFF</Color>
-    <Color x:Key="ControlDarkColor">#ffFFFFFF</Color>
-
-    <Color x:Key="GlyphColor">#ff000000</Color>
-    <Color x:Key="GlyphMouseOver">Green</Color>
-
-    <!--Border colors-->
-    <Color x:Key="BorderLightColor">#ffFFFFFF</Color>
-    <Color x:Key="BorderMediumColor">#ffFFFFFF</Color>
-    <Color x:Key="BorderDarkColor">#ffFFFFFF</Color>
-
-    <Color x:Key="PressedBorderLightColor">#ffFFFFFF</Color>
-    <Color x:Key="PressedBorderDarkColor">#ffFFFFFF</Color>
-
-    <Color x:Key="DisabledBorderLightColor">#ffFFFFFF</Color>
-    <Color x:Key="DisabledBorderDarkColor">#ffFFFFFF</Color>
-
-    <Color x:Key="DefaultBorderBrushDarkColor">Black</Color>
-
-
-
-
-
-
-
-
-
+    <!--***************************-->
+    <!--*                         *-->
+    <!--*   ToggleButton Styles   *-->
+    <!--*                         *-->
+    <!--**V************************-->
     <Style x:Key="ExpanderRightHeaderStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -479,6 +390,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="ExpanderLeftHeaderStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -534,6 +446,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="ExpanderDownHeaderStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Template">
             <Setter.Value>

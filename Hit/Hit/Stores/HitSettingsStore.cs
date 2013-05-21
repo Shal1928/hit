@@ -5,9 +5,23 @@ using UseAbilities.XML.Serialization;
 
 namespace Hit.Stores
 {
-    //ToDo: Make this class singleton
     public class HitSettingsStore : XmlStore<HitSettings>
     {
+        #region Singleton implementation
+
+        private HitSettingsStore()
+        {
+
+        }
+
+        private static readonly HitSettingsStore Instance = new HitSettingsStore();
+        public static HitSettingsStore GetInstance()
+        {
+            return Instance;
+        }
+
+        #endregion
+        
         private const string FILE_NAME = "HitSettings.xml";
         public override string FileName
         {
@@ -27,4 +41,21 @@ namespace Hit.Stores
             return SerializationUtility.Deserialize<HitSettings>(FileName);
         }
     }
+
+    //public sealed class Singleton
+    //{
+    //    private static readonly Singleton uniqueInstanceEager = new Singleton();
+
+
+    //    //Construction 
+    //    private Singleton()
+    //    {
+    //        Console.WriteLine("Singleton Instance Created.");
+    //    }
+
+    //    public static Singleton GetInstance()
+    //    {
+    //        return uniqueInstanceEager;
+    //    }
+    //}
 }

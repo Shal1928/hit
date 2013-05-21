@@ -50,7 +50,7 @@
     <Style x:Key="TextBlockTotalStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="10" />
         <Setter Property="Margin" Value="3,-5,0,0" />
-        <Setter Property="Visibility" Value="{Binding IsChecked, ElementName=IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
+        <Setter Property="Visibility" Value="{Binding IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
     </Style>
 
 

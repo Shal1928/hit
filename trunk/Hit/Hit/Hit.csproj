@@ -66,6 +66,7 @@
     <Compile Include="Controls\ButtonExt.cs" />
     <Compile Include="DataManagers\HitDataManager.cs" />
     <Compile Include="Helpers\StaticHelper.cs" />
+    <Compile Include="Models\Base\DataObject.cs" />
     <Compile Include="Models\HitSettings.cs" />
     <Compile Include="Models\HitsModel.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -13,5 +13,10 @@ namespace Hit.Stores.Base
         {
             throw new NotImplementedException();
         }
+
+        public T Load(int key)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -8,7 +8,7 @@ using Hit.Models.Base;
 
 namespace Hit.Stores.Base
 {
-    public abstract class DBStore<T> : StoreBase<T> where T: DataObject
+    public abstract class DBStore<T> : StoreBase<T> where T : UniqueObject
     {
         protected DBStore(string entitySetName)
         {
@@ -36,7 +36,40 @@ namespace Hit.Stores.Base
 
         protected EntityKey CreateEntityKey(int key)
         {
-            return new EntityKey(EntitySetName, EnumerableEx.Return(new KeyValuePair<string, object>("ID", key)));
+            return new EntityKey(EntitySetName, "ID", key);
         }
+
+        #region Nested object persistence methods
+
+        protected T GetObjectFromContext(int key)
+        {
+            return (T)ObjectContext.GetObjectByKey(CreateEntityKey(key));
+        }
+
+        /// <summary>
+        /// Create UniqueObject from key and Persistents objects
+        /// </summary>
+        /// <param name="key">Key of required object</param>
+        /// <param name="objectSet">Objects</param>
+        /// <returns></returns>
+        protected static UniqueObject GetObjectFromObjectSet(int key, IQueryable<UniqueObject> objectSet)
+        {
+            return objectSet.FirstOrDefault(item => item.Id == key);
+        }
+
+        /// <summary>
+        /// Create UniqueObjects from key list and Persistents objects
+        /// </summary>
+        /// <param name="keys">Keys of required objects</param>
+        /// <param name="objectSet">Objects</param>
+        /// <returns></returns>
+        protected static IEnumerable<UniqueObject> GetObjectsFromObjectSet(IEnumerable<int> keys, IQueryable<UniqueObject> objectSet)
+        {
+            if (keys == null) return Enumerable.Empty<UniqueObject>();
+
+            return keys.Select(key => GetObjectFromObjectSet(key, objectSet));
+        }
+
+        #endregion
     }
 }

@@ -37,6 +37,7 @@ namespace Hit
         private static void Loader(IoC ioc)
         {
             ioc.RegisterSingleton<IXmlStore<HitSettings>, HitSettingsStore>();
+            ioc.RegisterSingleton<DBStore<Requests>, RequestsDBStore>();
         }
     }    
 }

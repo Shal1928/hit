@@ -7,5 +7,11 @@
             get; 
             set;
         }
+
+        public virtual bool IsNew
+        {
+            get;
+            set;
+        }
     }
 }

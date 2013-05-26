@@ -74,8 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HitsModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Requests.cs" />
     <Compile Include="Models\RequestTheme.cs" />
+    <Compile Include="Models\RequestThemes.cs" />
     <Compile Include="Models\RequestType.cs" />
+    <Compile Include="Models\RequestTypes.cs" />
     <Compile Include="Stores\Base\DBStore.cs" />
     <Compile Include="Stores\Base\IFileStore.cs" />
     <Compile Include="Stores\Base\IStore.cs" />
@@ -84,6 +87,8 @@
     <Compile Include="Stores\Base\FileStore.cs" />
     <Compile Include="Stores\Base\XMLStore.cs" />
     <Compile Include="Stores\HitSettingsStore.cs" />
+    <Compile Include="Stores\HitsObjectContext.cs" />
+    <Compile Include="Stores\RequestsDBStore.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>

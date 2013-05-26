@@ -17,11 +17,11 @@ namespace Hit.ViewModels
         public MainWindowViewModel()
         {
             _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
-            _hitDataManager = new HitDataManager();
+            //_hitDataManager = new HitDataManager();
             UpdateRequestsCollection();
         }
 
-        private readonly HitDataManager _hitDataManager;
+        //private readonly HitDataManager _hitDataManager;
         private DateTime _date;
 
         #region Properties
@@ -314,6 +314,13 @@ namespace Hit.ViewModels
             set;
         }
 
+        [InjectedProperty]
+        public DBStore<Requests> RequestsDBStore
+        {
+            get;
+            set;
+        }
+
         #endregion
 
 
@@ -416,13 +423,14 @@ namespace Hit.ViewModels
 
         private void OnAddABBYYMailHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.ABBYY, _date));
+            var a = RequestsDBStore.LoadObject(1);
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.ABBYY, _date));
             UpdateRequestsCollection();
         }
 
         private void OnAddABBYYCallHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.ABBYY, _date));
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.ABBYY, _date));
             UpdateRequestsCollection();
         }
 
@@ -430,13 +438,13 @@ namespace Hit.ViewModels
 
         private void OnAddFILENETMailHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.FILENET, _date));
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.FILENET, _date));
             UpdateRequestsCollection();
         }
 
         private void OnAddFILENETCallHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.FILENET, _date));
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.FILENET, _date));
             UpdateRequestsCollection();
         }
 
@@ -444,13 +452,13 @@ namespace Hit.ViewModels
 
         private void OnAddSAPMailHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.SAP, _date));
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.SAP, _date));
             UpdateRequestsCollection();
         }
 
         private void OnAddSAPCallHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.SAP, _date));
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.SAP, _date));
             UpdateRequestsCollection();
         }
 
@@ -458,35 +466,35 @@ namespace Hit.ViewModels
 
         private void OnAddEnvironmentMailHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.Environment, _date));
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Email, RequestTheme.Environment, _date));
             UpdateRequestsCollection();
         }
 
         private void OnAddEnvironmentCallHitCommand()
         {
-            _hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.Environment, _date));
+            //_hitDataManager.AddRequests(Requests.CreateRequests(1, RequestType.Call, RequestTheme.Environment, _date));
             UpdateRequestsCollection();
         }
 
         public void UpdateRequestsCollection()
         {
-            RequestsCollection = new ObservableCollection<Requests>(_hitDataManager.FindRequestsList(SelectedDate));
+            //RequestsCollection = new ObservableCollection<Requests>(_hitDataManager.FindRequestsList(SelectedDate));
 
-            ABBYYCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
-            ABBYYEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
-            ABBYYCount = ABBYYCallsCount + ABBYYEmailsCount;
+            //ABBYYCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+            //ABBYYEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            //ABBYYCount = ABBYYCallsCount + ABBYYEmailsCount;
 
-            FILENETCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
-            FILENETEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
-            FILENETCount = FILENETCallsCount + FILENETEmailsCount;
+            //FILENETCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+            //FILENETEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            //FILENETCount = FILENETCallsCount + FILENETEmailsCount;
 
-            SAPCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
-            SAPEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
-            SAPCount = SAPCallsCount + SAPEmailsCount;
+            //SAPCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+            //SAPEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            //SAPCount = SAPCallsCount + SAPEmailsCount;
 
-            EnvironmentCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
-            EnvironmentEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
-            EnvironmentCount = EnvironmentCallsCount + EnvironmentEmailsCount;
+            //EnvironmentCallsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+            //EnvironmentEmailsCount = RequestsCollection.Count(request => request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            //EnvironmentCount = EnvironmentCallsCount + EnvironmentEmailsCount;
 
             Total = ABBYYCount + FILENETCount + SAPCount + EnvironmentCount;
             EmailTotal = ABBYYEmailsCount + FILENETEmailsCount + SAPEmailsCount + EnvironmentEmailsCount;

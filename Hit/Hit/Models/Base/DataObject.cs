@@ -1,6 +1,8 @@
-﻿namespace Hit.Models.Base
+﻿using System.Data.Objects.DataClasses;
+
+namespace Hit.Models.Base
 {
-    public abstract class DataObject
+    public abstract class DataObject : EntityObject
     {
         //
     }

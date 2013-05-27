@@ -10,10 +10,11 @@ namespace Hit.Stores
 {
     public class HitsObjectContext : ObjectContext
     {
-        private HitsObjectContext() : base("name=HitsEntities", "HitsEntities")
+        public HitsObjectContext(): base("name=HitsEntities", "HitsEntities")
         {
+            
             ContextOptions.ProxyCreationEnabled = false;
-
+            ContextOptions.LazyLoadingEnabled = true;
             //HitsEntities.Requests
             try
             {
@@ -21,10 +22,8 @@ namespace Hit.Stores
             }
             catch (Exception e)
             {
-                
-                throw;
+                throw e;
             }
-            
         }
 
         private static readonly HitsObjectContext Instance = new HitsObjectContext();
@@ -32,6 +31,22 @@ namespace Hit.Stores
         {
             return Instance;
         }
+
+        //internal static HitsObjectContext Instance
+        //{
+        //    get
+        //    {
+        //        var ext = ContextContainer.Find<StoreContextExtension<CommonContext>>();
+
+        //        if (ext == null)
+        //        {
+        //            ext = new StoreContextExtension<CommonContext> { ObjectContext = new CommonContext() };
+        //            ContextContainer.Add(ext);
+        //        }
+
+        //        return ext.ObjectContext;
+        //    }
+        //}
 
         private ObjectSet<Requests> _requests = null;
         public ObjectSet<Requests> Requests

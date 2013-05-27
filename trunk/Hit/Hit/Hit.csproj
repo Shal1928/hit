@@ -86,6 +86,7 @@
     <Compile Include="Stores\Base\StoreBase.cs" />
     <Compile Include="Stores\Base\FileStore.cs" />
     <Compile Include="Stores\Base\XMLStore.cs" />
+    <Compile Include="Stores\ContextContainer.cs" />
     <Compile Include="Stores\HitSettingsStore.cs" />
     <Compile Include="Stores\HitsObjectContext.cs" />
     <Compile Include="Stores\RequestsDBStore.cs" />

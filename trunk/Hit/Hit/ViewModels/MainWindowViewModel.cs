@@ -415,6 +415,15 @@ namespace Hit.ViewModels
             }
         }
 
+        private ICommand _showReportViewCommand;
+        public ICommand ShowReportViewCommand
+        {
+            get
+            {
+                return _showReportViewCommand ?? (_showReportViewCommand = new RelayCommand(param => ShowReportView(), null));
+            }
+        }
+        
         #endregion
 
 
@@ -503,6 +512,12 @@ namespace Hit.ViewModels
         private void SaveSettings()
         {
             HitSettingsStore.Save(HitSettings);
+        }
+
+        private void ShowReportView()
+        {
+            var reportViewModel = new ReportViewModel();
+            reportViewModel.Show();
         }
 
         #endregion

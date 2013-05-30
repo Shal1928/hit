@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Behaviors\ExpanderMouseOverBehavior.cs" />
     <Compile Include="Controls\ButtonExt.cs" />
     <Compile Include="DataManagers\HitDataManager.cs" />
     <Compile Include="Helpers\StaticHelper.cs" />

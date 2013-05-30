@@ -293,12 +293,12 @@
                             <Setter Property="Foreground" Value="#ff000000"/>
                             <Setter Property="Data" TargetName="arrow" Value="M 1,1.5 L 4.5,5 L 8,1.5"/>
                         </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
+                        <!--<Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="IsExpanded" Value="True"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="False">
                             <Setter Property="IsExpanded" Value="False"/>
-                        </Trigger>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

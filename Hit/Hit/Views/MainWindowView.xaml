@@ -115,6 +115,7 @@
             
             <Grid Margin="15">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
@@ -141,6 +142,11 @@
                 <CheckBox Content="Отображать итоги" IsChecked="{Binding IsTotalsVisible}"
                           FontSize="10" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                           Grid.Column="1" Grid.Row="0" />
+
+                <Button Style="{DynamicResource LinkButtonStyle}" Content="Подготовить отчет" 
+                        Command="{Binding ShowReportViewCommand}" Margin="0,5,0,0"
+                        Grid.Column="2" Grid.Row="0" />
+                
             </Grid>
         </Expander>
         

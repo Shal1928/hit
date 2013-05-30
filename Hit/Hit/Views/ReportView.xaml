@@ -1,0 +1,12 @@
+﻿<Base:ViewBase x:Class="Hit.Views.ReportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Base="clr-namespace:UseAbilities.MVVM.Base;assembly=UseAbilities.MVVM" 
+        WindowStartupLocation="CenterOwner" 
+        WindowState="Normal"
+        Title="Hit Report" 
+        Height="300" Width="500">
+    <Grid>
+        
+    </Grid>
+</Base:ViewBase>

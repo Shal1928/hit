@@ -21,7 +21,8 @@ namespace Hit
         {
             var relationsViewToViewModel = new Dictionary<Type, Type>
                                          {
-                                            {typeof (MainWindowViewModel), typeof (MainWindowView)}
+                                            {typeof (MainWindowViewModel), typeof (MainWindowView)},
+                                            {typeof (ReportViewModel), typeof (ReportView)}
                                          };
 
             ViewManager.RegisterViewViewModelRelations(relationsViewToViewModel);

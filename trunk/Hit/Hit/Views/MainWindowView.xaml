@@ -51,6 +51,8 @@
             <Controls:ButtonExt Content="Звонок" Command="{Binding AddABBYYCallHitCommand}" AdditionalContent="{Binding ABBYYCallsCount}" />
         </StackPanel>
 
+        
+        
 
         <Border Background="{DynamicResource FILENETSolidBrush}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" />
         <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="1" Grid.Row="1">

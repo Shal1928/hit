@@ -65,6 +65,9 @@
     </ApplicationDefinition>
     <Compile Include="Behaviors\ExpanderMouseOverBehavior.cs" />
     <Compile Include="Controls\ButtonExt.cs" />
+    <Compile Include="Controls\WeekChart.xaml.cs">
+      <DependentUpon>WeekChart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataManagers\HitDataManager.cs" />
     <Compile Include="Helpers\StaticHelper.cs" />
     <Compile Include="Models\Base\DataObject.cs" />
@@ -96,6 +99,10 @@
     <Compile Include="Views\ReportView.xaml.cs">
       <DependentUpon>ReportView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\WeekChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

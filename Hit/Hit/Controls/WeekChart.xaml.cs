@@ -26,22 +26,22 @@ namespace Hit.Controls
 
         #region DependencyProperty SelectedColumnIndex
 
-        public static readonly DependencyProperty MondayHitCount =
-            DependencyProperty.Register("SelectedColumnIndex",
+        public static readonly DependencyProperty MondayEmailsCountProperty =
+            DependencyProperty.Register("MondayEmailsCount",
                                         typeof(int),
-                                        typeof(ColumnHeaderFilterBehavior),
+                                        typeof(WeekChart),
                                         new UIPropertyMetadata(0, SelectedColumnIndexChanged)
                                         );
 
-        public int SelectedColumnIndex
+        public int MondayEmailsCount
         {
             get
             {
-                return (int)GetValue(SelectedColumnIndexProperty);
+                return (int)GetValue(MondayEmailsCountProperty);
             }
             set
             {
-                SetValue(SelectedColumnIndexProperty, value);
+                SetValue(MondayEmailsCountProperty, value);
             }
         }
 

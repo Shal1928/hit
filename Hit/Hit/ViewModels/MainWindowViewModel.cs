@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Hit.DataManagers;
 using Hit.Models;
 using Hit.Stores.Base;
+using UseAbilities.Extensions.DateTimeExt;
 using UseAbilities.IoC.Attributes;
 using UseAbilities.MVVM.Base;
 using UseAbilities.MVVM.Command;
@@ -18,11 +19,12 @@ namespace Hit.ViewModels
             _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
             _hitDataManager = new HitDataManager();
             UpdateRequestsCollection();
+            //FillABBYYWeekChartData();
         }
 
         private readonly HitDataManager _hitDataManager;
         private DateTime _date;
-
+        
         #region Properties
 
         private int _abbyyCount;
@@ -715,6 +717,8 @@ namespace Hit.ViewModels
             Total = ABBYYCount + FILENETCount + SAPCount + EnvironmentCount;
             EmailTotal = ABBYYEmailsCount + FILENETEmailsCount + SAPEmailsCount + EnvironmentEmailsCount;
             CallTotal = ABBYYCallsCount + FILENETCallsCount + SAPCallsCount + EnvironmentCallsCount;
+
+            FillABBYYWeekChartData();
         }
 
         private void SaveSettings()
@@ -726,6 +730,36 @@ namespace Hit.ViewModels
         {
             var reportViewModel = new ReportViewModel();
             reportViewModel.Show();
+        }
+
+        private void FillABBYYWeekChartData()
+        {
+            var week = _date.GetWeek();
+
+            //request.RequestDate == week[0].Date && 
+            //request.RequestDate == week[0].Date && 
+            var requestCollection = _hitDataManager.FindRequestsList(week[0], week[6]);
+
+            ABBYYMondayEmailsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYMondayCallsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+
+            ABBYYTuesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYTuesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+
+            ABBYYWednesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYWednesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+
+            ABBYYThursdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYThursdayCallsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+
+            ABBYYFridayEmailsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYFridayCallsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+
+            ABBYYSaturdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYSaturdayCallsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+
+            ABBYYSundayEmailsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
+            ABBYYSundayCallsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
         }
 
         #endregion

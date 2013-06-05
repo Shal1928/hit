@@ -26,15 +26,18 @@
         <!--***   Monday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
               Grid.Column="0" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding MondayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -46,8 +49,8 @@
                 </Rectangle>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="1" Grid.Row="0">
                 <TextBlock Text="{Binding MondayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -58,6 +61,9 @@
                     </Rectangle.Height>
                 </Rectangle>
             </StackPanel>
+
+            <TextBlock Text="Пн" FontSize="8" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+
         </Grid>
 
 
@@ -69,15 +75,19 @@
         <!--***   Tuesday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="0" Grid.Row="1">
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="1" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding TuesdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -89,8 +99,8 @@
                 </Rectangle>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="1" Grid.Row="0">
                 <TextBlock Text="{Binding TuesdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -101,6 +111,9 @@
                     </Rectangle.Height>
                 </Rectangle>
             </StackPanel>
+
+            <TextBlock Text="Вт" FontSize="8" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+
         </Grid>
 
 
@@ -110,15 +123,19 @@
         <!--***   Wednesday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="0" Grid.Row="1">
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="2" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding WednesdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -130,8 +147,8 @@
                 </Rectangle>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="1" Grid.Row="0">
                 <TextBlock Text="{Binding WednesdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -142,6 +159,9 @@
                     </Rectangle.Height>
                 </Rectangle>
             </StackPanel>
+
+            <TextBlock Text="Ср" FontSize="8" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+
         </Grid>
 
 
@@ -151,15 +171,19 @@
         <!--***   Thursday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="0" Grid.Row="1">
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="3" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding ThursdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -171,8 +195,8 @@
                 </Rectangle>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="1" Grid.Row="0">
                 <TextBlock Text="{Binding ThursdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -183,6 +207,9 @@
                     </Rectangle.Height>
                 </Rectangle>
             </StackPanel>
+
+            <TextBlock Text="Чт" FontSize="8" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+
         </Grid>
 
 
@@ -191,15 +218,19 @@
         <!--***   Friday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="0" Grid.Row="1">
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="4" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding FridayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -211,8 +242,8 @@
                 </Rectangle>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="1" Grid.Row="0">
                 <TextBlock Text="{Binding FridayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -223,6 +254,9 @@
                     </Rectangle.Height>
                 </Rectangle>
             </StackPanel>
+
+            <TextBlock Text="Пт" FontSize="8" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+
         </Grid>
 
 
@@ -232,15 +266,19 @@
         <!--***   Saturday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="0" Grid.Row="1">
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="5" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding SaturdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -252,8 +290,8 @@
                 </Rectangle>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="1" Grid.Row="0">
                 <TextBlock Text="{Binding SaturdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -264,6 +302,9 @@
                     </Rectangle.Height>
                 </Rectangle>
             </StackPanel>
+
+            <TextBlock Text="Сб" FontSize="8" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+
         </Grid>
 
 
@@ -273,15 +314,19 @@
         <!--***   Sunday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="0" Grid.Row="1">
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="6" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding SundayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -293,8 +338,8 @@
                 </Rectangle>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                        Grid.Column="1" Grid.Row="0">
                 <TextBlock Text="{Binding SundayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" FontSize="8" HorizontalAlignment="Center" />
                 <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
                     <Rectangle.Height>
@@ -305,6 +350,9 @@
                     </Rectangle.Height>
                 </Rectangle>
             </StackPanel>
+
+            <TextBlock Text="Вс" FontSize="8" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+
         </Grid>
 
 

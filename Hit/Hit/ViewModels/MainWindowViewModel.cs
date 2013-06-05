@@ -304,6 +304,214 @@ namespace Hit.ViewModels
         #endregion
 
 
+        #region ABBYY Properties for WeekChart
+        
+        private int _abbyyMondayEmailsCount;
+        public int ABBYYMondayEmailsCount
+        {
+            get
+            {
+                return _abbyyMondayEmailsCount;
+            }
+            set
+            {
+                _abbyyMondayEmailsCount = value;
+                OnPropertyChanged(() => ABBYYMondayEmailsCount);
+            }
+        }
+
+        private int _abbyyMondayCallsCount;
+        public int ABBYYMondayCallsCount
+        {
+            get
+            {
+                return _abbyyMondayCallsCount;
+            }
+            set
+            {
+                _abbyyMondayCallsCount = value;
+                OnPropertyChanged(() => ABBYYMondayCallsCount);
+            }
+        }
+
+
+        private int _abbyyTuesdayEmailsCount;
+        public int ABBYYTuesdayEmailsCount
+        {
+            get
+            {
+                return _abbyyTuesdayEmailsCount;
+            }
+            set
+            {
+                _abbyyTuesdayEmailsCount = value;
+                OnPropertyChanged(() => ABBYYTuesdayEmailsCount);
+            }
+        }
+
+        private int _abbyyTuesdayCallsCount;
+        public int ABBYYTuesdayCallsCount
+        {
+            get
+            {
+                return _abbyyTuesdayCallsCount;
+            }
+            set
+            {
+                _abbyyTuesdayCallsCount = value;
+                OnPropertyChanged(() => ABBYYTuesdayCallsCount);
+            }
+        }
+
+
+        private int _abbyyWednesdayEmailsCount;
+        public int ABBYYWednesdayEmailsCount
+        {
+            get
+            {
+                return _abbyyWednesdayEmailsCount;
+            }
+            set
+            {
+                _abbyyWednesdayEmailsCount = value;
+                OnPropertyChanged(() => ABBYYWednesdayEmailsCount);
+            }
+        }
+
+        private int _abbyyWednesdayCallsCount;
+        public int ABBYYWednesdayCallsCount
+        {
+            get
+            {
+                return _abbyyWednesdayCallsCount;
+            }
+            set
+            {
+                _abbyyWednesdayCallsCount = value;
+                OnPropertyChanged(() => ABBYYWednesdayCallsCount);
+            }
+        }
+
+
+        private int _abbyyThursdayEmailsCount;
+        public int ABBYYThursdayEmailsCount
+        {
+            get
+            {
+                return _abbyyThursdayEmailsCount;
+            }
+            set
+            {
+                _abbyyThursdayEmailsCount = value;
+                OnPropertyChanged(() => ABBYYThursdayEmailsCount);
+            }
+        }
+
+        private int _abbyyThursdayCallsCount;
+        public int ABBYYThursdayCallsCount
+        {
+            get
+            {
+                return _abbyyThursdayCallsCount;
+            }
+            set
+            {
+                _abbyyThursdayCallsCount = value;
+                OnPropertyChanged(() => ABBYYThursdayCallsCount);
+            }
+        }
+
+
+        private int _abbyyFridayEmailsCount;
+        public int ABBYYFridayEmailsCount
+        {
+            get
+            {
+                return _abbyyFridayEmailsCount;
+            }
+            set
+            {
+                _abbyyFridayEmailsCount = value;
+                OnPropertyChanged(() => ABBYYFridayEmailsCount);
+            }
+        }
+
+        private int _abbyyFridayCallsCount;
+        public int ABBYYFridayCallsCount
+        {
+            get
+            {
+                return _abbyyFridayCallsCount;
+            }
+            set
+            {
+                _abbyyFridayCallsCount = value;
+                OnPropertyChanged(() => ABBYYFridayCallsCount);
+            }
+        }
+
+
+        private int _abbyySaturdayEmailsCount;
+        public int ABBYYSaturdayEmailsCount
+        {
+            get
+            {
+                return _abbyySaturdayEmailsCount;
+            }
+            set
+            {
+                _abbyySaturdayEmailsCount = value;
+                OnPropertyChanged(() => ABBYYSaturdayEmailsCount);
+            }
+        }
+
+        private int _abbyySaturdayCallsCount;
+        public int ABBYYSaturdayCallsCount
+        {
+            get
+            {
+                return _abbyySaturdayCallsCount;
+            }
+            set
+            {
+                _abbyySaturdayCallsCount = value;
+                OnPropertyChanged(() => ABBYYSaturdayCallsCount);
+            }
+        }
+
+
+        private int _abbyySundayEmailsCount;
+        public int ABBYYSundayEmailsCount
+        {
+            get
+            {
+                return _abbyySundayEmailsCount;
+            }
+            set
+            {
+                _abbyySundayEmailsCount = value;
+                OnPropertyChanged(() => ABBYYSundayEmailsCount);
+            }
+        }
+
+        private int _abbyySundayCallsCount;
+        public int ABBYYSundayCallsCount
+        {
+            get
+            {
+                return _abbyySundayCallsCount;
+            }
+            set
+            {
+                _abbyySundayCallsCount = value;
+                OnPropertyChanged(() => ABBYYSundayCallsCount);
+            }
+        }
+
+
+        #endregion
+
+
         #region InjectedProperties
 
         [InjectedProperty]

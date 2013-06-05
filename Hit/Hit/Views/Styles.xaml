@@ -53,6 +53,15 @@
         <Setter Property="Visibility" Value="{Binding IsTotalsVisible, Converter={Converters:BoolToVisibilityConverter}, ConverterParameter=Collapsed}" />
     </Style>
 
+    <!--<Style x:Key="TextBlockChartStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="10" />
+        
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ActualWidth, RelativeSource={RelativeSource {x:Type Rectangle}}}" Value="">
+                
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>-->
 
     <!--**************************-->
     <!--*                        *-->

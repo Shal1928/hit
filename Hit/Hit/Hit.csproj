@@ -68,6 +68,7 @@
     <Compile Include="Controls\WeekChart.xaml.cs">
       <DependentUpon>WeekChart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\CountToPercentHeightMultiConverter.cs" />
     <Compile Include="DataManagers\HitDataManager.cs" />
     <Compile Include="Helpers\StaticHelper.cs" />
     <Compile Include="Models\Base\DataObject.cs" />

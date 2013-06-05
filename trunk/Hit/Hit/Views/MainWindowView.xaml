@@ -50,7 +50,14 @@
             <Controls:ButtonExt Content="Письмо" Command="{Binding AddABBYYMailHitCommand}" AdditionalContent="{Binding ABBYYEmailsCount}" />
             <Controls:ButtonExt Content="Звонок" Command="{Binding AddABBYYCallHitCommand}" AdditionalContent="{Binding ABBYYCallsCount}" />
         </StackPanel>
-
+        <Controls:WeekChart MondayEmailsCount="{Binding ABBYYMondayEmailsCount}" MondayCallsCount="{Binding ABBYYMondayCallsCount}"
+                            TuesdayEmailsCount="{Binding ABBYYTuesdayEmailsCount}" TuesdayCallsCount="{Binding ABBYYTuesdayCallsCount}"
+                            WednesdayEmailsCount="{Binding ABBYYWednesdayEmailsCount}" WednesdayCallsCount="{Binding ABBYYWednesdayCallsCount}"
+                            ThursdayEmailsCount="{Binding ABBYYThursdayEmailsCount}" ThursdayCallsCount="{Binding ABBYYThursdayCallsCount}"
+                            FridayEmailsCount="{Binding ABBYYFridayEmailsCount}" FridayCallsCount="{Binding ABBYYFridayCallsCount}"
+                            SaturdayEmailsCount="{Binding ABBYYSaturdayEmailsCount}" SaturdayCallsCount="{Binding ABBYYSaturdayCallsCount}"
+                            SundayEmailsCount="{Binding ABBYYSundayEmailsCount}" SundayCallsCount="{Binding ABBYYSundayCallsCount}"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" />
         
         
 

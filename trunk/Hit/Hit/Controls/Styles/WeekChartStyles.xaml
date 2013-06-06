@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="TextBlockBaseChartStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="8" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="TextBlockChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="0">
+                <Setter Property="Foreground" Value="#33000000" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockMondayChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding MondayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                    <Condition Binding="{Binding MondayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="TextBlock.Foreground" Value="#33000000" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockTuesdayChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding TuesdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                    <Condition Binding="{Binding TuesdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="TextBlock.Foreground" Value="#33000000" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockWednesdayChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding WednesdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                    <Condition Binding="{Binding WednesdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="TextBlock.Foreground" Value="#33000000" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockThursdayChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding ThursdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                    <Condition Binding="{Binding ThursdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="TextBlock.Foreground" Value="#33000000" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockFridayChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding FridayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                    <Condition Binding="{Binding FridayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="TextBlock.Foreground" Value="#33000000" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockSaturdayChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding SaturdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                    <Condition Binding="{Binding SaturdayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="TextBlock.Foreground" Value="#33000000" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockSundayChartStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseChartStyle}">
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding SundayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                    <Condition Binding="{Binding SundayCallsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Value="0" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="TextBlock.Foreground" Value="#33000000" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

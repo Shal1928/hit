@@ -102,6 +102,32 @@ namespace Hit.Controls
             //
         }
 
+
+
+        public static readonly DependencyProperty MondayIsVisibleProperty =
+            DependencyProperty.Register("MondayIsVisible",
+                                        typeof(bool),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(true, MondayIsVisibleChanged)
+                                        );
+
+        public bool MondayIsVisible
+        {
+            get
+            {
+                return (bool)GetValue(MondayIsVisibleProperty);
+            }
+            set
+            {
+                SetValue(MondayIsVisibleProperty, value);
+            }
+        }
+
+        private static void MondayIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
         #endregion
 
 
@@ -182,6 +208,32 @@ namespace Hit.Controls
         }
 
         private static void TuesdayCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
+
+
+        public static readonly DependencyProperty TuesdayIsVisibleProperty =
+            DependencyProperty.Register("TuesdayIsVisible",
+                                        typeof(bool),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(true, TuesdayIsVisibleChanged)
+                                        );
+
+        public bool TuesdayIsVisible
+        {
+            get
+            {
+                return (bool)GetValue(TuesdayIsVisibleProperty);
+            }
+            set
+            {
+                SetValue(TuesdayIsVisibleProperty, value);
+            }
+        }
+
+        private static void TuesdayIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             //
         }
@@ -270,6 +322,32 @@ namespace Hit.Controls
             //
         }
 
+
+
+        public static readonly DependencyProperty WednesdayIsVisibleProperty =
+            DependencyProperty.Register("WednesdayIsVisible",
+                                        typeof(bool),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(true, WednesdayIsVisibleChanged)
+                                        );
+
+        public bool WednesdayIsVisible
+        {
+            get
+            {
+                return (bool)GetValue(WednesdayIsVisibleProperty);
+            }
+            set
+            {
+                SetValue(WednesdayIsVisibleProperty, value);
+            }
+        }
+
+        private static void WednesdayIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
         #endregion
 
 
@@ -350,6 +428,32 @@ namespace Hit.Controls
         }
 
         private static void ThursdayCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
+
+
+        public static readonly DependencyProperty ThursdayIsVisibleProperty =
+            DependencyProperty.Register("ThursdayIsVisible",
+                                        typeof(bool),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(true, ThursdayIsVisibleChanged)
+                                        );
+
+        public bool ThursdayIsVisible
+        {
+            get
+            {
+                return (bool)GetValue(ThursdayIsVisibleProperty);
+            }
+            set
+            {
+                SetValue(ThursdayIsVisibleProperty, value);
+            }
+        }
+
+        private static void ThursdayIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             //
         }
@@ -438,6 +542,32 @@ namespace Hit.Controls
             //
         }
 
+
+
+        public static readonly DependencyProperty FridayIsVisibleProperty =
+            DependencyProperty.Register("FridayIsVisible",
+                                        typeof(bool),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(true, FridayIsVisibleChanged)
+                                        );
+
+        public bool FridayIsVisible
+        {
+            get
+            {
+                return (bool)GetValue(FridayIsVisibleProperty);
+            }
+            set
+            {
+                SetValue(FridayIsVisibleProperty, value);
+            }
+        }
+
+        private static void FridayIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
         #endregion
 
 
@@ -518,6 +648,32 @@ namespace Hit.Controls
         }
 
         private static void SaturdayCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
+
+
+        public static readonly DependencyProperty SaturdayIsVisibleProperty =
+            DependencyProperty.Register("SaturdayIsVisible",
+                                        typeof(bool),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(true, SaturdayIsVisibleChanged)
+                                        );
+
+        public bool SaturdayIsVisible
+        {
+            get
+            {
+                return (bool)GetValue(SaturdayIsVisibleProperty);
+            }
+            set
+            {
+                SetValue(SaturdayIsVisibleProperty, value);
+            }
+        }
+
+        private static void SaturdayIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             //
         }
@@ -606,6 +762,115 @@ namespace Hit.Controls
             //
         }
 
+
+
+        public static readonly DependencyProperty SundayIsVisibleProperty =
+            DependencyProperty.Register("SundayIsVisible",
+                                        typeof(bool),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(true, SundayIsVisibleChanged)
+                                        );
+
+        public bool SundayIsVisible
+        {
+            get
+            {
+                return (bool)GetValue(SundayIsVisibleProperty);
+            }
+            set
+            {
+                SetValue(SundayIsVisibleProperty, value);
+            }
+        }
+
+        private static void SundayIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
         #endregion
+
+
+
+
+        //#region DependencyProperties Configuration
+
+        //public static readonly DependencyProperty SundayEmailsCountProperty =
+        //    DependencyProperty.Register("SundayEmailsCount",
+        //                                typeof(int),
+        //                                typeof(WeekChart),
+        //                                new UIPropertyMetadata(0, SundayEmailsCountChanged)
+        //                                );
+
+        //public int SundayEmailsCount
+        //{
+        //    get
+        //    {
+        //        return (int)GetValue(SundayEmailsCountProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(SundayEmailsCountProperty, value);
+        //    }
+        //}
+
+        //private static void SundayEmailsCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        //{
+        //    //
+        //}
+
+
+
+        //public static readonly DependencyProperty SundayCallsCountProperty =
+        //    DependencyProperty.Register("SundayCallsCount",
+        //                                typeof(int),
+        //                                typeof(WeekChart),
+        //                                new UIPropertyMetadata(0, SundayCallsCountChanged)
+        //                                );
+
+        //public int SundayCallsCount
+        //{
+        //    get
+        //    {
+        //        return (int)GetValue(SundayCallsCountProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(SundayCallsCountProperty, value);
+        //    }
+        //}
+
+        //private static void SundayCallsCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        //{
+        //    //
+        //}
+
+
+
+        //public static readonly DependencyProperty SundayCountProperty =
+        //    DependencyProperty.Register("SundayCount",
+        //                                typeof(int),
+        //                                typeof(WeekChart),
+        //                                new UIPropertyMetadata(0, SundayCountChanged)
+        //                                );
+
+        //public int SundayCount
+        //{
+        //    get
+        //    {
+        //        return (int)GetValue(SundayCountProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(SundayCountProperty, value);
+        //    }
+        //}
+
+        //private static void SundayCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        //{
+        //    //
+        //}
+
+        //#endregion
     }
 }

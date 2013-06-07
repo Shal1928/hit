@@ -18,13 +18,13 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="{Binding Configuration.MondayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
-            <ColumnDefinition Width="{Binding Configuration.TuesdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
-            <ColumnDefinition Width="{Binding Configuration.WednesdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
-            <ColumnDefinition Width="{Binding Configuration.ThursdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
-            <ColumnDefinition Width="{Binding Configuration.FridayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
-            <ColumnDefinition Width="{Binding Configuration.SaturdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
-            <ColumnDefinition Width="{Binding Configuration.SundayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
+            <ColumnDefinition Width="{Binding Configuration.MondayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" />
+            <ColumnDefinition Width="{Binding Configuration.TuesdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" />
+            <ColumnDefinition Width="{Binding Configuration.WednesdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" />
+            <ColumnDefinition Width="{Binding Configuration.ThursdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" />
+            <ColumnDefinition Width="{Binding Configuration.FridayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" />
+            <ColumnDefinition Width="{Binding Configuration.SaturdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" />
+            <ColumnDefinition Width="{Binding Configuration.SundayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

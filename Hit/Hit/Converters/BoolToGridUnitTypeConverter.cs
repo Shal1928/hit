@@ -17,7 +17,9 @@ namespace Hit.Converters
             if (!(value is bool)) throw new ArgumentException("Value is not bool");
 
             var boolValue = (bool)value;
-            return boolValue ? GridUnitType.Star : GridUnitType.Auto;
+            var converter = new GridLengthConverter();
+
+            return boolValue ? GridUnitType.Star : converter.ConvertFrom(0);
         }
     }
 }

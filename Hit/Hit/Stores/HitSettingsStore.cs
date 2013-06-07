@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using Hit.Controls.Configurations;
 using Hit.Models;
 using Hit.Stores.Base;
 using UseAbilities.XML.Serialization;
@@ -35,7 +37,58 @@ namespace Hit.Stores
         {
             if (!File.Exists(FileName)) base.Save(new HitSettings
             {
-                IsTotalsVisible = false
+                IsTotalsVisible = false,
+                IsABBYYWeekChartVisible = false,
+                IsFILENETWeekChartVisible = false,
+                IsSAPWeekChartVisible = false,
+                IsEnvironmentWeekChartVisible = false,
+                WeekChartConfigurationList = new List<WeekChartConfiguration>
+                                                       {
+                                                           //ABBYY
+                                                           new WeekChartConfiguration
+                                                               {
+                                                                   MondayIsVisible = true,
+                                                                   TuesdayIsVisible = true,
+                                                                   WednesdayIsVisible = true,
+                                                                   ThursdayIsVisible = true,
+                                                                   FridayIsVisible = true,
+                                                                   SaturdayIsVisible = true,
+                                                                   SundayIsVisible = true
+                                                               },
+                                                            //FILNET
+                                                            new WeekChartConfiguration
+                                                               {
+                                                                   MondayIsVisible = true,
+                                                                   TuesdayIsVisible = true,
+                                                                   WednesdayIsVisible = true,
+                                                                   ThursdayIsVisible = true,
+                                                                   FridayIsVisible = true,
+                                                                   SaturdayIsVisible = true,
+                                                                   SundayIsVisible = true
+                                                               },
+                                                            //SAP
+                                                            new WeekChartConfiguration
+                                                               {
+                                                                   MondayIsVisible = true,
+                                                                   TuesdayIsVisible = true,
+                                                                   WednesdayIsVisible = true,
+                                                                   ThursdayIsVisible = true,
+                                                                   FridayIsVisible = true,
+                                                                   SaturdayIsVisible = true,
+                                                                   SundayIsVisible = true
+                                                               },
+                                                            //Environment
+                                                            new WeekChartConfiguration
+                                                               {
+                                                                   MondayIsVisible = true,
+                                                                   TuesdayIsVisible = true,
+                                                                   WednesdayIsVisible = true,
+                                                                   ThursdayIsVisible = true,
+                                                                   FridayIsVisible = true,
+                                                                   SaturdayIsVisible = true,
+                                                                   SundayIsVisible = true
+                                                               }
+                                                       }
             });
 
             return SerializationUtility.Deserialize<HitSettings>(FileName);

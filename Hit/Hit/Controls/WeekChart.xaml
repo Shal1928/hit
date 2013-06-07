@@ -18,13 +18,13 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="{Binding Configuration.MondayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
+            <ColumnDefinition Width="{Binding Configuration.TuesdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
+            <ColumnDefinition Width="{Binding Configuration.WednesdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
+            <ColumnDefinition Width="{Binding Configuration.ThursdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
+            <ColumnDefinition Width="{Binding Configuration.FridayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
+            <ColumnDefinition Width="{Binding Configuration.SaturdayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
+            <ColumnDefinition Width="{Binding Configuration.SundayIsVisible, Converter={Converters:BoolToGridUnitTypeConverter}}" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -38,7 +38,7 @@
         <!--***            ***-->
         <!--******************-->
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="0" Grid.Row="1" Visibility="{Binding MondayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}}">
+              Grid.Column="0" Grid.Row="1" Visibility="{Binding Configuration.MondayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -85,8 +85,8 @@
         <!--***   Tuesday   ***-->
         <!--***             ***-->
         <!--*******************-->
-        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="1" Grid.Row="1" Visibility="{Binding TuesdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="1" Grid.Row="1" Visibility="{Binding Configuration.TuesdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -132,8 +132,8 @@
         <!--***   Wednesday   ***-->
         <!--***               ***-->
         <!--*********************-->
-        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="2" Grid.Row="1" Visibility="{Binding WednesdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="2" Grid.Row="1" Visibility="{Binding Configuration.WednesdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -179,8 +179,8 @@
         <!--***   Thursday   ***-->
         <!--***              ***-->
         <!--********************-->
-        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="3" Grid.Row="1" Visibility="{Binding ThursdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="3" Grid.Row="1" Visibility="{Binding Configuration.ThursdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -225,8 +225,8 @@
         <!--***   Friday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="4" Grid.Row="1" Visibility="{Binding FridayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="4" Grid.Row="1" Visibility="{Binding Configuration.FridayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -269,11 +269,11 @@
 
         <!--********************-->
         <!--***              ***-->
-        <!--***   Saturday   ***-->
+        <!--***      ***-->
         <!--***              ***-->
         <!--********************-->
-        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="5" Grid.Row="1" Visibility="{Binding SaturdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="5" Grid.Row="1" Visibility="{Binding Configuration.SaturdayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -319,8 +319,8 @@
         <!--***   Sunday   ***-->
         <!--***            ***-->
         <!--******************-->
-        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-              Grid.Column="6" Grid.Row="1" Visibility="{Binding SundayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+              Grid.Column="6" Grid.Row="1" Visibility="{Binding Configuration.SundayIsVisible, Converter={ConvertersUA:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />

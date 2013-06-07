@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hit.Controls.Configurations;
 
 namespace Hit.Controls
 {
@@ -22,6 +23,7 @@ namespace Hit.Controls
         public WeekChart()
         {
             InitializeComponent();
+            //Configuration = new WeekChartConfiguration{SundayIsVisible = true};
         }
 
         #region DependencyProperties Monday
@@ -793,84 +795,32 @@ namespace Hit.Controls
 
 
 
-        //#region DependencyProperties Configuration
+        #region DependencyProperties Configuration
 
-        //public static readonly DependencyProperty SundayEmailsCountProperty =
-        //    DependencyProperty.Register("SundayEmailsCount",
-        //                                typeof(int),
-        //                                typeof(WeekChart),
-        //                                new UIPropertyMetadata(0, SundayEmailsCountChanged)
-        //                                );
+        public static readonly DependencyProperty ConfigurationProperty =
+            DependencyProperty.Register("Configuration",
+                                        typeof(WeekChartConfiguration),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(null, ConfigurationChanged)
+                                        );
 
-        //public int SundayEmailsCount
-        //{
-        //    get
-        //    {
-        //        return (int)GetValue(SundayEmailsCountProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(SundayEmailsCountProperty, value);
-        //    }
-        //}
+        public WeekChartConfiguration Configuration
+        {
+            get
+            {
+                return (WeekChartConfiguration)GetValue(ConfigurationProperty);
+            }
+            set
+            {
+                SetValue(ConfigurationProperty, value);
+            }
+        }
 
-        //private static void SundayEmailsCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        //{
-        //    //
-        //}
+        private static void ConfigurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
 
-
-
-        //public static readonly DependencyProperty SundayCallsCountProperty =
-        //    DependencyProperty.Register("SundayCallsCount",
-        //                                typeof(int),
-        //                                typeof(WeekChart),
-        //                                new UIPropertyMetadata(0, SundayCallsCountChanged)
-        //                                );
-
-        //public int SundayCallsCount
-        //{
-        //    get
-        //    {
-        //        return (int)GetValue(SundayCallsCountProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(SundayCallsCountProperty, value);
-        //    }
-        //}
-
-        //private static void SundayCallsCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        //{
-        //    //
-        //}
-
-
-
-        //public static readonly DependencyProperty SundayCountProperty =
-        //    DependencyProperty.Register("SundayCount",
-        //                                typeof(int),
-        //                                typeof(WeekChart),
-        //                                new UIPropertyMetadata(0, SundayCountChanged)
-        //                                );
-
-        //public int SundayCount
-        //{
-        //    get
-        //    {
-        //        return (int)GetValue(SundayCountProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(SundayCountProperty, value);
-        //    }
-        //}
-
-        //private static void SundayCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        //{
-        //    //
-        //}
-
-        //#endregion
+        #endregion
     }
 }

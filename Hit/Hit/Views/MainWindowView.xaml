@@ -5,10 +5,8 @@
         xmlns:Controls="clr-namespace:Hit.Controls"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:Converters="clr-namespace:UseAbilities.WPF.Converters;assembly=UseAbilities.WPF"
-        xmlns:Behaviors="clr-namespace:Hit.Behaviors" 
-        Icon="/Hit;component/Images/HitIcons.ico"
-        Title="Hit" 
-        Height="350" Width="525">
+        xmlns:Behaviors="clr-namespace:Hit.Behaviors"
+        Style="{DynamicResource WindowStyle}">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -17,7 +15,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-
+    
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Activated">
             <i:InvokeCommandAction Command="{Binding UpdateRequestsCollectionCommand}" />
@@ -38,8 +36,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
+        </Grid.RowDefinitions>        
         
         <Border Background="{DynamicResource ABBYYSolidBrush}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="5" />
         <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="0" Grid.Row="1">
@@ -57,6 +54,8 @@
                             FridayEmailsCount="{Binding ABBYYFridayEmailsCount}" FridayCallsCount="{Binding ABBYYFridayCallsCount}"
                             SaturdayEmailsCount="{Binding ABBYYSaturdayEmailsCount}" SaturdayCallsCount="{Binding ABBYYSaturdayCallsCount}"
                             SundayEmailsCount="{Binding ABBYYSundayEmailsCount}" SundayCallsCount="{Binding ABBYYSundayCallsCount}"
+                            Configuration="{Binding ABBYYWeekChartConfiguration}"
+                            Visibility="{Binding IsABBYYWeekChartVisible, Converter={Converters:BoolToVisibilityConverter}}"
                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" />
         
         
@@ -109,34 +108,60 @@
             </StackPanel>  
         </StackPanel>
 
-        
-        <Expander Header="Расширенные настройки" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="5">
 
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseLeave">
-                    <i:InvokeCommandAction Command="{Binding SaveSettingsCommand}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+        <Expander Header="Расширенные настройки" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="5">
 
             <i:Interaction.Behaviors>
                 <Behaviors:ExpanderMouseOverBehavior />
             </i:Interaction.Behaviors>
             
-            <Grid Margin="15">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeave">
+                    <i:InvokeCommandAction Command="{Binding SaveSettingsCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            
+            
+            <Grid Margin="5,15,0,5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
+                <TextBlock Text="Недельные графики" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" />
+                
+                <CheckBox Content="График ABBYY" IsChecked="{Binding IsABBYYWeekChartVisible}"
+                          FontSize="10" Margin="0,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          Grid.Column="0" Grid.Row="1" />
+                <CheckBox Content="График FILENET" IsChecked="{Binding IsFILENETWeekChartVisible}"
+                          FontSize="10" Margin="0,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          Grid.Column="1" Grid.Row="1" />
+                <CheckBox Content="График SAP" IsChecked="{Binding IsSAPWeekChartVisible}"
+                          FontSize="10" Margin="0,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          Grid.Column="2" Grid.Row="1" />
+                <CheckBox Content="График Environment" IsChecked="{Binding IsEnvironmentWeekChartVisible}"
+                          FontSize="10" Margin="0,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          Grid.Column="3" Grid.Row="1" />
+
+                <CheckBox Content="Отображать выходные"
+                          FontSize="10" Margin="0,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          Grid.Column="0" Grid.Row="2" />
+
+                
                 <DatePicker SelectedDate="{Binding SelectedDate}"
-                            FontSize="12" Width="105"
+                            FontSize="12" Width="105" Margin="0,10,0,5"
                             HorizontalAlignment="Left" VerticalAlignment="Top"
-                            Grid.Column="0" Grid.Row="0">
+                            Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectedDateChanged">
                             <i:InvokeCommandAction Command="{Binding UpdateRequestsCollectionCommand}" />
@@ -146,15 +171,15 @@
 
                 <CheckBox Content="Регистрировать с выбранной датой" IsChecked="{Binding UseSelectedDate}"
                           FontSize="10" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
-                          Grid.Column="0" Grid.Row="1" />
+                          Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" />
 
                 <CheckBox Content="Отображать итоги" IsChecked="{Binding IsTotalsVisible}"
                           FontSize="10" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
-                          Grid.Column="1" Grid.Row="0" />
+                          Grid.Column="1" Grid.Row="3" />
 
                 <Button Style="{DynamicResource LinkButtonStyle}" Content="Подготовить отчет" 
                         Command="{Binding ShowReportViewCommand}" Margin="0,5,0,0"
-                        Grid.Column="2" Grid.Row="0" />
+                        Grid.Column="2" Grid.Row="3" />
                 
             </Grid>
         </Expander>

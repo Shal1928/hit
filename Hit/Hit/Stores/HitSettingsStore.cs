@@ -52,7 +52,8 @@ namespace Hit.Stores
                                                            new WeekChartConfiguration(true, true),
                                                            //Environment
                                                            new WeekChartConfiguration(true, true),
-                                                       }
+                                                       },
+                DisplayType = WeekChartDisplayType.All
             });
 
             return SerializationUtility.Deserialize<HitSettings>(FileName);

@@ -347,19 +347,80 @@ namespace Hit.ViewModels
             }
         }
 
-        public bool IsWeekendVisible
+        //public bool IsWeekendVisible
+        //{
+        //    get
+        //    {
+        //        return WeekChartWeekendIsVisible(null);
+        //    }
+        //    set
+        //    {
+        //        WeekChartWeekendIsVisible(value);
+        //        OnPropertyChanged(()=> IsWeekendVisible);
+        //    }
+        //}
+
+        public WeekChartDisplayType DisplayType
         {
             get
             {
-                return WeekChartWeekendIsVisible(null);
+                _isAllWeekDisplay = HitSettings.DisplayType == WeekChartDisplayType.All;
+                _isOnlyWorkDaysDisplay = HitSettings.DisplayType == WeekChartDisplayType.WorkDays;
+                _isOnlyYesterdayAndTodayDisplay = HitSettings.DisplayType == WeekChartDisplayType.TodayAndYesterday;
+                return HitSettings.DisplayType;
             }
             set
             {
-                WeekChartWeekendIsVisible(value);
-                OnPropertyChanged(()=> IsWeekendVisible);
+                HitSettings.DisplayType = value;
+                OnPropertyChanged(() => DisplayType);
             }
         }
-        
+
+        private bool _isAllWeekDisplay;
+        public bool IsAllWeekDisplay
+        {
+            get
+            {
+                return _isAllWeekDisplay;
+            }
+            set
+            {
+                _isAllWeekDisplay = value;
+                if (_isAllWeekDisplay) DisplayType = WeekChartDisplayType.All;
+                OnPropertyChanged(()=> IsAllWeekDisplay);
+            }
+        }
+
+        private bool _isOnlyWorkDaysDisplay;
+        public bool IsOnlyWorkDaysDisplay
+        {
+            get
+            {
+                return _isOnlyWorkDaysDisplay;
+            }
+            set
+            {
+                _isOnlyWorkDaysDisplay = value;
+                if(_isOnlyWorkDaysDisplay) DisplayType = WeekChartDisplayType.WorkDays;
+                OnPropertyChanged(()=> IsOnlyWorkDaysDisplay);
+            }
+        }
+
+        private bool _isOnlyYesterdayAndTodayDisplay;
+        public bool IsOnlyYesterdayAndTodayDisplay
+        {
+            get
+            {
+                return _isOnlyYesterdayAndTodayDisplay;
+            }
+            set
+            {
+                _isOnlyYesterdayAndTodayDisplay = value;
+                if (_isOnlyYesterdayAndTodayDisplay) DisplayType = WeekChartDisplayType.TodayAndYesterday;
+                OnPropertyChanged(() => IsOnlyYesterdayAndTodayDisplay);
+            }
+        }
+
         private HitSettings _hitSettings;
         private HitSettings HitSettings
         {

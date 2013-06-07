@@ -48,5 +48,12 @@ namespace Hit.Models
             get;
             set;
         }
+
+        [DataMember]
+        public WeekChartDisplayType DisplayType
+        {
+            get;
+            set;
+        }
     }
 }

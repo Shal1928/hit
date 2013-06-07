@@ -45,49 +45,13 @@ namespace Hit.Stores
                 WeekChartConfigurationList = new List<WeekChartConfiguration>
                                                        {
                                                            //ABBYY
-                                                           new WeekChartConfiguration
-                                                               {
-                                                                   MondayIsVisible = true,
-                                                                   TuesdayIsVisible = true,
-                                                                   WednesdayIsVisible = true,
-                                                                   ThursdayIsVisible = true,
-                                                                   FridayIsVisible = true,
-                                                                   SaturdayIsVisible = true,
-                                                                   SundayIsVisible = true
-                                                               },
-                                                            //FILNET
-                                                            new WeekChartConfiguration
-                                                               {
-                                                                   MondayIsVisible = true,
-                                                                   TuesdayIsVisible = true,
-                                                                   WednesdayIsVisible = true,
-                                                                   ThursdayIsVisible = true,
-                                                                   FridayIsVisible = true,
-                                                                   SaturdayIsVisible = true,
-                                                                   SundayIsVisible = true
-                                                               },
-                                                            //SAP
-                                                            new WeekChartConfiguration
-                                                               {
-                                                                   MondayIsVisible = true,
-                                                                   TuesdayIsVisible = true,
-                                                                   WednesdayIsVisible = true,
-                                                                   ThursdayIsVisible = true,
-                                                                   FridayIsVisible = true,
-                                                                   SaturdayIsVisible = true,
-                                                                   SundayIsVisible = true
-                                                               },
-                                                            //Environment
-                                                            new WeekChartConfiguration
-                                                               {
-                                                                   MondayIsVisible = true,
-                                                                   TuesdayIsVisible = true,
-                                                                   WednesdayIsVisible = true,
-                                                                   ThursdayIsVisible = true,
-                                                                   FridayIsVisible = true,
-                                                                   SaturdayIsVisible = true,
-                                                                   SundayIsVisible = true
-                                                               }
+                                                           new WeekChartConfiguration(true, true),
+                                                           //FILNET
+                                                           new WeekChartConfiguration(true, true),
+                                                           //SAP
+                                                           new WeekChartConfiguration(true, true),
+                                                           //Environment
+                                                           new WeekChartConfiguration(true, true),
                                                        }
             });
 

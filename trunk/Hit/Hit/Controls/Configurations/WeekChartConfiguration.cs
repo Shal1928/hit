@@ -1,49 +1,54 @@
-﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
-using Hit.Controls.Configurations;
+﻿using System.Runtime.Serialization;
 
-namespace Hit.Models
+namespace Hit.Controls.Configurations
 {
     [DataContract]
-    public class HitSettings
+    public class WeekChartConfiguration
     {
         [DataMember]
-        public bool IsTotalsVisible
+        public bool MondayIsVisible
         {
-            get;
+            get; 
             set;
         }
-        
+
         [DataMember]
-        public bool IsABBYYWeekChartVisible
+        public bool TuesdayIsVisible
         {
             get;
             set;
         }
 
         [DataMember]
-        public bool IsFILENETWeekChartVisible
+        public bool WednesdayIsVisible
         {
             get;
             set;
         }
 
         [DataMember]
-        public bool IsSAPWeekChartVisible
+        public bool ThursdayIsVisible
         {
             get;
             set;
         }
 
         [DataMember]
-        public bool IsEnvironmentWeekChartVisible
+        public bool FridayIsVisible
         {
             get;
             set;
         }
 
         [DataMember]
-        public List<WeekChartConfiguration> WeekChartConfigurationList
+        public bool SaturdayIsVisible
+        {
+            get;
+            set;
+        }
+
+        [DataMember]
+        public bool SundayIsVisible
         {
             get;
             set;

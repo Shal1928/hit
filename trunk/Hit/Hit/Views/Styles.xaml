@@ -518,4 +518,21 @@
         </Setter>
     </Style>
 
+
+
+    <!--**************-->
+    <!--*            *-->
+    <!--*   Window   *-->
+    <!--*            *-->
+    <!--**V***********-->
+    <Style x:Key="WindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="Icon" Value="/Hit;component/Images/HitIcons.ico" />
+        <Setter Property="Title" Value="Hit" />
+        <Setter Property="Width" Value="525" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="MinWidth" Value="525" />
+        <Setter Property="MinHeight" Value="350" />
+        <Setter Property="SizeToContent" Value="Height" />
+    </Style>
+    
 </ResourceDictionary>

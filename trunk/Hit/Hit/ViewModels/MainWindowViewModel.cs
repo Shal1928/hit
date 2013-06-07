@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using Hit.Controls.Configurations;
 using Hit.DataManagers;
 using Hit.Models;
 using Hit.Stores.Base;
@@ -294,12 +295,77 @@ namespace Hit.ViewModels
             }
         }
 
+        public bool IsABBYYWeekChartVisible
+        {
+            get
+            {
+                return HitSettings.IsABBYYWeekChartVisible;
+            }
+            set
+            {
+                HitSettings.IsABBYYWeekChartVisible = value;
+                OnPropertyChanged(() => IsABBYYWeekChartVisible);
+            }
+        }
+
+        public bool IsFILENETWeekChartVisible
+        {
+            get
+            {
+                return HitSettings.IsFILENETWeekChartVisible;
+            }
+            set
+            {
+                HitSettings.IsFILENETWeekChartVisible = value;
+                OnPropertyChanged(() => IsFILENETWeekChartVisible);
+            }
+        }
+
+        public bool IsSAPWeekChartVisible
+        {
+            get
+            {
+                return HitSettings.IsSAPWeekChartVisible;
+            }
+            set
+            {
+                HitSettings.IsSAPWeekChartVisible = value;
+                OnPropertyChanged(() => IsSAPWeekChartVisible);
+            }
+        }
+
+        public bool IsEnvironmentWeekChartVisible
+        {
+            get
+            {
+                return HitSettings.IsEnvironmentWeekChartVisible;
+            }
+            set
+            {
+                HitSettings.IsEnvironmentWeekChartVisible = value;
+                OnPropertyChanged(() => IsEnvironmentWeekChartVisible);
+            }
+        }
+
         private HitSettings _hitSettings;
         private HitSettings HitSettings
         {
             get
             {
                 return _hitSettings ?? (_hitSettings = HitSettingsStore.Load());
+            }
+        }
+
+        public WeekChartConfiguration ABBYYWeekChartConfiguration
+        {
+            get
+            {
+                return HitSettings.WeekChartConfigurationList[0];
+            }
+            set
+            {
+                HitSettings.WeekChartConfigurationList[0] = value;
+                OnPropertyChanged(()=>ABBYYWeekChartConfiguration);
             }
         }
 

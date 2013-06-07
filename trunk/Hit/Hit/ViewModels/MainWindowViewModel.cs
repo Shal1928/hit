@@ -347,19 +347,6 @@ namespace Hit.ViewModels
             }
         }
 
-        //public bool IsWeekendVisible
-        //{
-        //    get
-        //    {
-        //        return WeekChartWeekendIsVisible(null);
-        //    }
-        //    set
-        //    {
-        //        WeekChartWeekendIsVisible(value);
-        //        OnPropertyChanged(()=> IsWeekendVisible);
-        //    }
-        //}
-
         public WeekChartDisplayType DisplayType
         {
             get
@@ -692,6 +679,626 @@ namespace Hit.ViewModels
 
         #endregion
 
+        #region FILENET Properties for WeekChart
+
+        private int _filenetMondayEmailsCount;
+        public int FILENETMondayEmailsCount
+        {
+            get
+            {
+                return _filenetMondayEmailsCount;
+            }
+            set
+            {
+                _filenetMondayEmailsCount = value;
+                OnPropertyChanged(() => FILENETMondayEmailsCount);
+            }
+        }
+
+        private int _filenetMondayCallsCount;
+        public int FILENETMondayCallsCount
+        {
+            get
+            {
+                return _filenetMondayCallsCount;
+            }
+            set
+            {
+                _filenetMondayCallsCount = value;
+                OnPropertyChanged(() => FILENETMondayCallsCount);
+            }
+        }
+
+
+        private int _filenetTuesdayEmailsCount;
+        public int FILENETTuesdayEmailsCount
+        {
+            get
+            {
+                return _filenetTuesdayEmailsCount;
+            }
+            set
+            {
+                _filenetTuesdayEmailsCount = value;
+                OnPropertyChanged(() => FILENETTuesdayEmailsCount);
+            }
+        }
+
+        private int _filenetTuesdayCallsCount;
+        public int FILENETTuesdayCallsCount
+        {
+            get
+            {
+                return _filenetTuesdayCallsCount;
+            }
+            set
+            {
+                _filenetTuesdayCallsCount = value;
+                OnPropertyChanged(() => FILENETTuesdayCallsCount);
+            }
+        }
+
+
+        private int _filenetWednesdayEmailsCount;
+        public int FILENETWednesdayEmailsCount
+        {
+            get
+            {
+                return _filenetWednesdayEmailsCount;
+            }
+            set
+            {
+                _filenetWednesdayEmailsCount = value;
+                OnPropertyChanged(() => FILENETWednesdayEmailsCount);
+            }
+        }
+
+        private int _filenetWednesdayCallsCount;
+        public int FILENETWednesdayCallsCount
+        {
+            get
+            {
+                return _filenetWednesdayCallsCount;
+            }
+            set
+            {
+                _filenetWednesdayCallsCount = value;
+                OnPropertyChanged(() => FILENETWednesdayCallsCount);
+            }
+        }
+
+
+        private int _filenetThursdayEmailsCount;
+        public int FILENETThursdayEmailsCount
+        {
+            get
+            {
+                return _filenetThursdayEmailsCount;
+            }
+            set
+            {
+                _filenetThursdayEmailsCount = value;
+                OnPropertyChanged(() => FILENETThursdayEmailsCount);
+            }
+        }
+
+        private int _filenetThursdayCallsCount;
+        public int FILENETThursdayCallsCount
+        {
+            get
+            {
+                return _filenetThursdayCallsCount;
+            }
+            set
+            {
+                _filenetThursdayCallsCount = value;
+                OnPropertyChanged(() => FILENETThursdayCallsCount);
+            }
+        }
+
+
+        private int _filenetFridayEmailsCount;
+        public int FILENETFridayEmailsCount
+        {
+            get
+            {
+                return _filenetFridayEmailsCount;
+            }
+            set
+            {
+                _filenetFridayEmailsCount = value;
+                OnPropertyChanged(() => FILENETFridayEmailsCount);
+            }
+        }
+
+        private int _filenetFridayCallsCount;
+        public int FILENETFridayCallsCount
+        {
+            get
+            {
+                return _filenetFridayCallsCount;
+            }
+            set
+            {
+                _filenetFridayCallsCount = value;
+                OnPropertyChanged(() => FILENETFridayCallsCount);
+            }
+        }
+
+
+        private int _filenetSaturdayEmailsCount;
+        public int FILENETSaturdayEmailsCount
+        {
+            get
+            {
+                return _filenetSaturdayEmailsCount;
+            }
+            set
+            {
+                _filenetSaturdayEmailsCount = value;
+                OnPropertyChanged(() => FILENETSaturdayEmailsCount);
+            }
+        }
+
+        private int _filenetSaturdayCallsCount;
+        public int FILENETSaturdayCallsCount
+        {
+            get
+            {
+                return _filenetSaturdayCallsCount;
+            }
+            set
+            {
+                _filenetSaturdayCallsCount = value;
+                OnPropertyChanged(() => FILENETSaturdayCallsCount);
+            }
+        }
+
+
+        private int _filenetSundayEmailsCount;
+        public int FILENETSundayEmailsCount
+        {
+            get
+            {
+                return _filenetSundayEmailsCount;
+            }
+            set
+            {
+                _filenetSundayEmailsCount = value;
+                OnPropertyChanged(() => FILENETSundayEmailsCount);
+            }
+        }
+
+        private int _filenetSundayCallsCount;
+        public int FILENETSundayCallsCount
+        {
+            get
+            {
+                return _filenetSundayCallsCount;
+            }
+            set
+            {
+                _filenetSundayCallsCount = value;
+                OnPropertyChanged(() => FILENETSundayCallsCount);
+            }
+        }
+
+
+        #endregion
+
+        #region SAP Properties for WeekChart
+
+        private int _sapMondayEmailsCount;
+        public int SAPMondayEmailsCount
+        {
+            get
+            {
+                return _sapMondayEmailsCount;
+            }
+            set
+            {
+                _sapMondayEmailsCount = value;
+                OnPropertyChanged(() => SAPMondayEmailsCount);
+            }
+        }
+
+        private int _sapMondayCallsCount;
+        public int SAPMondayCallsCount
+        {
+            get
+            {
+                return _sapMondayCallsCount;
+            }
+            set
+            {
+                _sapMondayCallsCount = value;
+                OnPropertyChanged(() => SAPMondayCallsCount);
+            }
+        }
+
+
+        private int _sapTuesdayEmailsCount;
+        public int SAPTuesdayEmailsCount
+        {
+            get
+            {
+                return _sapTuesdayEmailsCount;
+            }
+            set
+            {
+                _sapTuesdayEmailsCount = value;
+                OnPropertyChanged(() => SAPTuesdayEmailsCount);
+            }
+        }
+
+        private int _sapTuesdayCallsCount;
+        public int SAPTuesdayCallsCount
+        {
+            get
+            {
+                return _sapTuesdayCallsCount;
+            }
+            set
+            {
+                _sapTuesdayCallsCount = value;
+                OnPropertyChanged(() => SAPTuesdayCallsCount);
+            }
+        }
+
+
+        private int _sapWednesdayEmailsCount;
+        public int SAPWednesdayEmailsCount
+        {
+            get
+            {
+                return _sapWednesdayEmailsCount;
+            }
+            set
+            {
+                _sapWednesdayEmailsCount = value;
+                OnPropertyChanged(() => SAPWednesdayEmailsCount);
+            }
+        }
+
+        private int _sapWednesdayCallsCount;
+        public int SAPWednesdayCallsCount
+        {
+            get
+            {
+                return _sapWednesdayCallsCount;
+            }
+            set
+            {
+                _sapWednesdayCallsCount = value;
+                OnPropertyChanged(() => SAPWednesdayCallsCount);
+            }
+        }
+
+
+        private int _sapThursdayEmailsCount;
+        public int SAPThursdayEmailsCount
+        {
+            get
+            {
+                return _sapThursdayEmailsCount;
+            }
+            set
+            {
+                _sapThursdayEmailsCount = value;
+                OnPropertyChanged(() => SAPThursdayEmailsCount);
+            }
+        }
+
+        private int _sapThursdayCallsCount;
+        public int SAPThursdayCallsCount
+        {
+            get
+            {
+                return _sapThursdayCallsCount;
+            }
+            set
+            {
+                _sapThursdayCallsCount = value;
+                OnPropertyChanged(() => SAPThursdayCallsCount);
+            }
+        }
+
+
+        private int _sapFridayEmailsCount;
+        public int SAPFridayEmailsCount
+        {
+            get
+            {
+                return _sapFridayEmailsCount;
+            }
+            set
+            {
+                _sapFridayEmailsCount = value;
+                OnPropertyChanged(() => SAPFridayEmailsCount);
+            }
+        }
+
+        private int _sapFridayCallsCount;
+        public int SAPFridayCallsCount
+        {
+            get
+            {
+                return _sapFridayCallsCount;
+            }
+            set
+            {
+                _sapFridayCallsCount = value;
+                OnPropertyChanged(() => SAPFridayCallsCount);
+            }
+        }
+
+
+        private int _sapSaturdayEmailsCount;
+        public int SAPSaturdayEmailsCount
+        {
+            get
+            {
+                return _sapSaturdayEmailsCount;
+            }
+            set
+            {
+                _sapSaturdayEmailsCount = value;
+                OnPropertyChanged(() => SAPSaturdayEmailsCount);
+            }
+        }
+
+        private int _sapSaturdayCallsCount;
+        public int SAPSaturdayCallsCount
+        {
+            get
+            {
+                return _sapSaturdayCallsCount;
+            }
+            set
+            {
+                _sapSaturdayCallsCount = value;
+                OnPropertyChanged(() => SAPSaturdayCallsCount);
+            }
+        }
+
+
+        private int _sapSundayEmailsCount;
+        public int SAPSundayEmailsCount
+        {
+            get
+            {
+                return _sapSundayEmailsCount;
+            }
+            set
+            {
+                _sapSundayEmailsCount = value;
+                OnPropertyChanged(() => SAPSundayEmailsCount);
+            }
+        }
+
+        private int _sapSundayCallsCount;
+        public int SAPSundayCallsCount
+        {
+            get
+            {
+                return _sapSundayCallsCount;
+            }
+            set
+            {
+                _sapSundayCallsCount = value;
+                OnPropertyChanged(() => SAPSundayCallsCount);
+            }
+        }
+
+
+        #endregion
+
+        #region Environment Properties for WeekChart
+
+        private int _environmentMondayEmailsCount;
+        public int EnvironmentMondayEmailsCount
+        {
+            get
+            {
+                return _environmentMondayEmailsCount;
+            }
+            set
+            {
+                _environmentMondayEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentMondayEmailsCount);
+            }
+        }
+
+        private int _environmentMondayCallsCount;
+        public int EnvironmentMondayCallsCount
+        {
+            get
+            {
+                return _environmentMondayCallsCount;
+            }
+            set
+            {
+                _environmentMondayCallsCount = value;
+                OnPropertyChanged(() => EnvironmentMondayCallsCount);
+            }
+        }
+
+
+        private int _environmentTuesdayEmailsCount;
+        public int EnvironmentTuesdayEmailsCount
+        {
+            get
+            {
+                return _environmentTuesdayEmailsCount;
+            }
+            set
+            {
+                _environmentTuesdayEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentTuesdayEmailsCount);
+            }
+        }
+
+        private int _environmentTuesdayCallsCount;
+        public int EnvironmentTuesdayCallsCount
+        {
+            get
+            {
+                return _environmentTuesdayCallsCount;
+            }
+            set
+            {
+                _environmentTuesdayCallsCount = value;
+                OnPropertyChanged(() => EnvironmentTuesdayCallsCount);
+            }
+        }
+
+
+        private int _environmentWednesdayEmailsCount;
+        public int EnvironmentWednesdayEmailsCount
+        {
+            get
+            {
+                return _environmentWednesdayEmailsCount;
+            }
+            set
+            {
+                _environmentWednesdayEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentWednesdayEmailsCount);
+            }
+        }
+
+        private int _environmentWednesdayCallsCount;
+        public int EnvironmentWednesdayCallsCount
+        {
+            get
+            {
+                return _environmentWednesdayCallsCount;
+            }
+            set
+            {
+                _environmentWednesdayCallsCount = value;
+                OnPropertyChanged(() => EnvironmentWednesdayCallsCount);
+            }
+        }
+
+
+        private int _environmentThursdayEmailsCount;
+        public int EnvironmentThursdayEmailsCount
+        {
+            get
+            {
+                return _environmentThursdayEmailsCount;
+            }
+            set
+            {
+                _environmentThursdayEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentThursdayEmailsCount);
+            }
+        }
+
+        private int _environmentThursdayCallsCount;
+        public int EnvironmentThursdayCallsCount
+        {
+            get
+            {
+                return _environmentThursdayCallsCount;
+            }
+            set
+            {
+                _environmentThursdayCallsCount = value;
+                OnPropertyChanged(() => EnvironmentThursdayCallsCount);
+            }
+        }
+
+
+        private int _environmentFridayEmailsCount;
+        public int EnvironmentFridayEmailsCount
+        {
+            get
+            {
+                return _environmentFridayEmailsCount;
+            }
+            set
+            {
+                _environmentFridayEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentFridayEmailsCount);
+            }
+        }
+
+        private int _environmentFridayCallsCount;
+        public int EnvironmentFridayCallsCount
+        {
+            get
+            {
+                return _environmentFridayCallsCount;
+            }
+            set
+            {
+                _environmentFridayCallsCount = value;
+                OnPropertyChanged(() => EnvironmentFridayCallsCount);
+            }
+        }
+
+
+        private int _environmentSaturdayEmailsCount;
+        public int EnvironmentSaturdayEmailsCount
+        {
+            get
+            {
+                return _environmentSaturdayEmailsCount;
+            }
+            set
+            {
+                _environmentSaturdayEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentSaturdayEmailsCount);
+            }
+        }
+
+        private int _environmentSaturdayCallsCount;
+        public int EnvironmentSaturdayCallsCount
+        {
+            get
+            {
+                return _environmentSaturdayCallsCount;
+            }
+            set
+            {
+                _environmentSaturdayCallsCount = value;
+                OnPropertyChanged(() => EnvironmentSaturdayCallsCount);
+            }
+        }
+
+
+        private int _environmentSundayEmailsCount;
+        public int EnvironmentSundayEmailsCount
+        {
+            get
+            {
+                return _environmentSundayEmailsCount;
+            }
+            set
+            {
+                _environmentSundayEmailsCount = value;
+                OnPropertyChanged(() => EnvironmentSundayEmailsCount);
+            }
+        }
+
+        private int _environmentSundayCallsCount;
+        public int EnvironmentSundayCallsCount
+        {
+            get
+            {
+                return _environmentSundayCallsCount;
+            }
+            set
+            {
+                _environmentSundayCallsCount = value;
+                OnPropertyChanged(() => EnvironmentSundayCallsCount);
+            }
+        }
+
+
+        #endregion
 
         #region InjectedProperties
 
@@ -898,6 +1505,9 @@ namespace Hit.ViewModels
             CallTotal = ABBYYCallsCount + FILENETCallsCount + SAPCallsCount + EnvironmentCallsCount;
 
             FillABBYYWeekChartData();
+            FillFILENETWeekChartData();
+            FillSAPWeekChartData();
+            FillEnvironmentWeekChartData();
         }
 
         private void SaveSettings()
@@ -913,7 +1523,7 @@ namespace Hit.ViewModels
 
         private void FillABBYYWeekChartData()
         {
-            var week = _date.GetWeek();
+            var week = SelectedDate.GetWeek();
 
             //request.RequestDate == week[0].Date && 
             //request.RequestDate == week[0].Date && 
@@ -941,21 +1551,94 @@ namespace Hit.ViewModels
             ABBYYSundayCallsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
         }
 
-        private bool WeekChartWeekendIsVisible(bool? visible)
+        private void FillFILENETWeekChartData()
         {
-            if(visible.HasValue)
-            {
-                var weekChartConfiguration = new WeekChartConfiguration(true, visible.Value);
+            var week = SelectedDate.GetWeek();
 
-                ABBYYWeekChartConfiguration = weekChartConfiguration;
-                FILENETWeekChartConfiguration = weekChartConfiguration;
-                SAPWeekChartConfiguration = weekChartConfiguration;
-                EnvironmentWeekChartConfiguration = weekChartConfiguration;
+            //request.RequestDate == week[0].Date && 
+            //request.RequestDate == week[0].Date && 
+            var requestCollection = _hitDataManager.FindRequestsList(week[0], week[6]);
 
-                return visible.Value;
-            }
+            FILENETMondayEmailsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETMondayCallsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
 
-            return HitSettings.WeekChartConfigurationList.All(weekChartConfig => weekChartConfig.SaturdayIsVisible && weekChartConfig.SundayIsVisible);
+            FILENETTuesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETTuesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+
+            FILENETWednesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETWednesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+
+            FILENETThursdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETThursdayCallsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+
+            FILENETFridayEmailsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETFridayCallsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+
+            FILENETSaturdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETSaturdayCallsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+
+            FILENETSundayEmailsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Email);
+            FILENETSundayCallsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.FILENET && request.RequestTypeId == RequestType.Call);
+        }
+
+        private void FillSAPWeekChartData()
+        {
+            var week = SelectedDate.GetWeek();
+
+            //request.RequestDate == week[0].Date && 
+            //request.RequestDate == week[0].Date && 
+            var requestCollection = _hitDataManager.FindRequestsList(week[0], week[6]);
+
+            SAPMondayEmailsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPMondayCallsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+
+            SAPTuesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPTuesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+
+            SAPWednesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPWednesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+
+            SAPThursdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPThursdayCallsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+
+            SAPFridayEmailsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPFridayCallsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+
+            SAPSaturdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPSaturdayCallsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+
+            SAPSundayEmailsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Email);
+            SAPSundayCallsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.SAP && request.RequestTypeId == RequestType.Call);
+        }
+
+        private void FillEnvironmentWeekChartData()
+        {
+            var week = SelectedDate.GetWeek();
+
+            //request.RequestDate == week[0].Date && 
+            //request.RequestDate == week[0].Date && 
+            var requestCollection = _hitDataManager.FindRequestsList(week[0], week[6]);
+
+            EnvironmentMondayEmailsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentMondayCallsCount = requestCollection.Count(request => request.RequestDate == week[0].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+
+            EnvironmentTuesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentTuesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[1].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+
+            EnvironmentWednesdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentWednesdayCallsCount = requestCollection.Count(request => request.RequestDate == week[2].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+
+            EnvironmentThursdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentThursdayCallsCount = requestCollection.Count(request => request.RequestDate == week[3].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+
+            EnvironmentFridayEmailsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentFridayCallsCount = requestCollection.Count(request => request.RequestDate == week[4].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+
+            EnvironmentSaturdayEmailsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentSaturdayCallsCount = requestCollection.Count(request => request.RequestDate == week[5].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
+
+            EnvironmentSundayEmailsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Email);
+            EnvironmentSundayCallsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.Environment && request.RequestTypeId == RequestType.Call);
         }
 
         #endregion

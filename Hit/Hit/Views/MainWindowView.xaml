@@ -69,7 +69,18 @@
             <Controls:ButtonExt Content="Письмо" Command="{Binding AddFILENETMailHitCommand}" AdditionalContent="{Binding FILENETEmailsCount}" />
             <Controls:ButtonExt Content="Звонок" Command="{Binding AddFILENETCallHitCommand}" AdditionalContent="{Binding FILENETCallsCount}" />
         </StackPanel>
-
+        <Controls:WeekChart MondayEmailsCount="{Binding FILENETMondayEmailsCount}" MondayCallsCount="{Binding FILENETMondayCallsCount}"
+                            TuesdayEmailsCount="{Binding FILENETTuesdayEmailsCount}" TuesdayCallsCount="{Binding FILENETTuesdayCallsCount}"
+                            WednesdayEmailsCount="{Binding FILENETWednesdayEmailsCount}" WednesdayCallsCount="{Binding FILENETWednesdayCallsCount}"
+                            ThursdayEmailsCount="{Binding FILENETThursdayEmailsCount}" ThursdayCallsCount="{Binding FILENETThursdayCallsCount}"
+                            FridayEmailsCount="{Binding FILENETFridayEmailsCount}" FridayCallsCount="{Binding FILENETFridayCallsCount}"
+                            SaturdayEmailsCount="{Binding FILENETSaturdayEmailsCount}" SaturdayCallsCount="{Binding FILENETSaturdayCallsCount}"
+                            SundayEmailsCount="{Binding FILENETSundayEmailsCount}" SundayCallsCount="{Binding FILENETSundayCallsCount}"
+                            Configuration="{Binding FILENETWeekChartConfiguration}" DisplayType="{Binding DisplayType}"
+                            Visibility="{Binding IsFILENETWeekChartVisible, Converter={Converters:BoolToVisibilityConverter}}"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3" />   
+        
+        
 
         <Border Background="{DynamicResource SAPSolidBrush}" Grid.Column="2" Grid.Row="1" Grid.RowSpan="5" />
         <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="2" Grid.Row="1">
@@ -80,7 +91,16 @@
             <Controls:ButtonExt Content="Письмо" Command="{Binding AddSAPMailHitCommand}" AdditionalContent="{Binding SAPEmailsCount}" />
             <Controls:ButtonExt Content="Звонок" Command="{Binding AddSAPCallHitCommand}" AdditionalContent="{Binding SAPCallsCount}" />
         </StackPanel>
-
+        <Controls:WeekChart MondayEmailsCount="{Binding SAPMondayEmailsCount}" MondayCallsCount="{Binding SAPMondayCallsCount}"
+                            TuesdayEmailsCount="{Binding SAPTuesdayEmailsCount}" TuesdayCallsCount="{Binding SAPTuesdayCallsCount}"
+                            WednesdayEmailsCount="{Binding SAPWednesdayEmailsCount}" WednesdayCallsCount="{Binding SAPWednesdayCallsCount}"
+                            ThursdayEmailsCount="{Binding SAPThursdayEmailsCount}" ThursdayCallsCount="{Binding SAPThursdayCallsCount}"
+                            FridayEmailsCount="{Binding SAPFridayEmailsCount}" FridayCallsCount="{Binding SAPFridayCallsCount}"
+                            SaturdayEmailsCount="{Binding SAPSaturdayEmailsCount}" SaturdayCallsCount="{Binding SAPSaturdayCallsCount}"
+                            SundayEmailsCount="{Binding SAPSundayEmailsCount}" SundayCallsCount="{Binding SAPSundayCallsCount}"
+                            Configuration="{Binding SAPWeekChartConfiguration}" DisplayType="{Binding DisplayType}"
+                            Visibility="{Binding IsSAPWeekChartVisible, Converter={Converters:BoolToVisibilityConverter}}"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3" />   
 
         <Border Background="{DynamicResource EnvironmentSolidBrush}" Grid.Column="3" Grid.Row="1" Grid.RowSpan="5" />
         <StackPanel Style="{DynamicResource ThemeTitleStackPanelStyle}" Grid.Column="3" Grid.Row="1">
@@ -91,7 +111,16 @@
             <Controls:ButtonExt Content="Письмо" Command="{Binding AddEnvironmentMailHitCommand}" AdditionalContent="{Binding EnvironmentEmailsCount}" />
             <Controls:ButtonExt Content="Звонок" Command="{Binding AddEnvironmentCallHitCommand}" AdditionalContent="{Binding EnvironmentCallsCount}" />
         </StackPanel>
-
+        <Controls:WeekChart MondayEmailsCount="{Binding EnvironmentMondayEmailsCount}" MondayCallsCount="{Binding EnvironmentMondayCallsCount}"
+                            TuesdayEmailsCount="{Binding EnvironmentTuesdayEmailsCount}" TuesdayCallsCount="{Binding EnvironmentTuesdayCallsCount}"
+                            WednesdayEmailsCount="{Binding EnvironmentWednesdayEmailsCount}" WednesdayCallsCount="{Binding EnvironmentWednesdayCallsCount}"
+                            ThursdayEmailsCount="{Binding EnvironmentThursdayEmailsCount}" ThursdayCallsCount="{Binding EnvironmentThursdayCallsCount}"
+                            FridayEmailsCount="{Binding EnvironmentFridayEmailsCount}" FridayCallsCount="{Binding EnvironmentFridayCallsCount}"
+                            SaturdayEmailsCount="{Binding EnvironmentSaturdayEmailsCount}" SaturdayCallsCount="{Binding EnvironmentSaturdayCallsCount}"
+                            SundayEmailsCount="{Binding EnvironmentSundayEmailsCount}" SundayCallsCount="{Binding EnvironmentSundayCallsCount}"
+                            Configuration="{Binding EnvironmentWeekChartConfiguration}" DisplayType="{Binding DisplayType}"
+                            Visibility="{Binding IsEnvironmentWeekChartVisible, Converter={Converters:BoolToVisibilityConverter}}"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="3" Grid.Row="3" />
 
         
         
@@ -152,10 +181,6 @@
                 <CheckBox Content="График Environment" IsChecked="{Binding IsEnvironmentWeekChartVisible}"
                           FontSize="10" Margin="0,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top"
                           Grid.Column="3" Grid.Row="1" />
-
-                <!--<CheckBox Content="Отображать 7 дней" IsChecked="{Binding IsWeekendVisible}"
-                          FontSize="10" Margin="0,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top"
-                          Grid.Column="0" Grid.Row="2" />-->
 
                 <RadioButton Content="Вся неделя" IsChecked="{Binding IsAllWeekDisplay, Mode=TwoWay}" GroupName="WeekChartDaysDisplayGroup" Grid.Column="0" Grid.Row="2" />
                 <RadioButton Content="Будни" IsChecked="{Binding IsOnlyWorkDaysDisplay, Mode=TwoWay}" GroupName="WeekChartDaysDisplayGroup" Grid.Column="1" Grid.Row="2" />

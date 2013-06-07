@@ -5,6 +5,23 @@ namespace Hit.Controls.Configurations
     [DataContract]
     public class WeekChartConfiguration
     {
+        public WeekChartConfiguration()
+        {
+            //
+        }
+
+        public WeekChartConfiguration(bool workDayIsVisible, bool weekEndIsVisible = false)
+        {
+            MondayIsVisible = workDayIsVisible;
+            TuesdayIsVisible = workDayIsVisible;
+            WednesdayIsVisible = workDayIsVisible;
+            ThursdayIsVisible = workDayIsVisible;
+            FridayIsVisible = workDayIsVisible;
+
+            SaturdayIsVisible = weekEndIsVisible;
+            SundayIsVisible = weekEndIsVisible;
+        }
+
         [DataMember]
         public bool MondayIsVisible
         {

@@ -347,6 +347,19 @@ namespace Hit.ViewModels
             }
         }
 
+        public bool IsWeekendVisible
+        {
+            get
+            {
+                return WeekChartWeekendIsVisible(null);
+            }
+            set
+            {
+                WeekChartWeekendIsVisible(value);
+                OnPropertyChanged(()=> IsWeekendVisible);
+            }
+        }
+        
         private HitSettings _hitSettings;
         private HitSettings HitSettings
         {
@@ -366,6 +379,45 @@ namespace Hit.ViewModels
             {
                 HitSettings.WeekChartConfigurationList[0] = value;
                 OnPropertyChanged(()=>ABBYYWeekChartConfiguration);
+            }
+        }
+
+        public WeekChartConfiguration FILENETWeekChartConfiguration
+        {
+            get
+            {
+                return HitSettings.WeekChartConfigurationList[1];
+            }
+            set
+            {
+                HitSettings.WeekChartConfigurationList[1] = value;
+                OnPropertyChanged(() => FILENETWeekChartConfiguration);
+            }
+        }
+
+        public WeekChartConfiguration SAPWeekChartConfiguration
+        {
+            get
+            {
+                return HitSettings.WeekChartConfigurationList[2];
+            }
+            set
+            {
+                HitSettings.WeekChartConfigurationList[2] = value;
+                OnPropertyChanged(() => SAPWeekChartConfiguration);
+            }
+        }
+
+        public WeekChartConfiguration EnvironmentWeekChartConfiguration
+        {
+            get
+            {
+                return HitSettings.WeekChartConfigurationList[3];
+            }
+            set
+            {
+                HitSettings.WeekChartConfigurationList[3] = value;
+                OnPropertyChanged(() => EnvironmentWeekChartConfiguration);
             }
         }
 
@@ -826,6 +878,23 @@ namespace Hit.ViewModels
 
             ABBYYSundayEmailsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Email);
             ABBYYSundayCallsCount = requestCollection.Count(request => request.RequestDate == week[6].Date && request.RequestThemeId == RequestTheme.ABBYY && request.RequestTypeId == RequestType.Call);
+        }
+
+        private bool WeekChartWeekendIsVisible(bool? visible)
+        {
+            if(visible.HasValue)
+            {
+                var weekChartConfiguration = new WeekChartConfiguration(true, visible.Value);
+
+                ABBYYWeekChartConfiguration = weekChartConfiguration;
+                FILENETWeekChartConfiguration = weekChartConfiguration;
+                SAPWeekChartConfiguration = weekChartConfiguration;
+                EnvironmentWeekChartConfiguration = weekChartConfiguration;
+
+                return visible.Value;
+            }
+
+            return HitSettings.WeekChartConfigurationList.All(weekChartConfig => weekChartConfig.SaturdayIsVisible && weekChartConfig.SundayIsVisible);
         }
 
         #endregion

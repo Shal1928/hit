@@ -32,5 +32,33 @@ namespace Hit.Controls
         }
 
         #endregion
+
+        #region DependencyProperty DarkSkin
+
+        public static readonly DependencyProperty DarkSkinProperty =
+            DependencyProperty.Register("DarkSkin",
+                                        typeof(bool),
+                                        typeof(ButtonExt),
+                                        new UIPropertyMetadata(false, DarkSkinChanged)
+                                        );
+
+        public bool DarkSkin
+        {
+            get
+            {
+                return (bool)GetValue(DarkSkinProperty);
+            }
+            set
+            {
+                SetValue(DarkSkinProperty, value);
+            }
+        }
+
+        private static void DarkSkinChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
+        #endregion
     }
 }

@@ -44,8 +44,8 @@
             <TextBlock Text="{Binding ABBYYCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
         <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="0" Grid.Row="2">
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddABBYYMailHitCommand}" AdditionalContent="{Binding ABBYYEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddABBYYCallHitCommand}" AdditionalContent="{Binding ABBYYCallsCount}" />
+            <Controls:ButtonExt Content="Письмо" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddABBYYMailHitCommand}" AdditionalContent="{Binding ABBYYEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddABBYYCallHitCommand}" AdditionalContent="{Binding ABBYYCallsCount}" />
         </StackPanel>
         <Controls:WeekChart MondayEmailsCount="{Binding ABBYYMondayEmailsCount}" MondayCallsCount="{Binding ABBYYMondayCallsCount}"
                             TuesdayEmailsCount="{Binding ABBYYTuesdayEmailsCount}" TuesdayCallsCount="{Binding ABBYYTuesdayCallsCount}"
@@ -66,8 +66,8 @@
             <TextBlock Text="{Binding FILENETCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
         <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="1" Grid.Row="2">
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddFILENETMailHitCommand}" AdditionalContent="{Binding FILENETEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddFILENETCallHitCommand}" AdditionalContent="{Binding FILENETCallsCount}" />
+            <Controls:ButtonExt Content="Письмо" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddFILENETMailHitCommand}" AdditionalContent="{Binding FILENETEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddFILENETCallHitCommand}" AdditionalContent="{Binding FILENETCallsCount}" />
         </StackPanel>
         <Controls:WeekChart MondayEmailsCount="{Binding FILENETMondayEmailsCount}" MondayCallsCount="{Binding FILENETMondayCallsCount}"
                             TuesdayEmailsCount="{Binding FILENETTuesdayEmailsCount}" TuesdayCallsCount="{Binding FILENETTuesdayCallsCount}"
@@ -88,8 +88,8 @@
             <TextBlock Text="{Binding SAPCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
         <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="2" Grid.Row="2">
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddSAPMailHitCommand}" AdditionalContent="{Binding SAPEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddSAPCallHitCommand}" AdditionalContent="{Binding SAPCallsCount}" />
+            <Controls:ButtonExt Content="Письмо" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddSAPMailHitCommand}" AdditionalContent="{Binding SAPEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddSAPCallHitCommand}" AdditionalContent="{Binding SAPCallsCount}" />
         </StackPanel>
         <Controls:WeekChart MondayEmailsCount="{Binding SAPMondayEmailsCount}" MondayCallsCount="{Binding SAPMondayCallsCount}"
                             TuesdayEmailsCount="{Binding SAPTuesdayEmailsCount}" TuesdayCallsCount="{Binding SAPTuesdayCallsCount}"
@@ -108,8 +108,8 @@
             <TextBlock Text="{Binding EnvironmentCount}" Style="{DynamicResource TextBlockTotalStyle}" />
         </StackPanel>
         <StackPanel Style="{DynamicResource ThemeContentStackPanelStyle}" Grid.Column="3" Grid.Row="2">
-            <Controls:ButtonExt Content="Письмо" Command="{Binding AddEnvironmentMailHitCommand}" AdditionalContent="{Binding EnvironmentEmailsCount}" />
-            <Controls:ButtonExt Content="Звонок" Command="{Binding AddEnvironmentCallHitCommand}" AdditionalContent="{Binding EnvironmentCallsCount}" />
+            <Controls:ButtonExt Content="Письмо" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddEnvironmentMailHitCommand}" AdditionalContent="{Binding EnvironmentEmailsCount}" />
+            <Controls:ButtonExt Content="Звонок" Style="{DynamicResource ButtonExtLightSkinStyle}" Command="{Binding AddEnvironmentCallHitCommand}" AdditionalContent="{Binding EnvironmentCallsCount}" />
         </StackPanel>
         <Controls:WeekChart MondayEmailsCount="{Binding EnvironmentMondayEmailsCount}" MondayCallsCount="{Binding EnvironmentMondayCallsCount}"
                             TuesdayEmailsCount="{Binding EnvironmentTuesdayEmailsCount}" TuesdayCallsCount="{Binding EnvironmentTuesdayCallsCount}"

@@ -50,7 +50,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                         Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding MondayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Style="{DynamicResource TextBlockChartStyle}" />
-                <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
+                <Rectangle Fill="#33FFFFFF" VerticalAlignment="Bottom">
                     <Rectangle.Height>
                         <MultiBinding Converter="{Converters:CountToPercentHeightMultiConverter}">
                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" Mode="OneWay" />
@@ -99,7 +99,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                         Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding TuesdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Style="{DynamicResource TextBlockChartStyle}" />
-                <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
+                <Rectangle Fill="#33FFFFFF" VerticalAlignment="Bottom">
                     <Rectangle.Height>
                         <MultiBinding Converter="{Converters:CountToPercentHeightMultiConverter}">
                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" Mode="OneWay" />
@@ -146,7 +146,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                         Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding WednesdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Style="{DynamicResource TextBlockChartStyle}" />
-                <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
+                <Rectangle Fill="#33FFFFFF" VerticalAlignment="Bottom">
                     <Rectangle.Height>
                         <MultiBinding Converter="{Converters:CountToPercentHeightMultiConverter}">
                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" Mode="OneWay" />
@@ -193,7 +193,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                         Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding ThursdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Style="{DynamicResource TextBlockChartStyle}" />
-                <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
+                <Rectangle Fill="#33FFFFFF" VerticalAlignment="Bottom">
                     <Rectangle.Height>
                         <MultiBinding Converter="{Converters:CountToPercentHeightMultiConverter}">
                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" Mode="OneWay" />
@@ -239,7 +239,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                         Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding FridayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Style="{DynamicResource TextBlockChartStyle}" />
-                <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
+                <Rectangle Fill="#33FFFFFF" VerticalAlignment="Bottom">
                     <Rectangle.Height>
                         <MultiBinding Converter="{Converters:CountToPercentHeightMultiConverter}">
                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" Mode="OneWay" />
@@ -286,7 +286,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                         Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding SaturdayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Style="{DynamicResource TextBlockChartStyle}" />
-                <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
+                <Rectangle Fill="#33FFFFFF" VerticalAlignment="Bottom">
                     <Rectangle.Height>
                         <MultiBinding Converter="{Converters:CountToPercentHeightMultiConverter}">
                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" Mode="OneWay" />
@@ -333,7 +333,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                         Grid.Column="0" Grid.Row="0">
                 <TextBlock Text="{Binding SundayEmailsCount, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Style="{DynamicResource TextBlockChartStyle}" />
-                <Rectangle Fill="#33000000" VerticalAlignment="Bottom">
+                <Rectangle Fill="#33FFFFFF" VerticalAlignment="Bottom">
                     <Rectangle.Height>
                         <MultiBinding Converter="{Converters:CountToPercentHeightMultiConverter}">
                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" Mode="OneWay" />

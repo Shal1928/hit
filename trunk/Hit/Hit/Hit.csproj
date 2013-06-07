@@ -66,12 +66,14 @@
     <Compile Include="Behaviors\ExpanderMouseOverBehavior.cs" />
     <Compile Include="Controls\ButtonExt.cs" />
     <Compile Include="Controls\Configurations\WeekChartConfiguration.cs" />
+    <Compile Include="Controls\Configurations\WeekChartDisplayType.cs" />
     <Compile Include="Controls\WeekChart.xaml.cs">
       <DependentUpon>WeekChart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BoolToGridUnitTypeConverter.cs" />
     <Compile Include="Converters\CountToPercentHeightMultiConverter.cs" />
     <Compile Include="Converters\VisibilityToWidthConverter.cs" />
+    <Compile Include="Converters\WeekChartDisplayTypeToBoolConverter.cs" />
     <Compile Include="DataManagers\HitDataManager.cs" />
     <Compile Include="Helpers\StaticHelper.cs" />
     <Compile Include="Models\Base\DataObject.cs" />

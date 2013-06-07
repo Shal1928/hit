@@ -821,6 +821,80 @@ namespace Hit.Controls
             //
         }
 
+
+
+        public static readonly DependencyProperty DisplayTypeProperty =
+            DependencyProperty.Register("DisplayType",
+                                        typeof(WeekChartDisplayType),
+                                        typeof(WeekChart),
+                                        new UIPropertyMetadata(WeekChartDisplayType.All, DisplayTypeChanged)
+                                        );
+
+        public WeekChartDisplayType DisplayType
+        {
+            get
+            {
+                return (WeekChartDisplayType)GetValue(DisplayTypeProperty);
+            }
+            set
+            {
+                SetValue(DisplayTypeProperty, value);
+            }
+        }
+
+        private static void DisplayTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var weekChart = d as WeekChart;
+
+            if (weekChart == null) throw new ArgumentException("DependencyObjcet is not WeekChart");
+
+            switch (weekChart.DisplayType)
+            {
+                case WeekChartDisplayType.All:
+                    weekChart.Configuration = new WeekChartConfiguration(true, true);
+                    break;
+                case WeekChartDisplayType.WorkDays:
+                    weekChart.Configuration = new WeekChartConfiguration(true);
+                    break;
+                case WeekChartDisplayType.TodayAndYesterday:
+                    switch (DateTime.Now.DayOfWeek)
+                    {
+                        case DayOfWeek.Monday:
+                            weekChart.Configuration = new WeekChartConfiguration(true, false, false, false, false, false, false);
+                            break;
+                        case DayOfWeek.Tuesday:
+                            weekChart.Configuration = new WeekChartConfiguration(true, true, false, false, false, false, false);
+                            break;
+                        case DayOfWeek.Wednesday:
+                            weekChart.Configuration = new WeekChartConfiguration(false, true, true, false, false, false, false);
+                            break;
+                        case DayOfWeek.Thursday:
+                            weekChart.Configuration = new WeekChartConfiguration(false, false, true, true, false, false, false);
+                            break;
+                        case DayOfWeek.Friday:
+                            weekChart.Configuration = new WeekChartConfiguration(false, false, false, true, true, false, false);
+                            break;
+                        case DayOfWeek.Saturday:
+                            weekChart.Configuration = new WeekChartConfiguration(false, false, false, false, true, true, false);
+                            break;
+                        case DayOfWeek.Sunday:
+                            weekChart.Configuration = new WeekChartConfiguration(false, false, false, false, false, true, true);
+                            break;
+                    }
+                    break;
+                //case WeekChartDisplayType.TodayAndYesterdayWithoutWeekend:
+                //    break;
+                default:
+                    throw new ArgumentException("WeekChartDisplayType unknown value");
+            }
+        }
+        //[DataMember]
+        //public WeekChartDisplayType DisplayType
+        //{
+        //    get;
+        //    set;
+        //}
+
         #endregion
     }
 }

@@ -12,14 +12,24 @@ namespace Hit.Controls.Configurations
 
         public WeekChartConfiguration(bool workDayIsVisible, bool weekEndIsVisible = false)
         {
-            MondayIsVisible = workDayIsVisible;
-            TuesdayIsVisible = workDayIsVisible;
-            WednesdayIsVisible = workDayIsVisible;
-            ThursdayIsVisible = workDayIsVisible;
-            FridayIsVisible = workDayIsVisible;
+            InitializeWeekChartConfiguration(workDayIsVisible, workDayIsVisible, workDayIsVisible, workDayIsVisible, workDayIsVisible, weekEndIsVisible, weekEndIsVisible);
+        }
 
-            SaturdayIsVisible = weekEndIsVisible;
-            SundayIsVisible = weekEndIsVisible;
+        public WeekChartConfiguration(bool monday, bool tuesday, bool wednesday, bool thursday, bool friday, bool saturday, bool sunday)
+        {
+            InitializeWeekChartConfiguration(monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+        }
+
+        private void InitializeWeekChartConfiguration(bool monday, bool tuesday, bool wednesday, bool thursday, bool friday, bool saturday, bool sunday)
+        {
+            MondayIsVisible = monday;
+            TuesdayIsVisible = tuesday;
+            WednesdayIsVisible = wednesday;
+            ThursdayIsVisible = thursday;
+            FridayIsVisible = friday;
+
+            SaturdayIsVisible = saturday;
+            SundayIsVisible = sunday;
         }
 
         [DataMember]

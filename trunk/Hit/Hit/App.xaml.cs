@@ -7,6 +7,7 @@ using Hit.Stores;
 using Hit.Stores.Base;
 using Hit.ViewModels;
 using Hit.Views;
+using UseAbilities.MVVM.Base;
 using UseAbilities.MVVM.Managers;
 using UseAbilities.IoC.Core;
 
@@ -19,19 +20,19 @@ namespace Hit
     {
         private void OnStartup(object sender, StartupEventArgs e)
         {
+            Loader(StaticHelper.IoCcontainer);
+
+            var startupWindow = (MainWindowViewModel)StaticHelper.IoCcontainer.Resolve(ObserveWrapper.Wrap(typeof(MainWindowViewModel)));
+
             var relationsViewToViewModel = new Dictionary<Type, Type>
                                          {
-                                            {typeof (MainWindowViewModel), typeof (MainWindowView)},
+                                            {startupWindow.GetType(), typeof (MainWindowView)},
                                             {typeof (ReportViewModel), typeof (ReportView)}
                                          };
 
             ViewManager.RegisterViewViewModelRelations(relationsViewToViewModel);
             ViewModelManager.ActiveViewModels.CollectionChanged += ViewManager.OnViewModelsCoolectionChanged;
-
-            //var startupWindow = new MainWindowViewModel();
-            Loader(StaticHelper.IoCcontainer);
-
-            var startupWindow = StaticHelper.IoCcontainer.Resolve<MainWindowViewModel>();
+            
             startupWindow.Show();
         }
 

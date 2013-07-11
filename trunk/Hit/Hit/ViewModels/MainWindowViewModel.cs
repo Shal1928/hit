@@ -28,218 +28,98 @@ namespace Hit.ViewModels
         
         #region Properties
 
-        private int _abbyyCount;
-        public int ABBYYCount
+        public virtual int ABBYYCount
         {
-            get
-            {
-                return _abbyyCount;
-            }
-            set
-            {
-                _abbyyCount = value;
-                OnPropertyChanged(() => ABBYYCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyyCallsCount;
-        public int ABBYYCallsCount
+        public virtual int ABBYYCallsCount
         {
-            get
-            {
-                return _abbyyCallsCount;
-            }
-            set
-            {
-                _abbyyCallsCount = value;
-                OnPropertyChanged(() => ABBYYCallsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyyEmailsCount;
-        public int ABBYYEmailsCount
+        public virtual int ABBYYEmailsCount
         {
-            get
-            {
-                return _abbyyEmailsCount;
-            }
-            set
-            {
-                _abbyyEmailsCount = value;
-                OnPropertyChanged(() => ABBYYEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetCount;
-        public int FILENETCount
+        public virtual int FILENETCount
         {
-            get
-            {
-                return _filenetCount;
-            }
-            set
-            {
-                _filenetCount = value;
-                OnPropertyChanged(() => FILENETCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetEmailsCount;
-        public int FILENETEmailsCount
+        public virtual int FILENETEmailsCount
         {
-            get
-            {
-                return _filenetEmailsCount;
-            }
-            set
-            {
-                _filenetEmailsCount = value;
-                OnPropertyChanged(() => FILENETEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetCallsCount;
-        public int FILENETCallsCount
+        public virtual int FILENETCallsCount
         {
-            get
-            {
-                return _filenetCallsCount;
-            }
-            set
-            {
-                _filenetCallsCount = value;
-                OnPropertyChanged(() => FILENETCallsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapCount;
-        public int SAPCount
+        public virtual int SAPCount
         {
-            get
-            {
-                return _sapCount;
-            }
-            set
-            {
-                _sapCount = value;
-                OnPropertyChanged(() => SAPCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapEmailsCount;
-        public int SAPEmailsCount
+        public virtual int SAPEmailsCount
         {
-            get
-            {
-                return _sapEmailsCount;
-            }
-            set
-            {
-                _sapEmailsCount = value;
-                OnPropertyChanged(() => SAPEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapCallsCount;
-        public int SAPCallsCount
+        public virtual int SAPCallsCount
         {
-            get
-            {
-                return _sapCallsCount;
-            }
-            set
-            {
-                _sapCallsCount = value;
-                OnPropertyChanged(() => SAPCallsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentCount;
-        public int EnvironmentCount
+        public virtual int EnvironmentCount
         {
-            get
-            {
-                return _environmentCount;
-            }
-            set
-            {
-                _environmentCount = value;
-                OnPropertyChanged(() => EnvironmentCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentEmailsCount;
-        public int EnvironmentEmailsCount
+        public virtual int EnvironmentEmailsCount
         {
-            get
-            {
-                return _environmentEmailsCount;
-            }
-            set
-            {
-                _environmentEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentCallsCount;
-        public int EnvironmentCallsCount
+        public virtual int EnvironmentCallsCount
         {
-            get
-            {
-                return _environmentCallsCount;
-            }
-            set
-            {
-                _environmentCallsCount = value;
-                OnPropertyChanged(() => EnvironmentCallsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _total;
-        public int Total
+        public virtual int Total
         {
-            get
-            {
-                return _total;
-            }
-            set
-            {
-                _total = value;
-                OnPropertyChanged(() => Total);
-            }
+            get; 
+            set;
         }
 
-        private int _emailTotal;
-        public int EmailTotal
+        public virtual int EmailTotal
         {
-            get
-            {
-                return _emailTotal;
-            }
-            set
-            {
-                _emailTotal = value;
-                OnPropertyChanged(() => EmailTotal);
-            }
+            get; 
+            set;
         }
 
-        private int _callTotal;
-        public int CallTotal
+        public virtual int CallTotal
         {
-            get
-            {
-                return _callTotal;
-            }
-            set
-            {
-                _callTotal = value;
-                OnPropertyChanged(() => CallTotal);
-            }
+            get; 
+            set;
         }
 
         private DateTime _selectedDate = DateTime.Now;
-        public DateTime SelectedDate
+        public virtual DateTime SelectedDate
         {
             get
             {
@@ -249,12 +129,11 @@ namespace Hit.ViewModels
             {
                 _selectedDate = value;
                 _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
-                OnPropertyChanged(() => SelectedDate);
             }
         }
 
         private bool _useSelectedDate;
-        public bool UseSelectedDate
+        public virtual bool UseSelectedDate
         {
             get
             {
@@ -264,25 +143,16 @@ namespace Hit.ViewModels
             {
                 _useSelectedDate = value;
                 _date = _useSelectedDate ? SelectedDate : DateTime.Now.Date;
-                OnPropertyChanged(() => UseSelectedDate);
             }
         }
 
-        private ObservableCollection<Requests> _requestsCollection;
-        public ObservableCollection<Requests> RequestsCollection
+        public virtual ObservableCollection<Requests> RequestsCollection
         {
-            get
-            {
-                return _requestsCollection;
-            }
-            set
-            {
-                _requestsCollection = value;
-                OnPropertyChanged(() => RequestsCollection);
-            }
+            get; 
+            set;
         }
 
-        public bool IsTotalsVisible
+        public virtual bool IsTotalsVisible
         {
             get
             {
@@ -291,11 +161,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.IsTotalsVisible = value;
-                OnPropertyChanged(() => IsTotalsVisible);
             }
         }
 
-        public bool IsABBYYWeekChartVisible
+        public virtual bool IsABBYYWeekChartVisible
         {
             get
             {
@@ -304,11 +173,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.IsABBYYWeekChartVisible = value;
-                OnPropertyChanged(() => IsABBYYWeekChartVisible);
             }
         }
 
-        public bool IsFILENETWeekChartVisible
+        public virtual bool IsFILENETWeekChartVisible
         {
             get
             {
@@ -317,11 +185,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.IsFILENETWeekChartVisible = value;
-                OnPropertyChanged(() => IsFILENETWeekChartVisible);
             }
         }
 
-        public bool IsSAPWeekChartVisible
+        public virtual bool IsSAPWeekChartVisible
         {
             get
             {
@@ -330,11 +197,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.IsSAPWeekChartVisible = value;
-                OnPropertyChanged(() => IsSAPWeekChartVisible);
             }
         }
 
-        public bool IsEnvironmentWeekChartVisible
+        public virtual bool IsEnvironmentWeekChartVisible
         {
             get
             {
@@ -343,11 +209,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.IsEnvironmentWeekChartVisible = value;
-                OnPropertyChanged(() => IsEnvironmentWeekChartVisible);
             }
         }
 
-        public WeekChartDisplayType DisplayType
+        public virtual WeekChartDisplayType DisplayType
         {
             get
             {
@@ -359,12 +224,11 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.DisplayType = value;
-                OnPropertyChanged(() => DisplayType);
             }
         }
 
         private bool _isAllWeekDisplay;
-        public bool IsAllWeekDisplay
+        public virtual bool IsAllWeekDisplay
         {
             get
             {
@@ -374,12 +238,11 @@ namespace Hit.ViewModels
             {
                 _isAllWeekDisplay = value;
                 if (_isAllWeekDisplay) DisplayType = WeekChartDisplayType.All;
-                OnPropertyChanged(()=> IsAllWeekDisplay);
             }
         }
 
         private bool _isOnlyWorkDaysDisplay;
-        public bool IsOnlyWorkDaysDisplay
+        public virtual bool IsOnlyWorkDaysDisplay
         {
             get
             {
@@ -389,12 +252,11 @@ namespace Hit.ViewModels
             {
                 _isOnlyWorkDaysDisplay = value;
                 if(_isOnlyWorkDaysDisplay) DisplayType = WeekChartDisplayType.WorkDays;
-                OnPropertyChanged(()=> IsOnlyWorkDaysDisplay);
             }
         }
 
         private bool _isOnlyYesterdayAndTodayDisplay;
-        public bool IsOnlyYesterdayAndTodayDisplay
+        public virtual bool IsOnlyYesterdayAndTodayDisplay
         {
             get
             {
@@ -404,7 +266,6 @@ namespace Hit.ViewModels
             {
                 _isOnlyYesterdayAndTodayDisplay = value;
                 if (_isOnlyYesterdayAndTodayDisplay) DisplayType = WeekChartDisplayType.TodayAndYesterday;
-                OnPropertyChanged(() => IsOnlyYesterdayAndTodayDisplay);
             }
         }
 
@@ -417,7 +278,7 @@ namespace Hit.ViewModels
             }
         }
 
-        public WeekChartConfiguration ABBYYWeekChartConfiguration
+        public virtual WeekChartConfiguration ABBYYWeekChartConfiguration
         {
             get
             {
@@ -426,11 +287,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.WeekChartConfigurationList[0] = value;
-                OnPropertyChanged(()=>ABBYYWeekChartConfiguration);
             }
         }
 
-        public WeekChartConfiguration FILENETWeekChartConfiguration
+        public virtual WeekChartConfiguration FILENETWeekChartConfiguration
         {
             get
             {
@@ -439,11 +299,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.WeekChartConfigurationList[1] = value;
-                OnPropertyChanged(() => FILENETWeekChartConfiguration);
             }
         }
 
-        public WeekChartConfiguration SAPWeekChartConfiguration
+        public virtual WeekChartConfiguration SAPWeekChartConfiguration
         {
             get
             {
@@ -452,11 +311,10 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.WeekChartConfigurationList[2] = value;
-                OnPropertyChanged(() => SAPWeekChartConfiguration);
             }
         }
 
-        public WeekChartConfiguration EnvironmentWeekChartConfiguration
+        public virtual WeekChartConfiguration EnvironmentWeekChartConfiguration
         {
             get
             {
@@ -465,7 +323,6 @@ namespace Hit.ViewModels
             set
             {
                 HitSettings.WeekChartConfigurationList[3] = value;
-                OnPropertyChanged(() => EnvironmentWeekChartConfiguration);
             }
         }
 
@@ -473,830 +330,378 @@ namespace Hit.ViewModels
 
 
         #region ABBYY Properties for WeekChart
-        
-        private int _abbyyMondayEmailsCount;
-        public int ABBYYMondayEmailsCount
+
+        public virtual int ABBYYMondayEmailsCount
         {
-            get
-            {
-                return _abbyyMondayEmailsCount;
-            }
-            set
-            {
-                _abbyyMondayEmailsCount = value;
-                OnPropertyChanged(() => ABBYYMondayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyyMondayCallsCount;
-        public int ABBYYMondayCallsCount
+        public virtual int ABBYYMondayCallsCount
         {
-            get
-            {
-                return _abbyyMondayCallsCount;
-            }
-            set
-            {
-                _abbyyMondayCallsCount = value;
-                OnPropertyChanged(() => ABBYYMondayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _abbyyTuesdayEmailsCount;
-        public int ABBYYTuesdayEmailsCount
+        public virtual int ABBYYTuesdayEmailsCount
         {
-            get
-            {
-                return _abbyyTuesdayEmailsCount;
-            }
-            set
-            {
-                _abbyyTuesdayEmailsCount = value;
-                OnPropertyChanged(() => ABBYYTuesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyyTuesdayCallsCount;
-        public int ABBYYTuesdayCallsCount
+        public virtual int ABBYYTuesdayCallsCount
         {
-            get
-            {
-                return _abbyyTuesdayCallsCount;
-            }
-            set
-            {
-                _abbyyTuesdayCallsCount = value;
-                OnPropertyChanged(() => ABBYYTuesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _abbyyWednesdayEmailsCount;
-        public int ABBYYWednesdayEmailsCount
+        public virtual int ABBYYWednesdayEmailsCount
         {
-            get
-            {
-                return _abbyyWednesdayEmailsCount;
-            }
-            set
-            {
-                _abbyyWednesdayEmailsCount = value;
-                OnPropertyChanged(() => ABBYYWednesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyyWednesdayCallsCount;
-        public int ABBYYWednesdayCallsCount
+        public virtual int ABBYYWednesdayCallsCount
         {
-            get
-            {
-                return _abbyyWednesdayCallsCount;
-            }
-            set
-            {
-                _abbyyWednesdayCallsCount = value;
-                OnPropertyChanged(() => ABBYYWednesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _abbyyThursdayEmailsCount;
-        public int ABBYYThursdayEmailsCount
+        public virtual int ABBYYThursdayEmailsCount
         {
-            get
-            {
-                return _abbyyThursdayEmailsCount;
-            }
-            set
-            {
-                _abbyyThursdayEmailsCount = value;
-                OnPropertyChanged(() => ABBYYThursdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyyThursdayCallsCount;
-        public int ABBYYThursdayCallsCount
+        public virtual int ABBYYThursdayCallsCount
         {
-            get
-            {
-                return _abbyyThursdayCallsCount;
-            }
-            set
-            {
-                _abbyyThursdayCallsCount = value;
-                OnPropertyChanged(() => ABBYYThursdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _abbyyFridayEmailsCount;
-        public int ABBYYFridayEmailsCount
+        public virtual int ABBYYFridayEmailsCount
         {
-            get
-            {
-                return _abbyyFridayEmailsCount;
-            }
-            set
-            {
-                _abbyyFridayEmailsCount = value;
-                OnPropertyChanged(() => ABBYYFridayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyyFridayCallsCount;
-        public int ABBYYFridayCallsCount
+        public virtual int ABBYYFridayCallsCount
         {
-            get
-            {
-                return _abbyyFridayCallsCount;
-            }
-            set
-            {
-                _abbyyFridayCallsCount = value;
-                OnPropertyChanged(() => ABBYYFridayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _abbyySaturdayEmailsCount;
-        public int ABBYYSaturdayEmailsCount
+        public virtual int ABBYYSaturdayEmailsCount
         {
-            get
-            {
-                return _abbyySaturdayEmailsCount;
-            }
-            set
-            {
-                _abbyySaturdayEmailsCount = value;
-                OnPropertyChanged(() => ABBYYSaturdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyySaturdayCallsCount;
-        public int ABBYYSaturdayCallsCount
+        public virtual int ABBYYSaturdayCallsCount
         {
-            get
-            {
-                return _abbyySaturdayCallsCount;
-            }
-            set
-            {
-                _abbyySaturdayCallsCount = value;
-                OnPropertyChanged(() => ABBYYSaturdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _abbyySundayEmailsCount;
-        public int ABBYYSundayEmailsCount
+        public virtual int ABBYYSundayEmailsCount
         {
-            get
-            {
-                return _abbyySundayEmailsCount;
-            }
-            set
-            {
-                _abbyySundayEmailsCount = value;
-                OnPropertyChanged(() => ABBYYSundayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _abbyySundayCallsCount;
-        public int ABBYYSundayCallsCount
+        public virtual int ABBYYSundayCallsCount
         {
-            get
-            {
-                return _abbyySundayCallsCount;
-            }
-            set
-            {
-                _abbyySundayCallsCount = value;
-                OnPropertyChanged(() => ABBYYSundayCallsCount);
-            }
+            get; 
+            set;
         }
-
 
         #endregion
 
         #region FILENET Properties for WeekChart
 
-        private int _filenetMondayEmailsCount;
-        public int FILENETMondayEmailsCount
+        public virtual int FILENETMondayEmailsCount
         {
-            get
-            {
-                return _filenetMondayEmailsCount;
-            }
-            set
-            {
-                _filenetMondayEmailsCount = value;
-                OnPropertyChanged(() => FILENETMondayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetMondayCallsCount;
-        public int FILENETMondayCallsCount
+        public virtual int FILENETMondayCallsCount
         {
-            get
-            {
-                return _filenetMondayCallsCount;
-            }
-            set
-            {
-                _filenetMondayCallsCount = value;
-                OnPropertyChanged(() => FILENETMondayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _filenetTuesdayEmailsCount;
-        public int FILENETTuesdayEmailsCount
+        public virtual int FILENETTuesdayEmailsCount
         {
-            get
-            {
-                return _filenetTuesdayEmailsCount;
-            }
-            set
-            {
-                _filenetTuesdayEmailsCount = value;
-                OnPropertyChanged(() => FILENETTuesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetTuesdayCallsCount;
-        public int FILENETTuesdayCallsCount
+        public virtual int FILENETTuesdayCallsCount
         {
-            get
-            {
-                return _filenetTuesdayCallsCount;
-            }
-            set
-            {
-                _filenetTuesdayCallsCount = value;
-                OnPropertyChanged(() => FILENETTuesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _filenetWednesdayEmailsCount;
-        public int FILENETWednesdayEmailsCount
+        public virtual int FILENETWednesdayEmailsCount
         {
-            get
-            {
-                return _filenetWednesdayEmailsCount;
-            }
-            set
-            {
-                _filenetWednesdayEmailsCount = value;
-                OnPropertyChanged(() => FILENETWednesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetWednesdayCallsCount;
-        public int FILENETWednesdayCallsCount
+        public virtual int FILENETWednesdayCallsCount
         {
-            get
-            {
-                return _filenetWednesdayCallsCount;
-            }
-            set
-            {
-                _filenetWednesdayCallsCount = value;
-                OnPropertyChanged(() => FILENETWednesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _filenetThursdayEmailsCount;
-        public int FILENETThursdayEmailsCount
+        public virtual int FILENETThursdayEmailsCount
         {
-            get
-            {
-                return _filenetThursdayEmailsCount;
-            }
-            set
-            {
-                _filenetThursdayEmailsCount = value;
-                OnPropertyChanged(() => FILENETThursdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetThursdayCallsCount;
-        public int FILENETThursdayCallsCount
+        public virtual int FILENETThursdayCallsCount
         {
-            get
-            {
-                return _filenetThursdayCallsCount;
-            }
-            set
-            {
-                _filenetThursdayCallsCount = value;
-                OnPropertyChanged(() => FILENETThursdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _filenetFridayEmailsCount;
-        public int FILENETFridayEmailsCount
+        public virtual int FILENETFridayEmailsCount
         {
-            get
-            {
-                return _filenetFridayEmailsCount;
-            }
-            set
-            {
-                _filenetFridayEmailsCount = value;
-                OnPropertyChanged(() => FILENETFridayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetFridayCallsCount;
-        public int FILENETFridayCallsCount
+        public virtual int FILENETFridayCallsCount
         {
-            get
-            {
-                return _filenetFridayCallsCount;
-            }
-            set
-            {
-                _filenetFridayCallsCount = value;
-                OnPropertyChanged(() => FILENETFridayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _filenetSaturdayEmailsCount;
-        public int FILENETSaturdayEmailsCount
+        public virtual int FILENETSaturdayEmailsCount
         {
-            get
-            {
-                return _filenetSaturdayEmailsCount;
-            }
-            set
-            {
-                _filenetSaturdayEmailsCount = value;
-                OnPropertyChanged(() => FILENETSaturdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetSaturdayCallsCount;
-        public int FILENETSaturdayCallsCount
+        public virtual int FILENETSaturdayCallsCount
         {
-            get
-            {
-                return _filenetSaturdayCallsCount;
-            }
-            set
-            {
-                _filenetSaturdayCallsCount = value;
-                OnPropertyChanged(() => FILENETSaturdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _filenetSundayEmailsCount;
-        public int FILENETSundayEmailsCount
+        public virtual int FILENETSundayEmailsCount
         {
-            get
-            {
-                return _filenetSundayEmailsCount;
-            }
-            set
-            {
-                _filenetSundayEmailsCount = value;
-                OnPropertyChanged(() => FILENETSundayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _filenetSundayCallsCount;
-        public int FILENETSundayCallsCount
+        public virtual int FILENETSundayCallsCount
         {
-            get
-            {
-                return _filenetSundayCallsCount;
-            }
-            set
-            {
-                _filenetSundayCallsCount = value;
-                OnPropertyChanged(() => FILENETSundayCallsCount);
-            }
+            get; 
+            set;
         }
-
 
         #endregion
 
         #region SAP Properties for WeekChart
 
-        private int _sapMondayEmailsCount;
-        public int SAPMondayEmailsCount
+        public virtual int SAPMondayEmailsCount
         {
-            get
-            {
-                return _sapMondayEmailsCount;
-            }
-            set
-            {
-                _sapMondayEmailsCount = value;
-                OnPropertyChanged(() => SAPMondayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapMondayCallsCount;
-        public int SAPMondayCallsCount
+        public virtual int SAPMondayCallsCount
         {
-            get
-            {
-                return _sapMondayCallsCount;
-            }
-            set
-            {
-                _sapMondayCallsCount = value;
-                OnPropertyChanged(() => SAPMondayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _sapTuesdayEmailsCount;
-        public int SAPTuesdayEmailsCount
+        public virtual int SAPTuesdayEmailsCount
         {
-            get
-            {
-                return _sapTuesdayEmailsCount;
-            }
-            set
-            {
-                _sapTuesdayEmailsCount = value;
-                OnPropertyChanged(() => SAPTuesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapTuesdayCallsCount;
-        public int SAPTuesdayCallsCount
+        public virtual int SAPTuesdayCallsCount
         {
-            get
-            {
-                return _sapTuesdayCallsCount;
-            }
-            set
-            {
-                _sapTuesdayCallsCount = value;
-                OnPropertyChanged(() => SAPTuesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _sapWednesdayEmailsCount;
-        public int SAPWednesdayEmailsCount
+        public virtual int SAPWednesdayEmailsCount
         {
-            get
-            {
-                return _sapWednesdayEmailsCount;
-            }
-            set
-            {
-                _sapWednesdayEmailsCount = value;
-                OnPropertyChanged(() => SAPWednesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapWednesdayCallsCount;
-        public int SAPWednesdayCallsCount
+        public virtual int SAPWednesdayCallsCount
         {
-            get
-            {
-                return _sapWednesdayCallsCount;
-            }
-            set
-            {
-                _sapWednesdayCallsCount = value;
-                OnPropertyChanged(() => SAPWednesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _sapThursdayEmailsCount;
-        public int SAPThursdayEmailsCount
+        public virtual int SAPThursdayEmailsCount
         {
-            get
-            {
-                return _sapThursdayEmailsCount;
-            }
-            set
-            {
-                _sapThursdayEmailsCount = value;
-                OnPropertyChanged(() => SAPThursdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapThursdayCallsCount;
-        public int SAPThursdayCallsCount
+        public virtual int SAPThursdayCallsCount
         {
-            get
-            {
-                return _sapThursdayCallsCount;
-            }
-            set
-            {
-                _sapThursdayCallsCount = value;
-                OnPropertyChanged(() => SAPThursdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _sapFridayEmailsCount;
-        public int SAPFridayEmailsCount
+        public virtual int SAPFridayEmailsCount
         {
-            get
-            {
-                return _sapFridayEmailsCount;
-            }
-            set
-            {
-                _sapFridayEmailsCount = value;
-                OnPropertyChanged(() => SAPFridayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapFridayCallsCount;
-        public int SAPFridayCallsCount
+        public virtual int SAPFridayCallsCount
         {
-            get
-            {
-                return _sapFridayCallsCount;
-            }
-            set
-            {
-                _sapFridayCallsCount = value;
-                OnPropertyChanged(() => SAPFridayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _sapSaturdayEmailsCount;
-        public int SAPSaturdayEmailsCount
+        public virtual int SAPSaturdayEmailsCount
         {
-            get
-            {
-                return _sapSaturdayEmailsCount;
-            }
-            set
-            {
-                _sapSaturdayEmailsCount = value;
-                OnPropertyChanged(() => SAPSaturdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapSaturdayCallsCount;
-        public int SAPSaturdayCallsCount
+        public virtual int SAPSaturdayCallsCount
         {
-            get
-            {
-                return _sapSaturdayCallsCount;
-            }
-            set
-            {
-                _sapSaturdayCallsCount = value;
-                OnPropertyChanged(() => SAPSaturdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _sapSundayEmailsCount;
-        public int SAPSundayEmailsCount
+        public virtual int SAPSundayEmailsCount
         {
-            get
-            {
-                return _sapSundayEmailsCount;
-            }
-            set
-            {
-                _sapSundayEmailsCount = value;
-                OnPropertyChanged(() => SAPSundayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _sapSundayCallsCount;
-        public int SAPSundayCallsCount
+        public virtual int SAPSundayCallsCount
         {
-            get
-            {
-                return _sapSundayCallsCount;
-            }
-            set
-            {
-                _sapSundayCallsCount = value;
-                OnPropertyChanged(() => SAPSundayCallsCount);
-            }
+            get; 
+            set;
         }
-
 
         #endregion
 
         #region Environment Properties for WeekChart
 
-        private int _environmentMondayEmailsCount;
-        public int EnvironmentMondayEmailsCount
+        public virtual int EnvironmentMondayEmailsCount
         {
-            get
-            {
-                return _environmentMondayEmailsCount;
-            }
-            set
-            {
-                _environmentMondayEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentMondayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentMondayCallsCount;
-        public int EnvironmentMondayCallsCount
+        public virtual int EnvironmentMondayCallsCount
         {
-            get
-            {
-                return _environmentMondayCallsCount;
-            }
-            set
-            {
-                _environmentMondayCallsCount = value;
-                OnPropertyChanged(() => EnvironmentMondayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _environmentTuesdayEmailsCount;
-        public int EnvironmentTuesdayEmailsCount
+        public virtual int EnvironmentTuesdayEmailsCount
         {
-            get
-            {
-                return _environmentTuesdayEmailsCount;
-            }
-            set
-            {
-                _environmentTuesdayEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentTuesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentTuesdayCallsCount;
-        public int EnvironmentTuesdayCallsCount
+        public virtual int EnvironmentTuesdayCallsCount
         {
-            get
-            {
-                return _environmentTuesdayCallsCount;
-            }
-            set
-            {
-                _environmentTuesdayCallsCount = value;
-                OnPropertyChanged(() => EnvironmentTuesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _environmentWednesdayEmailsCount;
-        public int EnvironmentWednesdayEmailsCount
+        public virtual int EnvironmentWednesdayEmailsCount
         {
-            get
-            {
-                return _environmentWednesdayEmailsCount;
-            }
-            set
-            {
-                _environmentWednesdayEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentWednesdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentWednesdayCallsCount;
-        public int EnvironmentWednesdayCallsCount
+        public virtual int EnvironmentWednesdayCallsCount
         {
-            get
-            {
-                return _environmentWednesdayCallsCount;
-            }
-            set
-            {
-                _environmentWednesdayCallsCount = value;
-                OnPropertyChanged(() => EnvironmentWednesdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _environmentThursdayEmailsCount;
-        public int EnvironmentThursdayEmailsCount
+        public virtual int EnvironmentThursdayEmailsCount
         {
-            get
-            {
-                return _environmentThursdayEmailsCount;
-            }
-            set
-            {
-                _environmentThursdayEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentThursdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentThursdayCallsCount;
-        public int EnvironmentThursdayCallsCount
+        public virtual int EnvironmentThursdayCallsCount
         {
-            get
-            {
-                return _environmentThursdayCallsCount;
-            }
-            set
-            {
-                _environmentThursdayCallsCount = value;
-                OnPropertyChanged(() => EnvironmentThursdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _environmentFridayEmailsCount;
-        public int EnvironmentFridayEmailsCount
+        public virtual int EnvironmentFridayEmailsCount
         {
-            get
-            {
-                return _environmentFridayEmailsCount;
-            }
-            set
-            {
-                _environmentFridayEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentFridayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentFridayCallsCount;
-        public int EnvironmentFridayCallsCount
+        public virtual int EnvironmentFridayCallsCount
         {
-            get
-            {
-                return _environmentFridayCallsCount;
-            }
-            set
-            {
-                _environmentFridayCallsCount = value;
-                OnPropertyChanged(() => EnvironmentFridayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _environmentSaturdayEmailsCount;
-        public int EnvironmentSaturdayEmailsCount
+        public virtual int EnvironmentSaturdayEmailsCount
         {
-            get
-            {
-                return _environmentSaturdayEmailsCount;
-            }
-            set
-            {
-                _environmentSaturdayEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentSaturdayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentSaturdayCallsCount;
-        public int EnvironmentSaturdayCallsCount
+        public virtual int EnvironmentSaturdayCallsCount
         {
-            get
-            {
-                return _environmentSaturdayCallsCount;
-            }
-            set
-            {
-                _environmentSaturdayCallsCount = value;
-                OnPropertyChanged(() => EnvironmentSaturdayCallsCount);
-            }
+            get; 
+            set;
         }
 
 
-        private int _environmentSundayEmailsCount;
-        public int EnvironmentSundayEmailsCount
+        public virtual int EnvironmentSundayEmailsCount
         {
-            get
-            {
-                return _environmentSundayEmailsCount;
-            }
-            set
-            {
-                _environmentSundayEmailsCount = value;
-                OnPropertyChanged(() => EnvironmentSundayEmailsCount);
-            }
+            get; 
+            set;
         }
 
-        private int _environmentSundayCallsCount;
-        public int EnvironmentSundayCallsCount
+        public virtual int EnvironmentSundayCallsCount
         {
-            get
-            {
-                return _environmentSundayCallsCount;
-            }
-            set
-            {
-                _environmentSundayCallsCount = value;
-                OnPropertyChanged(() => EnvironmentSundayCallsCount);
-            }
+            get; 
+            set;
         }
-
 
         #endregion
 
